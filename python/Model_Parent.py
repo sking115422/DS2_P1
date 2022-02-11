@@ -16,8 +16,22 @@ def get_forest_fires_df():
     return df
 
 
-def forward_selection(df):
-
+def forward_selection(model, feature_df: pd.DataFrame, response_series: pd.Series):
+    f_df = feature_df.copy(deep=True)
+    features = []
+    while not f_df.empty:
+        best_f = None
+        best_r2_bar = -1000
+        best_r2_cv = -1000
+        for f in f_df:
+            temp_feats = features.append(f)
+            model.fit(temp_feats, response_series)
+            # GET R2 BAR and R2 CV
+            # determine best_f
+            ...
+        # Print best_f's name and R^2
+        features.append(best_f)
+        f_df.drop(columns=[best_f], inplace=True)
     return
 
 
