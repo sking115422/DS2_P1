@@ -202,7 +202,7 @@ end LassoRegression
     val mod = new LassoRegression (x, y)                           // create a Lasso regression model
     mod.trainNtest ()()                                            // train and test the model
     println (mod.summary ())                                       // parameter/coefficient statistics
-    println (s"best (lambda, sse) = ${mod.findLambda}")
+    // println (s"best (lambda, sse) = ${mod.findLambda}")
     
 
     banner ("Forward Selection Test")
@@ -252,6 +252,151 @@ end lassoRegressionAutoMPG
     // println (s"best (lambda, sse) = ${mod.findLambda}")
     
 
+    banner ("Forward Selection Test")
+    val (cols, rSq) = mod.forwardSelAll ()                         // R^2, R^2 Bar, R^2 cv
+    val k = cols.size
+    val t = VectorD.range (1, k)                                   // instance index
+    new PlotM (t, rSq.transpose, Array ("R^2", "R^2 bar", "R^2 cv"),
+               "R^2 vs n for Forward Selection - LassoRegression", lines = true)
+    println (s"rSq = $rSq")
+
+    banner ("Backward Elimination Test")
+    val (cols2, rSq2) = mod.backwardElimAll ()                       // R^2, R^2 Bar, R^2 cv
+    val k2 = cols2.size
+    val t2 = VectorD.range (1, k2)                                   // instance index
+    new PlotM (t2, rSq2.transpose, Array ("R^2", "R^2 bar", "R^2 cv"),
+               "R^2 vs n for Backward Elimination - LassoRegression", lines = true)
+    println (s"rSq = $rSq2")
+
+    banner ("Stepwise Selection Test")
+    val (cols3, rSq3) = mod.stepRegressionAll ()                     // R^2, R^2 Bar, R^2 cv
+    val k3 = cols3.size
+    val t3 = VectorD.range (1, k3)                                   // instance index
+    new PlotM (t3, rSq3.transpose, Array ("R^2", "R^2 bar", "R^2 cv"),
+               "R^2 vs n for Stepwise Selection - LassoRegression", lines = true)
+    println (s"rSq = $rSq3")
+
+end lassoRegression_forestfires
+
+
+
+//// Insert Function for AirQuality once target is established
+
+
+
+@main def lassoRegression_BikeSharingHour (): Unit =
+
+    banner ("bike_sharing_hour data")
+    val auto_mat = MatrixD.load("bike_sharing_hour.csv")
+    // println(auto_mat)
+
+    val x = auto_mat(?, 1 to 12)
+    val y = auto_mat(?, 15)
+
+    println (x)
+    println (y)
+
+    banner ("LassoRegression for bike_sharing_hour")
+    val mod = new LassoRegression (x, y)                           // create a Lasso regression model
+    mod.trainNtest ()()                                            // train and test the model
+    println (mod.summary ())                                       // parameter/coefficient statistics
+    // println (s"best (lambda, sse) = ${mod.findLambda}")
+    
+
+    banner ("Forward Selection Test")
+    val (cols, rSq) = mod.forwardSelAll ()                         // R^2, R^2 Bar, R^2 cv
+    val k = cols.size
+    val t = VectorD.range (1, k)                                   // instance index
+    new PlotM (t, rSq.transpose, Array ("R^2", "R^2 bar", "R^2 cv"),
+               "R^2 vs n for Forward Selection - LassoRegression", lines = true)
+    println (s"rSq = $rSq")
+
+    banner ("Backward Elimination Test")
+    val (cols2, rSq2) = mod.backwardElimAll ()                       // R^2, R^2 Bar, R^2 cv
+    val k2 = cols2.size
+    val t2 = VectorD.range (1, k2)                                   // instance index
+    new PlotM (t2, rSq2.transpose, Array ("R^2", "R^2 bar", "R^2 cv"),
+               "R^2 vs n for Backward Elimination - LassoRegression", lines = true)
+    println (s"rSq = $rSq2")
+
+    banner ("Stepwise Selection Test")
+    val (cols3, rSq3) = mod.stepRegressionAll ()                     // R^2, R^2 Bar, R^2 cv
+    val k3 = cols3.size
+    val t3 = VectorD.range (1, k3)                                   // instance index
+    new PlotM (t3, rSq3.transpose, Array ("R^2", "R^2 bar", "R^2 cv"),
+               "R^2 vs n for Stepwise Selection - LassoRegression", lines = true)
+    println (s"rSq = $rSq3")
+
+end lassoRegression_BikeSharingHour
+
+
+
+@main def lassoRegression_CCPP (): Unit =
+
+    banner ("CCPP data")
+    val auto_mat = MatrixD.load("CCPP.csv")
+    // println(auto_mat)
+
+    val x = auto_mat(?, 0 to 3)
+    val y = auto_mat(?, 4)
+
+    println (x)
+    println (y)
+
+    banner ("LassoRegression for CCPP")
+    val mod = new LassoRegression (x, y)                           // create a Lasso regression model
+    mod.trainNtest ()()                                            // train and test the model
+    println (mod.summary ())                                       // parameter/coefficient statistics
+    // println (s"best (lambda, sse) = ${mod.findLambda}")
+    
+
+    banner ("Forward Selection Test")
+    val (cols, rSq) = mod.forwardSelAll ()                         // R^2, R^2 Bar, R^2 cv
+    val k = cols.size
+    val t = VectorD.range (1, k)                                   // instance index
+    new PlotM (t, rSq.transpose, Array ("R^2", "R^2 bar", "R^2 cv"),
+               "R^2 vs n for Forward Selection - LassoRegression", lines = true)
+    println (s"rSq = $rSq")
+
+    banner ("Backward Elimination Test")
+    val (cols2, rSq2) = mod.backwardElimAll ()                       // R^2, R^2 Bar, R^2 cv
+    val k2 = cols2.size
+    val t2 = VectorD.range (1, k2)                                   // instance index
+    new PlotM (t2, rSq2.transpose, Array ("R^2", "R^2 bar", "R^2 cv"),
+               "R^2 vs n for Backward Elimination - LassoRegression", lines = true)
+    println (s"rSq = $rSq2")
+
+    banner ("Stepwise Selection Test")
+    val (cols3, rSq3) = mod.stepRegressionAll ()                     // R^2, R^2 Bar, R^2 cv
+    val k3 = cols3.size
+    val t3 = VectorD.range (1, k3)                                   // instance index
+    new PlotM (t3, rSq3.transpose, Array ("R^2", "R^2 bar", "R^2 cv"),
+               "R^2 vs n for Stepwise Selection - LassoRegression", lines = true)
+    println (s"rSq = $rSq3")
+
+end lassoRegression_CCPP
+
+
+
+@main def lassoRegression_WineQuality (): Unit =
+
+    banner ("winequality-white data")
+    val auto_mat = MatrixD.load("winequality-white_fixed.csv")
+    // println(auto_mat)
+
+    val x = auto_mat(?, 0 to 10)
+    val y = auto_mat(?, 11)
+
+    println (x)
+    println (y)
+
+    // banner ("LassoRegression for winequality-white")
+    // val mod = new LassoRegression (x, y)                           // create a Lasso regression model
+    // mod.trainNtest ()()                                            // train and test the model
+    // println (mod.summary ())                                       // parameter/coefficient statistics
+    // // println (s"best (lambda, sse) = ${mod.findLambda}")
+    
+
     // banner ("Forward Selection Test")
     // val (cols, rSq) = mod.forwardSelAll ()                         // R^2, R^2 Bar, R^2 cv
     // val k = cols.size
@@ -276,5 +421,4 @@ end lassoRegressionAutoMPG
     //            "R^2 vs n for Stepwise Selection - LassoRegression", lines = true)
     // println (s"rSq = $rSq3")
 
-end lassoRegression_forestfires
-
+end lassoRegression_WineQuality

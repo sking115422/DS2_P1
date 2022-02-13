@@ -1,15 +1,12 @@
-[0m[[0m[31merror[0m] [0m[0m[31m-- [E018] Syntax Error: /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/src/main/scala/models/test.scala:14:21 [0m[0m
-[0m[[0m[31merror[0m] [0m[0m[31m14 |[0m    [33mval[0m [36mx[0m = auto_mat(:, [31m0[0m)[0m
-[0m[[0m[31merror[0m] [0m[0m   |                     [31m^[0m[0m
-[0m[[0m[31merror[0m] [0m[0m   |                     expression expected but [31m:[0m found[0m
-[0m[[0m[31merror[0m] [0m[0m[31m-- [E051] Reference Error: /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/src/main/scala/models/test.scala:14:12 [0m[0m
-[0m[[0m[31merror[0m] [0m[0m[31m14 |[0m    [33mval[0m [36mx[0m = auto_mat(:, [31m0[0m)[0m
-[0m[[0m[31merror[0m] [0m[0m   |            [31m^^^^^^^^[0m[0m
-[0m[[0m[31merror[0m] [0m[0m   |Ambiguous overload. The overloaded alternatives of [33mmethod[0m [35mapply[0m in [33mclass[0m [35mMatrixD[0m with types[0m
-[0m[[0m[31merror[0m] [0m[0m   | (idx: IndexedSeq[Int]): scalation.mathstat.MatrixD[0m
-[0m[[0m[31merror[0m] [0m[0m   | (idx: scala.collection.mutable.IndexedSeq[Int]): scalation.mathstat.MatrixD[0m
-[0m[[0m[31merror[0m] [0m[0m   | (iset: scala.collection.mutable.Set[Int]): scalation.mathstat.MatrixD[0m
-[0m[[0m[31merror[0m] [0m[0m   | (ir: Range): scalation.mathstat.MatrixD[0m
-[0m[[0m[31merror[0m] [0m[0m   |all match arguments (Null)[0m
-[0m[[0m[31merror[0m] [0m[0mtwo errors found[0m
-[0m[[0m[31merror[0m] [0m[0mtwo errors found[0m
+[0m[[0m[31merror[0m] [0m[0m[31m-- [E018] Syntax Error: /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/src/main/scala/models/LassoRegression.scala:283:47 [0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m283 |[0m[35m@main[0m [33mdef[0m [36mlassoRegression_AirQuality[0m (): [35mUnit[0m =[0m
+[0m[[0m[31merror[0m] [0m[0m    |                                               [31m^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m    |                                     expression expected but [31mend[0m found[0m
+[0m[[0m[33mwarn[0m] [0m[0m[33m-- [E129] Potential Issue Warning: /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/src/main/scala/models/LassoRegression.scala:283:45 [0m[0m
+[0m[[0m[33mwarn[0m] [0m[0m[33m283 |[0m[35m@main[0m [33mdef[0m [36mlassoRegression_AirQuality[0m (): [35mUnit[0m =[0m
+[0m[[0m[33mwarn[0m] [0m[0m    |                                             [33m^[0m[0m
+[0m[[0m[33mwarn[0m] [0m[0m    |A pure expression does nothing in statement position; you may be omitting necessary parentheses[0m
+[0m[[0m[33mwarn[0m] [0m[0mone warning found[0m
+[0m[[0m[31merror[0m] [0m[0mone error found[0m
+[0m[[0m[33mwarn[0m] [0m[0mone warning found[0m
+[0m[[0m[31merror[0m] [0m[0mone error found[0m

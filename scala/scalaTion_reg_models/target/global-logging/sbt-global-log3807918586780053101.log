@@ -1,7 +1,0 @@
-[0m[[0m[0mdebug[0m] [0m[0m> Exec(run, Some(a5d4f57f-d630-4de1-8400-e23837c3eb26), Some(CommandSource(console0)))[0m
-[0m[[0m[0mdebug[0m] [0m[0mEvaluating tasks: Compile / run[0m
-[0m[[0m[0mdebug[0m] [0m[0mRunning task... Cancel: Signal, check cycles: false, forcegc: true[0m
-[0m[[0m[0mdebug[0m] [0m[0mForcing garbage collection...[0m
-[0m[[0m[32msuccess[0m] [0m[0mTotal time: 175 s (02:55), completed Feb 12, 2022, 8:18:40 PM[0m
-[0m[[0m[0mdebug[0m] [0m[0m> Exec(shell, None, None)[0m
-[0m[[0m[0mdebug[0m] [0m[0mForcing garbage collection...[0m
