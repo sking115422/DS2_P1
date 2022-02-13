@@ -249,32 +249,32 @@ end lassoRegressionAutoMPG
     val mod = new LassoRegression (x, y)                           // create a Lasso regression model
     mod.trainNtest ()()                                            // train and test the model
     println (mod.summary ())                                       // parameter/coefficient statistics
-    println (s"best (lambda, sse) = ${mod.findLambda}")
+    // println (s"best (lambda, sse) = ${mod.findLambda}")
     
 
-    banner ("Forward Selection Test")
-    val (cols, rSq) = mod.forwardSelAll ()                         // R^2, R^2 Bar, R^2 cv
-    val k = cols.size
-    val t = VectorD.range (1, k)                                   // instance index
-    new PlotM (t, rSq.transpose, Array ("R^2", "R^2 bar", "R^2 cv"),
-               "R^2 vs n for Forward Selection - LassoRegression", lines = true)
-    println (s"rSq = $rSq")
+    // banner ("Forward Selection Test")
+    // val (cols, rSq) = mod.forwardSelAll ()                         // R^2, R^2 Bar, R^2 cv
+    // val k = cols.size
+    // val t = VectorD.range (1, k)                                   // instance index
+    // new PlotM (t, rSq.transpose, Array ("R^2", "R^2 bar", "R^2 cv"),
+    //            "R^2 vs n for Forward Selection - LassoRegression", lines = true)
+    // println (s"rSq = $rSq")
 
-    banner ("Backward Elimination Test")
-    val (cols2, rSq2) = mod.backwardElimAll ()                       // R^2, R^2 Bar, R^2 cv
-    val k2 = cols2.size
-    val t2 = VectorD.range (1, k2)                                   // instance index
-    new PlotM (t2, rSq2.transpose, Array ("R^2", "R^2 bar", "R^2 cv"),
-               "R^2 vs n for Backward Elimination - LassoRegression", lines = true)
-    println (s"rSq = $rSq2")
+    // banner ("Backward Elimination Test")
+    // val (cols2, rSq2) = mod.backwardElimAll ()                       // R^2, R^2 Bar, R^2 cv
+    // val k2 = cols2.size
+    // val t2 = VectorD.range (1, k2)                                   // instance index
+    // new PlotM (t2, rSq2.transpose, Array ("R^2", "R^2 bar", "R^2 cv"),
+    //            "R^2 vs n for Backward Elimination - LassoRegression", lines = true)
+    // println (s"rSq = $rSq2")
 
-    banner ("Stepwise Selection Test")
-    val (cols3, rSq3) = mod.stepRegressionAll ()                     // R^2, R^2 Bar, R^2 cv
-    val k3 = cols3.size
-    val t3 = VectorD.range (1, k3)                                   // instance index
-    new PlotM (t3, rSq3.transpose, Array ("R^2", "R^2 bar", "R^2 cv"),
-               "R^2 vs n for Stepwise Selection - LassoRegression", lines = true)
-    println (s"rSq = $rSq3")
+    // banner ("Stepwise Selection Test")
+    // val (cols3, rSq3) = mod.stepRegressionAll ()                     // R^2, R^2 Bar, R^2 cv
+    // val k3 = cols3.size
+    // val t3 = VectorD.range (1, k3)                                   // instance index
+    // new PlotM (t3, rSq3.transpose, Array ("R^2", "R^2 bar", "R^2 cv"),
+    //            "R^2 vs n for Stepwise Selection - LassoRegression", lines = true)
+    // println (s"rSq = $rSq3")
 
 end lassoRegression_forestfires
 
