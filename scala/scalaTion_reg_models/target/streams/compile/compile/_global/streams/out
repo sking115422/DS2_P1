@@ -1,10 +1,15 @@
-[0m[[0m[31merror[0m] [0m[0m[31m-- [E161] Naming Error: /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/src/main/scala/models/test.scala:9:10 [0m[0m
-[0m[[0m[31merror[0m] [0m[0m[31m9 |[0m[35m@main[0m [33mdef[0m [36mregressionTest[0m (): [35mUnit[0m = {[0m
-[0m[[0m[31merror[0m] [0m[0m   |[31m^[0m[0m
-[0m[[0m[31merror[0m] [0m[0m   |regressionTest is already defined as [33mmethod[0m [35mregressionTest[0m in /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/src/main/scala/models/Regression.scala[0m
-[0m[[0m[31merror[0m] [0m[0m   |[0m
-[0m[[0m[31merror[0m] [0m[0m   |Note that overloaded methods must all be defined in the same group of toplevel definitions[0m
-[0m[[0m[31merror[0m] [0m[0m[31m10 |[0m    MatrixD.load([31m"AirQualityUCI_fixed_cleaned.csv"[0m)[0m
-[0m[[0m[31merror[0m] [0m[0m[31m11 |[0m}[0m
-[0m[[0m[31merror[0m] [0m[0mone error found[0m
-[0m[[0m[31merror[0m] [0m[0mone error found[0m
+[0m[[0m[31merror[0m] [0m[0m[31m-- [E018] Syntax Error: /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/src/main/scala/models/test.scala:14:21 [0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m14 |[0m    [33mval[0m [36mx[0m = auto_mat(:, [31m0[0m)[0m
+[0m[[0m[31merror[0m] [0m[0m   |                     [31m^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m   |                     expression expected but [31m:[0m found[0m
+[0m[[0m[31merror[0m] [0m[0m[31m-- [E051] Reference Error: /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/src/main/scala/models/test.scala:14:12 [0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m14 |[0m    [33mval[0m [36mx[0m = auto_mat(:, [31m0[0m)[0m
+[0m[[0m[31merror[0m] [0m[0m   |            [31m^^^^^^^^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m   |Ambiguous overload. The overloaded alternatives of [33mmethod[0m [35mapply[0m in [33mclass[0m [35mMatrixD[0m with types[0m
+[0m[[0m[31merror[0m] [0m[0m   | (idx: IndexedSeq[Int]): scalation.mathstat.MatrixD[0m
+[0m[[0m[31merror[0m] [0m[0m   | (idx: scala.collection.mutable.IndexedSeq[Int]): scalation.mathstat.MatrixD[0m
+[0m[[0m[31merror[0m] [0m[0m   | (iset: scala.collection.mutable.Set[Int]): scalation.mathstat.MatrixD[0m
+[0m[[0m[31merror[0m] [0m[0m   | (ir: Range): scalation.mathstat.MatrixD[0m
+[0m[[0m[31merror[0m] [0m[0m   |all match arguments (Null)[0m
+[0m[[0m[31merror[0m] [0m[0mtwo errors found[0m
+[0m[[0m[31merror[0m] [0m[0mtwo errors found[0m

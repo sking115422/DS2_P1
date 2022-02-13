@@ -166,126 +166,6 @@ end LassoRegression
 
 
 //:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-/** The `lassoRegressionTest` main function tests `LassoRegression` class using
- *  the following regression equation.
- *      y  =  b dot x  =  b_0 + b_1*x_1 + b_2*x_2.
- *  It comapres `LassoRegression` to `Regression`.
- *  @see http://statmaster.sdu.dk/courses/st111/module03/index.html
- *  > runMain scalation.modeling.lassoRegressionTest
- */
-@main def lassoRegressionTest (): Unit =
-
-    // 5 data points: constant term, x_1 coordinate, x_2 coordinate
-    val x = MatrixD ((5, 3), 1.0, 36.0,  66.0,                     // 5-by-3 matrix
-                             1.0, 37.0,  68.0,
-                             1.0, 47.0,  64.0,
-                             1.0, 32.0,  53.0,
-                             1.0,  1.0, 101.0)
-    val y = VectorD (745.0, 895.0, 442.0, 440.0, 1598.0)
-    val z = VectorD (1.0, 20.0, 80.0)
-
-//  println ("model: y = b_0 + b_1*x_1 + b_2*x_2")
-    println ("model: y = b₀ + b₁*x₁ + b₂*x₂")
-    println ("x = " + x)
-    println ("y = " + y)
-
-    banner ("Regression")
-    val reg = new Regression (x, y)                                // create a regression model
-    reg.trainNtest ()()                                            // train and test the model
-    println (reg.summary ())                                       // parameter/coefficient statistics
-    println (s"predict ($z) = ${reg.predict (z)}")                 // make an out-of-sample prediction
-
-    val yp = reg.predict (x)                                       // predict y for several points
-    println (s"predict (x) = $yp")
-
-    banner ("LassoRegression")
-    val mod = new LassoRegression (x, y)                           // create a Lasso regression model
-    mod.trainNtest ()()                                            // train and test the model
-    println (mod.summary ())                                       // parameter/coefficient statistics
-    println (s"predict ($z) = ${mod.predict (z)}")                 // make an out-of-sample prediction
-
-    val yyp = mod.predict (x)                                      // predict y for several points
-    println (s"predict (x) = $yyp")
-
-    new Plot (null, y, yp, "Regression y vs. yp")
-    new Plot (null, y, yyp, "Lasso Regression y vs. yyp")
-    new Plot (x(?, 1), y, yyp, "y, yyp vs. col 1")
-    new Plot (x(?, 2), y, yyp, "y, yyp vs. col 2")
-
-end lassoRegressionTest
-
-
-//:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-/** The `lassoRegressionTest2` main function tests `LassoRegression` class using
- *  the following regression equation.
- *      y  =  b dot x  =  b_1*x1 + b_2*x_2.
- *  Try non-default value for the 'lambda' hyper-parameter.
- *  > runMain scalation.modeling.lassoRegressionTest2
- */
-@main def lassoRegressionTest2 (): Unit =
-
-    import LassoRegression.hp
-
-    println (s"hp = $hp")
-    val hp2 = hp.updateReturn ("lambda", 1.0)                      // try different values
-    println (s"hp2 = $hp2")
-
-    // 5 data points:        one   x_1    x_2
-    val x = MatrixD ((5, 3), 1.0, 36.0,  66.0,                     // 5-by-3 matrix
-                             1.0, 37.0,  68.0,
-                             1.0, 47.0,  64.0,
-                             1.0, 32.0,  53.0,
-                             1.0,  1.0, 101.0)
-    val y = VectorD (745.0, 895.0, 442.0, 440.0, 1598.0)
-    val z = VectorD (1.0, 20.0, 80.0)
-
-    println ("x = " + x + "\ny = " + y + "\nz = " + z)
-
-    banner ("LassoRegression")
-    val mod = new LassoRegression (x, y, hparam = hp2)             // create a Lasso regression model
-    mod.trainNtest ()()                                            // train and test the model
-    println (mod.summary ())                                       // parameter/coefficient statistics
-    println (s"predict ($z) = ${mod.predict (z)}")                 // make an out-of-sample prediction
-
-end lassoRegressionTest2
-
-
-//:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-/** The `lassoRegressionTest3` main function tests `LassoRegression` class using
- *  the following regression equation.
- *      y  =  b dot x  =  b_1*x1 + b_2*x_2.
- *  Test regression, forward selection and backward elimination.
- *  > runMain scalation.modeling.lassoRegressionTest3
- */
-@main def lassoRegressionTest3 (): Unit =
-
-    // 5 data points:            one   x_1    x_2
-    val x = MatrixD ((5, 3), 1.0, 36.0,  66.0,                     // 5-by-3 matrix
-                             1.0, 37.0,  68.0,
-                             1.0, 47.0,  64.0,
-                             1.0, 32.0,  53.0,
-                             1.0,  1.0, 101.0)
-    val y = VectorD (745.0, 895.0, 442.0, 440.0, 1598.0)
-    val z = VectorD (1.0, 20.0, 80.0)
-
-    println ("x = " + x + "\ny = " + y + "\nz = " + z)
-
-    banner ("LassoRegression")
-    val mod = new LassoRegression (x, y)                           // create a Lasso regression model
-    mod.trainNtest ()()                                            // train and test the model
-    println (mod.summary ())                                       // parameter/coefficient statistics
-    println (s"predict ($z) = ${mod.predict (z)}")                 // make an out-of-sample prediction
-
-    banner ("Forward Selection Test")
-    mod.forwardSelAll (cross = false)
-
-    banner ("Backward Elimination Test")
-    mod.backwardElimAll (cross = false)
-
-end lassoRegressionTest3
-
-
-//:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 /** The `lassoRegressionTest4` main function tests the `LassoRegression` class using
  *  the AutoMPG dataset.  It illustrates using the `Relation` class for reading the
  *  data from a .csv file "auto-mpg.csv".  Assumes no missing values.
@@ -293,59 +173,108 @@ end lassoRegressionTest3
  *  R^2, R^2 Bar and R^2 cv vs. the instance index.
  *  > runMain scalation.modeling.lassoRegressionTest4
  */
-@main def lassoRegressionTest4 (): Unit =
+@main def lassoRegressionAutoMPG (): Unit =
 
-    import scalation.database.relation.Relation
+    // import scalation.database.relation.Relation
 
-    banner ("auto_mpg relation")
-    val auto_tab = Relation (BASE_DIR + "auto-mpg.csv", "auto_mpg", null, -1)
-    auto_tab.show ()
+    banner ("auto_mpg data")
+    // val auto_tab = Relation ("auto_mpg_fixed_cleaned.csv", "auto_mpg", null, -1)
+    // auto_tab.show ()
 
-    banner ("auto_mpg (x, y) dataset")
-    val (x, y) = auto_tab.toMatrixDD (ArrayBuffer.range (1, 7), 0)
-    println (s"x = $x")
-    println (s"y = $y")
+    // val auto_mat = MatrixD.load("auto_mpg_fixed_cleaned.csv")
+    // // println(auto_mat)
+
+    // banner ("auto_mpg (x, y) dataset")
+    // val (x, y) = auto_tab.toMatrixDD (ArrayBuffer.range (1, 7), 0)
+    // println (s"x = $x")
+    // println (s"y = $y")
+
+    val auto_mat = MatrixD.load("auto_mpg_fixed_cleaned.csv")
+    println(auto_mat)
+
+    val x = auto_mat(?, 0 to 6)
+    val y = auto_mat(?, 7)
+
+    println (x)
+    println (y)
 
     banner ("LassoRegression for auto_mpg")
     val mod = new LassoRegression (x, y)                           // create a Lasso regression model
     mod.trainNtest ()()                                            // train and test the model
     println (mod.summary ())                                       // parameter/coefficient statistics
+    println (s"best (lambda, sse) = ${mod.findLambda}")
+    
 
     banner ("Forward Selection Test")
     val (cols, rSq) = mod.forwardSelAll ()                         // R^2, R^2 Bar, R^2 cv
     val k = cols.size
     val t = VectorD.range (1, k)                                   // instance index
     new PlotM (t, rSq.transpose, Array ("R^2", "R^2 bar", "R^2 cv"),
-               "R^2 vs n for LassoRegression", lines = true)
+               "R^2 vs n for Forward Selection - LassoRegression", lines = true)
     println (s"rSq = $rSq")
 
-end lassoRegressionTest4
+    banner ("Backward Elimination Test")
+    val (cols2, rSq2) = mod.backwardElimAll ()                       // R^2, R^2 Bar, R^2 cv
+    val k2 = cols2.size
+    val t2 = VectorD.range (1, k2)                                   // instance index
+    new PlotM (t2, rSq2.transpose, Array ("R^2", "R^2 bar", "R^2 cv"),
+               "R^2 vs n for Backward Elimination - LassoRegression", lines = true)
+    println (s"rSq = $rSq2")
+
+    banner ("Stepwise Selection Test")
+    val (cols3, rSq3) = mod.stepRegressionAll ()                     // R^2, R^2 Bar, R^2 cv
+    val k3 = cols3.size
+    val t3 = VectorD.range (1, k3)                                   // instance index
+    new PlotM (t3, rSq3.transpose, Array ("R^2", "R^2 bar", "R^2 cv"),
+               "R^2 vs n for Stepwise Selection - LassoRegression", lines = true)
+    println (s"rSq = $rSq3")
+
+end lassoRegressionAutoMPG
 
 
-//:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-/** The `lassoRegressionTest5` main function tests the `LassoRegression` class using
- *  the AutoMPG dataset.  It illustrates using the `Relation` class for reading the'
- *  data from a .csv file "auto-mpg.csv".  Assumes no missing values.
- *  It also uses the 'findLambda' method to search for a shrinkage parameter
- *  that roughly mininizes 'sse_cv'.
- *  > runMain scalation.modeling.lassoRegressionTest5
- */
-@main def lassoRegressionTest5 (): Unit =
 
-    import scalation.database.relation.Relation
+@main def lassoRegression_forestfires (): Unit =
 
-    banner ("auto_mpg relation")
-    val auto_tab = Relation (BASE_DIR + "auto-mpg.csv", "auto_mpg", null, -1)
-    auto_tab.show ()
+    banner ("forestfires data")
+    val auto_mat = MatrixD.load("forestfires_cleaned.csv")
+    println(auto_mat)
 
-    banner ("auto_mpg (x, y) dataset")
-    val (x, y) = auto_tab.toMatrixDD (ArrayBuffer.range (1, 7), 0)
+    val x = auto_mat(?, 1 to 12)
+    val y = auto_mat(?, 13)
 
-    banner ("LassoRegression for auto_mpg")
+    println (x)
+    println (y)
+
+    banner ("LassoRegression for forestfires")
     val mod = new LassoRegression (x, y)                           // create a Lasso regression model
     mod.trainNtest ()()                                            // train and test the model
     println (mod.summary ())                                       // parameter/coefficient statistics
-
     println (s"best (lambda, sse) = ${mod.findLambda}")
+    
 
-end lassoRegressionTest5
+    banner ("Forward Selection Test")
+    val (cols, rSq) = mod.forwardSelAll ()                         // R^2, R^2 Bar, R^2 cv
+    val k = cols.size
+    val t = VectorD.range (1, k)                                   // instance index
+    new PlotM (t, rSq.transpose, Array ("R^2", "R^2 bar", "R^2 cv"),
+               "R^2 vs n for Forward Selection - LassoRegression", lines = true)
+    println (s"rSq = $rSq")
+
+    banner ("Backward Elimination Test")
+    val (cols2, rSq2) = mod.backwardElimAll ()                       // R^2, R^2 Bar, R^2 cv
+    val k2 = cols2.size
+    val t2 = VectorD.range (1, k2)                                   // instance index
+    new PlotM (t2, rSq2.transpose, Array ("R^2", "R^2 bar", "R^2 cv"),
+               "R^2 vs n for Backward Elimination - LassoRegression", lines = true)
+    println (s"rSq = $rSq2")
+
+    banner ("Stepwise Selection Test")
+    val (cols3, rSq3) = mod.stepRegressionAll ()                     // R^2, R^2 Bar, R^2 cv
+    val k3 = cols3.size
+    val t3 = VectorD.range (1, k3)                                   // instance index
+    new PlotM (t3, rSq3.transpose, Array ("R^2", "R^2 bar", "R^2 cv"),
+               "R^2 vs n for Stepwise Selection - LassoRegression", lines = true)
+    println (s"rSq = $rSq3")
+
+end lassoRegression_forestfires
+

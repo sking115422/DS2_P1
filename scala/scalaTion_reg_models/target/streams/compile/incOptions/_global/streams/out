@@ -1,2 +1,41 @@
 [0m[[0m[0mdebug[0m] [0m[0mCreated transactional ClassFileManager with tempDir = /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes.bak[0m
+[0m[[0m[0mdebug[0m] [0m[0mAbout to delete class files:[0m
+[0m[[0m[0mdebug[0m] [0m[0m	LassoRegression.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	LassoRegression$package.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	LassoRegression$package$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	lassoRegression_forestfires.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	LassoRegression$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	lassoRegressionAutoMPG.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	LassoRegression.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	LassoRegression$package.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	LassoRegression$package$.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	lassoRegression_forestfires.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	LassoRegression$.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	lassoRegressionAutoMPG.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0mWe backup class files:[0m
+[0m[[0m[0mdebug[0m] [0m[0m	LassoRegression.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	LassoRegression$package.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	LassoRegression$package$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	lassoRegression_forestfires.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	LassoRegression$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	lassoRegressionAutoMPG.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	LassoRegression.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	LassoRegression$package.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	LassoRegression$package$.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	lassoRegression_forestfires.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	LassoRegression$.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	lassoRegressionAutoMPG.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0mRegistering generated classes:[0m
+[0m[[0m[0mdebug[0m] [0m[0m	LassoRegression.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	LassoRegression$package.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	LassoRegression$package$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	lassoRegression_forestfires.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	LassoRegression$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	lassoRegressionAutoMPG.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	LassoRegression.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	LassoRegression$package.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	LassoRegression$package$.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	lassoRegression_forestfires.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	LassoRegression$.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	lassoRegressionAutoMPG.tasty[0m
 [0m[[0m[0mdebug[0m] [0m[0mRemoving the temporary directory used for backing up class files: /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes.bak[0m
