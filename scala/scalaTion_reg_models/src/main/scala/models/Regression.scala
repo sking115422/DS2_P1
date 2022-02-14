@@ -224,8 +224,8 @@ end regressionAutoMPG
     val auto_mat = MatrixD.load("forestfires_cleaned.csv")
     println(auto_mat)
 
-    val x = auto_mat(?, 1 to 12)
-    val y = auto_mat(?, 13)
+    val x = auto_mat(?, 0 to 11)
+    val y = auto_mat(?, 12)
 
     println(x)
     println(y)
@@ -267,8 +267,8 @@ end regressionForestFires
     val auto_mat = MatrixD.load("bike_sharing_hour.csv")
     println(auto_mat)
 
-    val x = auto_mat(?, 1 to 12)
-    val y = auto_mat(?, 15)
+    val x = auto_mat(?, 0 to 11)
+    val y = auto_mat(?, 14)
 
     println(x)
     println(y)
