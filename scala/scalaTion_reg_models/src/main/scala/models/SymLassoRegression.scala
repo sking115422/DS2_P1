@@ -10,7 +10,11 @@
 package scalation
 package modeling
 
+import scala.runtime.ScalaRunTime.stringOf
+
 import scalation.mathstat._
+
+// import Example_AutoMPG._
 
 //:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 /** The `SymLassoRegression` object supports symbolic Lasso regression that allows
@@ -121,7 +125,112 @@ object SymLassoRegression:
 
 end SymLassoRegression
 
-import Example_AutoMPG._
+
+
+object AutoMPG:
+
+    /** the names of the predictor variables; the name of response variable is mpg
+     */
+    val xr_fname = Array ("cylinders", "displacement", "horsepower", "weight",
+                          "acceleration", "modelyear", "origin")
+
+    /** the raw combined data matrix 'xyr'
+     */
+    val xyr = MatrixD.load("auto_mpg_fixed_cleaned.csv")
+
+    /** the origin column (6) is categorical
+     */
+    val oxr = xyr.not(?, 7)
+    val oxr_fname: Array [String] = Array ("intercept") ++ xr_fname
+
+    /** the combined data matrix xy with the origin column (6) removed
+     */
+    val xy = xyr.not(?, 6)                                             // remove the origin column
+//  val xy = xyr                                                       // use all columns - may cause multi-collinearity
+
+    private val n = xy.dim2 - 1                                        // last column in xy
+
+    val (x, y) = (xy.not(?, n), xy(?, n))                              // (data/input matrix, response column)
+    val _1     = VectorD.one (xy.dim)                                  // vector of all ones
+    val oxy    = _1 +^: xy                                             // prepend a column of all ones to xy
+    val ox     = _1 +^: x                                              // prepend a column of all ones to x
+
+    val x_fname: Array [String] = xr_fname.take (6)
+    val ox_fname: Array [String] = Array ("intercept") ++ x_fname
+
+end AutoMPG
+
+
+
+object ForestFiresData:
+
+    /** the names of the predictor variables; the name of response variable is mpg
+     */
+    val xr_fname = Array ("X", "Y", "month", "day",
+                          "FFMC", "DMC", "DC", "ISI",
+                          "temp", "RH", "wind", "rain")
+
+    /** the raw combined data matrix 'xyr'
+     */
+    val xyr = MatrixD.load("forestfires_cleaned.csv")
+
+    /** the origin column (6) is categorical
+     */
+    val oxr = xyr.not(?, 12)
+    val oxr_fname: Array [String] = Array ("intercept") ++ xr_fname
+
+    /** the combined data matrix xy with the origin column (6) removed
+     */
+    //  val xy = xyr.not(?, 6)                                         // remove the origin column
+    val xy = xyr                                                       // use all columns - may cause multi-collinearity
+
+    private val n = xy.dim2 - 1                                        // last column in xy
+
+    val (x, y) = (xy.not(?, n), xy(?, n))                              // (data/input matrix, response column)
+    val _1     = VectorD.one (xy.dim)                                  // vector of all ones
+    val oxy    = _1 +^: xy                                             // prepend a column of all ones to xy
+    val ox     = _1 +^: x                                              // prepend a column of all ones to x
+
+    val x_fname: Array [String] = xr_fname.take (11)
+    val ox_fname: Array [String] = Array ("intercept") ++ x_fname
+
+end ForestFiresData
+
+
+
+object CCPP_Data:
+
+    /** the names of the predictor variables; the name of response variable is mpg
+     */
+    val xr_fname = Array ("AT", "V", "AP", "RH", "PE")
+
+    /** the raw combined data matrix 'xyr'
+     */
+    val xyr = MatrixD.load("CCPP.csv")
+
+    /** the origin column (6) is categorical
+     */
+    val oxr = xyr.not(?, 4)
+    val oxr_fname: Array [String] = Array ("intercept") ++ xr_fname
+
+    /** the combined data matrix xy with the origin column (6) removed
+     */
+    //  val xy = xyr.not(?, 6)                                         // remove the origin column
+    val xy = xyr                                                       // use all columns - may cause multi-collinearity
+
+    private val n = xy.dim2 - 1                                        // last column in xy
+
+    val (x, y) = (xy.not(?, n), xy(?, n))                              // (data/input matrix, response column)
+    val _1     = VectorD.one (xy.dim)                                  // vector of all ones
+    val oxy    = _1 +^: xy                                             // prepend a column of all ones to xy
+    val ox     = _1 +^: x                                              // prepend a column of all ones to x
+
+    val x_fname: Array [String] = xr_fname.take (3)
+    val ox_fname: Array [String] = Array ("intercept") ++ x_fname
+
+end CCPP_Data
+
+
 
 //:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 /** The `SymLassoRegressionTest` main function tests the `SymLassoRegression`
@@ -130,12 +239,95 @@ import Example_AutoMPG._
  *  applies forward selection, backward elimination, or stepwise regression.
  *  > runMain scalation.modeling.SymLassoRegressionTest
  */
-@main def SymLassoRegressionTest (): Unit =
+@main def SymLassoRegression_AutoMPG (): Unit =
+    
+    import AutoMPG._
 
-//  println (s"x = $x")
-//  println (s"y = $y")
+    banner ("Variable Names in AutoMPG Dataset")
+    println (s"xr_fname = ${stringOf (xr_fname)}")                     // raw dataset
+    println (s"x_fname  = ${stringOf (x_fname)}")                      // origin column removed
+    println (s"ox_fname = ${stringOf (ox_fname)}")                     // intercept (1's) added
 
-    banner ("auto_mpg Symbolic Lasso Regression")
+    println (s"x = $x")
+    println (s"y = $y")
+    
+    // banner ("auto_mpg Symbolic Lasso Regression")
+    // val mod = SymLassoRegression (x, y, x_fname, Set (-2, -1, 0.5, 2))    // add cross-terms and given powers
+    // mod.trainNtest ()()                                                   // train and test the model
+    // println (mod.summary ())                                              // parameter/coefficient statistics
+
+    // for tech <- Predictor.SelectionTech.values do 
+    //     banner (s"Feature Selection Technique: $tech")
+    //     val (cols, rSq) = mod.selectFeatures (tech)                       // R^2, R^2 bar, R^2 cv
+    //     val k = cols.size
+    //     println (s"k = $k, n = ${x.dim2}")
+    //     new PlotM (null, rSq.transpose, Array ("R^2", "R^2 bar", "R^2 cv"),
+    //                s"R^2 vs n for Symbolic Lasso Regression with $tech", lines = true)
+    //     println (s"$tech: rSq = $rSq")
+    // end for
+
+end SymLassoRegression_AutoMPG
+
+
+
+//:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+/** The `SymLassoRegressionTest` main function tests the `SymLassoRegression`
+ *  object using the AutoMPG dataset.  Assumes no missing values.
+ *  It tests custom "Symbolic Lasso Regression", with powers specified in "Set (...)" and
+ *  applies forward selection, backward elimination, or stepwise regression.
+ *  > runMain scalation.modeling.SymLassoRegressionTest
+ */
+@main def SymLassoRegression_ForestFires (): Unit =
+    
+    import ForestFiresData._
+
+    banner ("Variable Names in forestfires Dataset")
+    println (s"xr_fname = ${stringOf (xr_fname)}")                     // raw dataset
+    println (s"x_fname  = ${stringOf (x_fname)}")                      // origin column removed
+    println (s"ox_fname = ${stringOf (ox_fname)}")                     // intercept (1's) added
+
+    println (s"x = $x")
+    println (s"y = $y")
+    
+    // banner ("forestfires Symbolic Lasso Regression")
+    // val mod = SymLassoRegression (x, y, x_fname, Set (-2, -1, 0.5, 2))    // add cross-terms and given powers
+    // mod.trainNtest ()()                                                   // train and test the model
+    // println (mod.summary ())                                              // parameter/coefficient statistics
+
+    // for tech <- Predictor.SelectionTech.values do 
+    //     banner (s"Feature Selection Technique: $tech")
+    //     val (cols, rSq) = mod.selectFeatures (tech)                       // R^2, R^2 bar, R^2 cv
+    //     val k = cols.size
+    //     println (s"k = $k, n = ${x.dim2}")
+    //     new PlotM (null, rSq.transpose, Array ("R^2", "R^2 bar", "R^2 cv"),
+    //                s"R^2 vs n for Symbolic Lasso Regression with $tech", lines = true)
+    //     println (s"$tech: rSq = $rSq")
+    // end for
+
+end SymLassoRegression_ForestFires
+
+
+
+//:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+/** The `SymLassoRegressionTest` main function tests the `SymLassoRegression`
+ *  object using the AutoMPG dataset.  Assumes no missing values.
+ *  It tests custom "Symbolic Lasso Regression", with powers specified in "Set (...)" and
+ *  applies forward selection, backward elimination, or stepwise regression.
+ *  > runMain scalation.modeling.SymLassoRegressionTest
+ */
+@main def SymLassoRegression_CCPP (): Unit =
+    
+    import CCPP_Data._
+
+    banner ("Variable Names in CCPP Dataset")
+    println (s"xr_fname = ${stringOf (xr_fname)}")                     // raw dataset
+    println (s"x_fname  = ${stringOf (x_fname)}")                      // origin column removed
+    println (s"ox_fname = ${stringOf (ox_fname)}")                     // intercept (1's) added
+
+    // println (s"x = $x")
+    // println (s"y = $y")
+    
+    banner ("CCPP Symbolic Lasso Regression")
     val mod = SymLassoRegression (x, y, x_fname, Set (-2, -1, 0.5, 2))    // add cross-terms and given powers
     mod.trainNtest ()()                                                   // train and test the model
     println (mod.summary ())                                              // parameter/coefficient statistics
@@ -150,189 +342,4 @@ import Example_AutoMPG._
         println (s"$tech: rSq = $rSq")
     end for
 
-end SymLassoRegressionTest
-
-
-//:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-/** The `SymLassoRegressionTest2` main function tests the `SymLassoRegression`
- *  object using the AutoMPG dataset.  Assumes no missing values.
- *  It tests "Quadratic Lasso Regression" (with cross = false) and
- *  applies forward selection, backward elimination, or stepwise regression.
- *  > runMain scalation.modeling.SymLassoRegressionTest2
- */
-@main def SymLassoRegressionTest2 (): Unit =
-
-//  println (s"x = $x")
-//  println (s"y = $y")
-
-    banner ("auto_mpg Quadratic Lasso Regression")
-    val mod = SymLassoRegression.quadratic (x, y, x_fname)                // add x^2 terms
-    mod.trainNtest ()()                                                   // train and test the model
-    println (mod.summary ())                                              // parameter/coefficient statistics
-
-    for tech <- Predictor.SelectionTech.values do
-        banner (s"Feature Selection Technique: $tech")
-        val (cols, rSq) = mod.selectFeatures (tech)                       // R^2, R^2 bar, R^2 cv
-        val k = cols.size
-        println (s"k = $k, n = ${x.dim2}")
-        new PlotM (null, rSq.transpose, Array ("R^2", "R^2 bar", "R^2 cv"),
-                   s"R^2 vs n for Quadratic Lasso Regression with $tech", lines = true)
-        println (s"$tech: rSq = $rSq")
-    end for
-
-end SymLassoRegressionTest2
-
-
-//:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-/** The `SymLassoRegressionTest3` main function tests the `SymLassoRegression`
- *  object using the AutoMPG dataset.  Assumes no missing values.
- *  It tests "Quadratic X Lasso Regression" (with cross = true) and
- *  applies forward selection, backward elimination, or stepwise regression.
- *  > runMain scalation.modeling.SymLassoRegressionTest3
- */
-@main def SymLassoRegressionTest3 (): Unit =
-
-//  println (s"x = $x")
-//  println (s"y = $y")
-
-    banner ("auto_mpg Quadratic X Lasso Regression")
-    val mod = SymLassoRegression.quadratic (x, y, x_fname, true)          // add cross-terms and x^2 terms
-    mod.trainNtest ()()                                                   // train and test the model
-    println (mod.summary ())                                              // parameter/coefficient statistics
-
-    for tech <- Predictor.SelectionTech.values do 
-        banner (s"Feature Selection Technique: $tech")
-        val (cols, rSq) = mod.selectFeatures (tech)                       // R^2, R^2 bar, R^2 cv
-        val k = cols.size
-        println (s"k = $k, n = ${x.dim2}")
-        new PlotM (null, rSq.transpose, Array ("R^2", "R^2 bar", "R^2 cv"),
-                   s"R^2 vs n for Quadratic X Lasso Regression with $tech", lines = true)
-        println (s"$tech: rSq = $rSq")
-    end for
-
-end SymLassoRegressionTest3
-
-
-//:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-/** The `SymLassoRegressionTest4` main function tests the `SymLassoRegression`
- *  object using the AutoMPG dataset.  Assumes no missing values.
- *  It tests "Cubic Lasso Regression" (with cross = false) and
- *  applies forward selection, backward elimination, or stepwise regression.
- *  > runMain scalation.modeling.SymLassoRegressionTest4
- */
-@main def SymLassoRegressionTest4 (): Unit =
-
-//  println (s"x = $x")
-//  println (s"y = $y")
-
-    banner ("auto_mpg Cubic Lasso Regression")
-    val mod = SymLassoRegression.cubic (x, y, x_fname)                    // add x^2 and x^3 terms
-    mod.trainNtest ()()                                                   // train and test the model
-    println (mod.summary ())                                              // parameter/coefficient statistics
-
-    for tech <- Predictor.SelectionTech.values do 
-        banner (s"Feature Selection Technique: $tech")
-        val (cols, rSq) = mod.selectFeatures (tech)                       // R^2, R^2 bar, R^2 cv
-        val k = cols.size
-        println (s"k = $k, n = ${x.dim2}")
-        new PlotM (null, rSq.transpose, Array ("R^2", "R^2 bar", "R^2 cv"),
-                   s"R^2 vs n for Cubic Lasso Regression with $tech", lines = true)
-        println (s"$tech: rSq = $rSq")
-    end for
-
-end SymLassoRegressionTest4
-
-
-//:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-/** The `SymLassoRegressionTest5` main function tests the `SymLassoRegression`
- *  object using the AutoMPG dataset.  Assumes no missing values.
- *  It tests "Cubic X Lasso Regression" (with cross = true) and
- *  applies forward selection, backward elimination, or stepwise regression.
- *  > runMain scalation.modeling.SymLassoRegressionTest5
- */
-@main def SymLassoRegressionTest5 (): Unit =
-
-//  println (s"x = $x")
-//  println (s"y = $y")
-
-    banner ("auto_mpg Cubic X Lasso Regression")
-    val mod = SymLassoRegression.cubic (x, y, x_fname, true)              // add cross-terms, x^2 and x^3 terms
-    mod.trainNtest ()()                                                   // train and test the model
-    println (mod.summary ())                                              // parameter/coefficient statistics
-
-    for tech <- Predictor.SelectionTech.values do 
-        banner (s"Feature Selection Technique: $tech")
-        val (cols, rSq) = mod.selectFeatures (tech)                       // R^2, R^2 bar, R^2 cv
-        val k = cols.size
-        println (s"k = $k, n = ${x.dim2}")
-        new PlotM (null, rSq.transpose, Array ("R^2", "R^2 bar", "R^2 cv"),
-                   s"R^2 vs n for Cubic X Lasso Regression with $tech", lines = true)
-        println (s"$tech: rSq = $rSq")
-    end for
-
-end SymLassoRegressionTest5
-
-
-//:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-/** The `SymLassoRegressionTest6` main function tests the `SymLassoRegression`
- *  object using the AutoMPG dataset.  Assumes no missing values.
- *  It tests "Cubic XX Lasso Regression" (with cross, cross3 = true) and
- *  applies forward selection, backward elimination, or stepwise regression.
- *  WARNING: setting cross3 = true can lead to an explotion of terms.
- *  > runMain scalation.modeling.SymLassoRegressionTest6
- */
-@main def SymLassoRegressionTest6 (): Unit =
-
-//  println (s"x = $x")
-//  println (s"y = $y")
-
-    banner ("auto_mpg Cubic XX Lasso Regression")
-    val mod = SymLassoRegression.cubic (x, y, x_fname,                  // add x^2 and x^3 terms
-                                        true, true)                     // add cross and cross3 terms
-    mod.trainNtest ()()                                                 // train and test the model
-    println (mod.summary ())                                            // parameter/coefficient statistics
-
-    for tech <- Predictor.SelectionTech.values do
-        banner (s"Feature Selection Technique: $tech")
-        val (cols, rSq) = mod.selectFeatures (tech)                     // R^2, R^2 bar, R^2 cv
-        val k = cols.size
-        println (s"k = $k, n = ${x.dim2}")
-        new PlotM (null, rSq.transpose, Array ("R^2", "R^2 bar", "R^2 cv"),
-                   s"R^2 vs n for Cubic XX Lasso Regression with $tech", lines = true)
-        println (s"$tech: rSq = $rSq")
-    end for
-
-end SymLassoRegressionTest6
-
-
-//:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-/** The `SymLassoRegressionTest7` main function tests the `SymLassoRegression`
- *  object using the AutoMPG dataset.  Assumes no missing values.
- *  It tests custom "Symbolic Lasso Regression", with powers specified in "Set (...)" and
- *  applies forward selection, backward elimination, or stepwise regression.
- *  This test case performs data rescaling.
- *  > runMain scalation.modeling.SymLassoRegressionTest7
- */
-@main def SymLassoRegressionTest7 (): Unit =
-
-//  println (s"x = $x")
-//  println (s"y = $y")
-
-    banner ("auto_mpg Symbolic Lasso Regression")
-    val mod = SymLassoRegression.rescale (x, y, x_fname,
-                                          Set (-2, -1, 0.5, 2))          // add cross-terms and given powers
-    mod.trainNtest ()()                                                  // train and test the model
-    println (mod.summary ())                                             // parameter/coefficient statistics
-
-    for tech <- Predictor.SelectionTech.values do
-        banner (s"Feature Selection Technique: $tech")
-        val (cols, rSq) = mod.selectFeatures (tech)                      // R^2, R^2 bar, R^2 cv
-        val k = cols.size
-        println (s"k = $k, n = ${x.dim2}")
-        new PlotM (null, rSq.transpose, Array ("R^2", "R^2 bar", "R^2 cv"),
-                   s"R^2 vs n for Symbolic Lasso Regression with $tech", lines = true)
-        println (s"$tech: rSq = $rSq")
-    end for
-
-end SymLassoRegressionTest7
-
+end SymLassoRegression_CCPP

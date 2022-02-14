@@ -1,2 +1,83 @@
-[0m[[0m[0mdebug[0m] [0m[0mCreated transactional ClassFileManager with tempDir = /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes.bak[0m
-[0m[[0m[0mdebug[0m] [0m[0mRemoving the temporary directory used for backing up class files: /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes.bak[0m
+[0m[[0m[0mdebug[0m] [0m[0mCreated transactional ClassFileManager with tempDir = C:\Users\spenc\Desktop\UGA_projects\DS2_P1\scala\scalaTion_reg_models\target\scala-3.1.1\classes.bak[0m
+[0m[[0m[0mdebug[0m] [0m[0mAbout to delete class files:[0m
+[0m[[0m[0mdebug[0m] [0m[0m	ForestFiresData$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	SymLassoRegression_ForestFires.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	CCPP_Data$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	SymLassoRegression_AutoMPG.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	CCPP_Data.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	SymLassoRegression$package$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	SymLassoRegression.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	AutoMPG.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	SymLassoRegression$package.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	AutoMPG$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	SymLassoRegression_CCPP.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	SymLassoRegression$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	ForestFiresData.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	ForestFiresData$.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	SymLassoRegression_ForestFires.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	CCPP_Data$.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	SymLassoRegression_AutoMPG.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	CCPP_Data.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	SymLassoRegression$package$.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	SymLassoRegression.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	AutoMPG.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	SymLassoRegression$package.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	AutoMPG$.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	SymLassoRegression_CCPP.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	SymLassoRegression$.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	ForestFiresData.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0mWe backup class files:[0m
+[0m[[0m[0mdebug[0m] [0m[0m	ForestFiresData$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	SymLassoRegression_ForestFires.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	CCPP_Data$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	SymLassoRegression_AutoMPG.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	CCPP_Data.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	SymLassoRegression$package$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	SymLassoRegression.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	AutoMPG.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	SymLassoRegression$package.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	AutoMPG$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	SymLassoRegression_CCPP.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	SymLassoRegression$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	ForestFiresData.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	ForestFiresData$.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	SymLassoRegression_ForestFires.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	CCPP_Data$.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	SymLassoRegression_AutoMPG.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	CCPP_Data.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	SymLassoRegression$package$.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	SymLassoRegression.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	AutoMPG.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	SymLassoRegression$package.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	AutoMPG$.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	SymLassoRegression_CCPP.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	SymLassoRegression$.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	ForestFiresData.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0mRegistering generated classes:[0m
+[0m[[0m[0mdebug[0m] [0m[0m	ForestFiresData$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	SymLassoRegression_ForestFires.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	CCPP_Data$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	SymLassoRegression_AutoMPG.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	CCPP_Data.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	SymLassoRegression$package$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	SymLassoRegression.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	AutoMPG.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	SymLassoRegression$package.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	AutoMPG$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	SymLassoRegression_CCPP.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	SymLassoRegression$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	ForestFiresData.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	ForestFiresData$.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	SymLassoRegression_ForestFires.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	CCPP_Data$.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	SymLassoRegression_AutoMPG.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	CCPP_Data.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	SymLassoRegression$package$.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	SymLassoRegression.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	AutoMPG.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	SymLassoRegression$package.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	AutoMPG$.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	SymLassoRegression_CCPP.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	SymLassoRegression$.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	ForestFiresData.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0mRemoving the temporary directory used for backing up class files: C:\Users\spenc\Desktop\UGA_projects\DS2_P1\scala\scalaTion_reg_models\target\scala-3.1.1\classes.bak[0m
