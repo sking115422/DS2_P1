@@ -174,320 +174,218 @@ object Regression:
 
 end Regression
 
+@main def regressionAutoMPG (): Unit =
+    
+    banner ("auto_mpg data")
+    val auto_mat = MatrixD.load("auto_mpg_fixed_cleaned.csv")
+    println(auto_mat)
 
-//::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-/** The `regressionTest` main function tests `Regression` class using the following
- *  regression equation.
- *      y  =  b dot x  =  b_0 + b_1*x_1 + b_2*x_2.
- *  @see statmaster.sdu.dk/courses/st111/module03/index.html
- *  > runMain scalation.modeling.regressionTest
- */
-@main def regressionTest (): Unit =
+    val x = auto_mat(?, 0 to 6)
+    val y = auto_mat(?, 7)
 
-    // 5 data points: constant term, x_1 coordinate, x_2 coordinate
+    println(x)
+    println(y)
 
-    val x = MatrixD ((5, 3), 1.0, 36.0,  66.0,                     // 5-by-3 matrix
-                             1.0, 37.0,  68.0,
-                             1.0, 47.0,  64.0,
-                             1.0, 32.0,  53.0,
-                             1.0,  1.0, 101.0)
-    val y = VectorD (745.0, 895.0, 442.0, 440.0, 1598.0)
-    val z = VectorD (1.0, 20.0, 80.0)
-
-    println ("model: y = b_0 + b_1*x_1 + b_2*x_2")
-
-//  Pick one of the factorization algorithms via the hyper-parameter
-
-    Regression.hp("factorization") = "Fac_QR"
-//  Regression.hp("factorization") = "Fac_SVD"
-//  Regression.hp("factorization") = "Fac_Cholesky"
-//  Regression.hp("factorization") = "Fac_LU"
-//  Regression.hp("factorization") = "Fac_Inverse"
-
-    val mod = new Regression (x, y)                                // create a regression model
-    mod.train ()                                                   // train the model
-    println (mod.report (mod.test ()._2))                          // test the model and report the results
-    println (s"predict ($z) = ${mod.predict (z)}")                 // make an out-of-sample prediction
-
-    val mod2 = Regression (x :^+ y)()                              // create model from combined matrix
-                                                                   // () -> use last column for response
-    mod2.train ()                                                  // train the model
-    println (mod2.report (mod2.test ()._2))                        // test the model and report the results
-    println (s"predict ($z) = ${mod2.predict (z)}")                // make an out-of-sample prediction
-
-end regressionTest
-
-
-//::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-/** The `regressionTest2` main function is used to test the correctness of the
- *  factorization algorithms used to solve for the parameters b in `Regression`.
- *  @see `scalation.mathstat.Fac_QRTest2`
- *  > runMain scalation.modeling.regressionTest2
- */
-@main def regressionTest2 (): Unit =
-
-    // Blood Pressure Dataset
-    // 20 data points:   Constant     x_1     x_2    x_3      x_4
-    //                                Age  Weight    Dur   Stress
-    val x = MatrixD ((20, 5), 1.0,   47.0,   85.4,   5.1,    33.0,
-                              1.0,   49.0,   94.2,   3.8,    14.0,
-                              1.0,   49.0,   95.3,   8.2,    10.0,
-                              1.0,   50.0,   94.7,   5.8,    99.0,
-                              1.0,   51.0,   89.4,   7.0,    95.0,
-                              1.0,   48.0,   99.5,   9.3,    10.0,
-                              1.0,   49.0,   99.8,   2.5,    42.0,
-                              1.0,   47.0,   90.9,   6.2,     8.0,
-                              1.0,   49.0,   89.2,   7.1,    62.0,
-                              1.0,   48.0,   92.7,   5.6,    35.0,
-                              1.0,   47.0,   94.4,   5.3,    90.0,
-                              1.0,   49.0,   94.1,   5.6,    21.0,
-                              1.0,   50.0,   91.6,  10.2,    47.0,
-                              1.0,   45.0,   87.1,   5.6,    80.0,
-                              1.0,   52.0,  101.3,  10.0,    98.0,
-                              1.0,   46.0,   94.5,   7.4,    95.0,
-                              1.0,   46.0,   87.0,   3.6,    18.0,
-                              1.0,   46.0,   94.5,   4.3,    12.0,
-                              1.0,   48.0,   90.5,   9.0,    99.0,
-                              1.0,   56.0,   95.7,   7.0,    99.0)
-    //  response BP
-    val y = VectorD (105.0, 115.0, 116.0, 117.0, 112.0, 121.0, 121.0, 110.0, 110.0, 114.0,
-                     114.0, 115.0, 114.0, 106.0, 125.0, 114.0, 106.0, 113.0, 110.0, 122.0)
-
-    println ("model: y = b_0 + b_1*x1 + b_2*x_ + b3*x3 + b4*x42")
-//  println ("model: y = b₀ + b₁∙x₁ + b₂∙x₂ + b₃∙x₃ + b₄∙x₄")
-    println (s"x = $x")
-    println (s"y = $y")
-
-    val xtx = x.transpose * x
-    val xty = x.transpose * y
-
-    var fac: Factorization = null                             // factorization algorithm
-    var mod: Regression = null                                // regression model
-    var yp:  VectorD = null                                   // y-predicted (predicted response)
-
-// Test QR Factorization -------------------------------------------------------
-
-    banner ("Direct Application of QR Factorization")
-    fac = new Fac_QR (x)                                      // input = X
-    fac.factor ()
-    println (s"parameters b = ${fac.solve (y)}")              // compute the b vector by using solve of `Fac_QR`
-
-    banner ("Application of Factorization via Regression")
-    Regression.hp("factorization") = "Fac_QR"
-    mod = new Regression (x, y)                               // create a regression model
-    mod.train ()                                              // train the model
-    println (mod.report (mod.test ()._2))                     // test the model and report the results
-
-// Test SVD Factorization ------------------------------------------------------
-
-    banner ("Direct Application of SVD Factorization")
-    fac = new Fac_SVD (x)                                     // input = X
-    fac.factor ()
-    println (s"parameters b = ${fac.solve (y)}")              // compute the b vector by using solve of `Fac_QR`
-
-    banner ("Application of Factorization via Regression")
-    Regression.hp("factorization") = "Fac_SVD"
-    mod = new Regression (x, y)                               // create a regression model
-    mod.train ()                                              // train the model
-    println (mod.report (mod.test ()._2))                     // test the model and report the results
-
-// Test Cholesky Factorization -------------------------------------------------
-
-    banner ("Direct Application of Cholesky Factorization")
-    fac = new Fac_Cholesky (xtx)                              // input = X^t * X
-    fac.factor ()
-    println (s"parameters b = ${fac.solve (xty)}")            // compute the b vector by using solve of `Fac_Cholesky`
-
-    banner ("Application of Factorization via Regression")
-    Regression.hp("factorization") = "Fac_Cholesky"
-    mod = new Regression (x, y)                               // create a regression model
-    mod.train ()                                              // train the model
-    println (mod.report (mod.test ()._2))                     // test the model and report the results
-
-// Test LU Factorization -------------------------------------------------------
-
-    banner ("Direct Application of LU Factorization")
-    fac = new Fac_LU (xtx)                                    // input = X^t * X
-    fac.factor ()
-    println (s"parameters b = ${fac.solve (xty)}")            // compute the b vector by using solve of `Fac_LU`
-
-    banner ("Application of Factorization via Regression")
-    Regression.hp("factorization") = "Fac_LU"
-    mod = new Regression (x, y)                               // create a regression model
-    mod.train ()                                              // train the model
-    println (mod.report (mod.test ()._2))                     // test the model and report the results
-
-// Test Inverse Factorization -------------------------------------------------------
-
-    banner ("Direct Application of Inverse Factorization")
-    fac = new Fac_LU (xtx)                                    // input = X^t * X
-    fac.factor ()
-    println (s"parameters b = ${fac.solve (xty)}")            // compute the b vector by using solve of `Fac_LU`
-
-    banner ("Application of Factorization via Regression")
-    Regression.hp("factorization") = "Fac_Inverse"
-    mod = new Regression (x, y)                               // create a regression model
-    mod.train ()                                              // train the model
-    println (mod.report (mod.test ()._2))                     // test the model and report the results
-
-end regressionTest2
-
-import Example_AutoMPG._
-
-//::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-/** The `regressionTest3` main function tests the `Regression` class using the AutoMPG
- *  dataset.  Assumes no missing values.  It test cross validation.
- *  > runMain scalation.modeling.regressionTest3
- */
-@main def regressionTest3 (): Unit =
-
-//  println (s"ox = $ox")
-//  println (s"y  = $y")
-    println (s"ox_fname = ${stringOf (ox_fname)}")
-
-    banner ("AutoMPG Regression")
-    val mod = new Regression (ox, y, ox_fname)                // create model with intercept (else pass x)
-    mod.trainNtest ()()                                       // train and test the model
-    println (mod.summary ())                                  // parameter/coefficient statistics
-
-    banner ("AutoMPG Validation Test")
-    println (Fit.fitMap (mod.validate ()()))
-
-    banner ("AutoMPG Cross-Validation Test")
-    val stats = mod.crossValidate ()
-    Fit.showQofStatTable (stats)
-
-end regressionTest3
- 
-
-//::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-/** The `regressionTest4` main function tests the `Regression` class using the AutoMPG
- *  dataset.  Assumes no missing values.  It tests forward selection.
- *  > runMain scalation.modeling.regressionTest4
- */
-@main def regressionTest4 (): Unit =
-
-//  println (s"ox = $ox")
-//  println (s"y  = $y")
-    println (s"ox_fname = ${stringOf (ox_fname)}")
-
-    banner ("AutoMPG Regression")
-    val mod = new Regression (ox, y, ox_fname)                // create model with intercept (else pass x)
-    mod.trainNtest ()()                                       // train and test the model
-    println (mod.summary ())                                  // parameter/coefficient statistics
-
-    banner ("Feature Selection Technique: Forward")
-    val (cols, rSq) = mod.forwardSelAll ()                    // R^2, R^2 bar, R^2 cv
-//  val (cols, rSq) = mod.backwardElimAll ()                  // R^2, R^2 bar, R^2 cv
-    val k = cols.size
-    println (s"k = $k, n = ${x.dim2}")
-    new PlotM (null, rSq.transpose, Array ("R^2", "R^2 bar", "R^2 cv"),
-               "R^2 vs n for Regression", lines = true)
-    println (s"rSq = $rSq")
-
-end regressionTest4
-
-
-//::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-/** The `regressionTest5` main function tests the `Regression` class using the AutoMPG
- *  dataset.  Assumes no missing values.  It tests forward, backward and stepwise selection.
- *  > runMain scalation.modeling.regressionTest5
- */
-@main def regressionTest5 (): Unit =
-
-//  println (s"ox = $ox")
-//  println (s"y  = $y")
-
-    banner ("AutoMPG Regression")
-    val mod = new Regression (ox, y, ox_fname)                // create model with intercept (else pass x)
-    mod.trainNtest ()()                                       // train and test the model
-    println (mod.summary ())                                  // parameter/coefficient statistics
-
-    banner ("Cross-Validation")
-    Fit.showQofStatTable (mod.crossValidate ())
-
-    println (s"ox_fname = ${stringOf (ox_fname)}")
-
-    for tech <- Predictor.SelectionTech.values do
-        banner (s"Feature Selection Technique: $tech")
-        val (cols, rSq) = mod.selectFeatures (tech)             // R^2, R^2 bar, R^2 cv
-        val k = cols.size
-        println (s"k = $k, n = ${x.dim2}")
-        new PlotM (null, rSq.transpose, Array ("R^2", "R^2 bar", "R^2 cv"),
-                   s"R^2 vs n for Regression with $tech", lines = true)
-        println (s"$tech: rSq = $rSq")
-    end for
-
-end regressionTest5
-
-
-//:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-/** The `regressionTest6` main function tests the `Regression` class using the following
- *  regression equation.
- *      y = b dot x = b_0 + b_1*x1 + b_2*x_2.
- *  Show effects of increasing collinearity.
- *  > runMain scalation.modeling.regressionTest6
- */
-@main def regressionTest6 (): Unit =
-//                         one x1 x2
-    val x = MatrixD ((4, 3), 1, 1, 1,
-                             1, 2, 2,
-                             1, 3, 3,
-                             1, 4, 0)                             // change 0 by .5 to 4
-    val y = VectorD (1, 3, 3, 4)
-
-    val v = x(?, 0 until 2)
-    banner (s"Test without column x2")
-    println (s"v = $v")
-    var mod = new Regression (v, y)
+    banner ("Regression for AutoMPG")
+    val mod = new Regression(x, y)
     mod.trainNtest ()()
-    println (mod.summary)
+    println(mod.summary)
 
-    for i <- 0 to 8 do
-        banner (s"Test Increasing Collinearity: x_32 = ${x(3, 2)}")
-        println (s"x = $x")
-        println (s"x.corr = ${x.corr}")
-        mod = new Regression (x, y)
-        mod.trainNtest ()()
-        println (mod.summary)
-        x(3, 2) += 0.5
-    end for
+    banner("Forward Selection Test")
+    val (cols, rSq) = mod.forwardSelAll()
+    val k = cols.size
+    val t = VectorD.range(1, k)
+    new PlotM(t, rSq.transpose, Array ("R^2", "R^2 bar", "R^2 cv"),
+            "R^2 vs n for Forward Selection - Regression", lines = true)
+    println(s"rSq = $rSq")
 
-end regressionTest6
+    banner("Backward Elimination Test")
+    val (cols2, rSq2) = mod.backwardElimAll ()                       // R^2, R^2 Bar, R^2 cv
+    val k2 = cols2.size
+    val t2 = VectorD.range (1, k2)                                   // instance index
+    new PlotM (t2, rSq2.transpose, Array ("R^2", "R^2 bar", "R^2 cv"),
+               "R^2 vs n for Backward Elimination - Regression", lines = true)
+    println (s"rSq = $rSq2")
+
+    banner("Stepwise Selection Test")
+    val (cols3, rSq3) = mod.stepRegressionAll ()                     // R^2, R^2 Bar, R^2 cv
+    val k3 = cols3.size
+    val t3 = VectorD.range (1, k3)                                   // instance index
+    new PlotM (t3, rSq3.transpose, Array ("R^2", "R^2 bar", "R^2 cv"),
+               "R^2 vs n for Stepwise Selection - Regression", lines = true)
+    println (s"rSq = $rSq3")
+
+end regressionAutoMPG
 
 
-//::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-/** The `regressionTest7` main function trains a regression model on a small dataset of
- *  temperatures from counties in Texas where the variables/factors to consider
- *  are Latitude (x1), Elevation (x2) and Longitude (x3).  The model equation
- *  is the following:
- *      y  =  b dot x  =  b0 + b1*x1 + b2*x2 + b3*x3
- *  > runMain scalation.modeling.regressionTest7
- */
-@main def regressionTest7 (): Unit =
+@main def regressionForestFires (): Unit = 
 
-    // 16 data points:          one      x1      x2       x3     y
-    //                                  Lat    Elev     Long  Temp        County
-    val xy =  MatrixD ((16, 5), 1.0, 29.767,   41.0,  95.367, 56.0,    // Harris
-                                1.0, 32.850,  440.0,  96.850, 48.0,    // Dallas
-                                1.0, 26.933,   25.0,  97.800, 60.0,    // Kennedy
-                                1.0, 31.950, 2851.0, 102.183, 46.0,    // Midland
-                                1.0, 34.800, 3840.0, 102.467, 38.0,    // Deaf Smith
-                                1.0, 33.450, 1461.0,  99.633, 46.0,    // Knox
-                                1.0, 28.700,  815.0, 100.483, 53.0,    // Maverick
-                                1.0, 32.450, 2380.0, 100.533, 46.0,    // Nolan
-                                1.0, 31.800, 3918.0, 106.400, 44.0,    // El Paso
-                                1.0, 34.850, 2040.0, 100.217, 41.0,    // Collington
-                                1.0, 30.867, 3000.0, 102.900, 47.0,    // Pecos
-                                1.0, 36.350, 3693.0, 102.083, 36.0,    // Sherman
-                                1.0, 30.300,  597.0,  97.700, 52.0,    // Travis
-                                1.0, 26.900,  315.0,  99.283, 60.0,    // Zapata
-                                1.0, 28.450,  459.0,  99.217, 56.0,    // Lasalle
-                                1.0, 25.900,   19.0,  97.433, 62.0)    // Cameron
+    banner ("Forest Fires data")
+    val auto_mat = MatrixD.load("forestfires_cleaned.csv")
+    println(auto_mat)
 
-    banner ("Texas Temperatures Regression")
-    val mod = Regression (xy)()                               // create model with intercept (else pass x)
-    mod.trainNtest ()()                                       // train and test the model
-    println (mod.summary ())                                  // parameter/coefficient statistics
+    val x = auto_mat(?, 1 to 12)
+    val y = auto_mat(?, 13)
 
-end regressionTest7
+    println(x)
+    println(y)
+
+    banner ("Regression for Forest Fires")
+    val mod = new Regression(x, y)
+    mod.trainNtest ()()
+    println(mod.summary)
+
+    banner("Forward Selection Test")
+    val (cols, rSq) = mod.forwardSelAll()
+    val k = cols.size
+    val t = VectorD.range(1, k)
+    new PlotM(t, rSq.transpose, Array ("R^2", "R^2 bar", "R^2 cv"),
+            "R^2 vs n for Forward Selection - Regression", lines = true)
+    println(s"rSq = $rSq")
+
+    banner("Backward Elimination Test")
+    val (cols2, rSq2) = mod.backwardElimAll ()                       // R^2, R^2 Bar, R^2 cv
+    val k2 = cols2.size
+    val t2 = VectorD.range (1, k2)                                   // instance index
+    new PlotM (t2, rSq2.transpose, Array ("R^2", "R^2 bar", "R^2 cv"),
+               "R^2 vs n for Backward Elimination - Regression", lines = true)
+    println (s"rSq = $rSq2")
+
+    banner("Stepwise Selection Test")
+    val (cols3, rSq3) = mod.stepRegressionAll ()                     // R^2, R^2 Bar, R^2 cv
+    val k3 = cols3.size
+    val t3 = VectorD.range (1, k3)                                   // instance index
+    new PlotM (t3, rSq3.transpose, Array ("R^2", "R^2 bar", "R^2 cv"),
+               "R^2 vs n for Stepwise Selection - Regression", lines = true)
+    println (s"rSq = $rSq3")
+
+end regressionForestFires
+
+@main def regressionBikeSharingHour (): Unit =
+
+    banner ("Bike Sharing Hour data")
+    val auto_mat = MatrixD.load("bike_sharing_hour.csv")
+    println(auto_mat)
+
+    val x = auto_mat(?, 1 to 12)
+    val y = auto_mat(?, 15)
+
+    println(x)
+    println(y)
+
+    banner ("Regression for Bike Sharing hour")
+    val mod = new Regression(x, y)
+    mod.trainNtest ()()
+    println(mod.summary)
+
+    banner("Forward Selection Test")
+    val (cols, rSq) = mod.forwardSelAll()
+    val k = cols.size
+    val t = VectorD.range(1, k)
+    new PlotM(t, rSq.transpose, Array ("R^2", "R^2 bar", "R^2 cv"),
+            "R^2 vs n for Forward Selection - Regression", lines = true)
+    println(s"rSq = $rSq")
+
+    banner("Backward Elimination Test")
+    val (cols2, rSq2) = mod.backwardElimAll ()                       // R^2, R^2 Bar, R^2 cv
+    val k2 = cols2.size
+    val t2 = VectorD.range (1, k2)                                   // instance index
+    new PlotM (t2, rSq2.transpose, Array ("R^2", "R^2 bar", "R^2 cv"),
+               "R^2 vs n for Backward Elimination - Regression", lines = true)
+    println (s"rSq = $rSq2")
+
+    banner("Stepwise Selection Test")
+    val (cols3, rSq3) = mod.stepRegressionAll ()                     // R^2, R^2 Bar, R^2 cv
+    val k3 = cols3.size
+    val t3 = VectorD.range (1, k3)                                   // instance index
+    new PlotM (t3, rSq3.transpose, Array ("R^2", "R^2 bar", "R^2 cv"),
+               "R^2 vs n for Stepwise Selection - Regression", lines = true)
+    println (s"rSq = $rSq3")
+
+end regressionBikeSharingHour
+
+@main def regressionCCPP (): Unit = 
+
+    banner ("CCPP data")
+    val auto_mat = MatrixD.load("CCPP.csv")
+    println(auto_mat)
+
+    val x = auto_mat(?, 0 to 3)
+    val y = auto_mat(?, 4)
+
+    println(x)
+    println(y)
+
+    banner ("Regression for CCPP")
+    val mod = new Regression(x, y)
+    mod.trainNtest ()()
+    println(mod.summary)
+
+    banner("Forward Selection Test")
+    val (cols, rSq) = mod.forwardSelAll()
+    val k = cols.size
+    val t = VectorD.range(1, k)
+    new PlotM(t, rSq.transpose, Array ("R^2", "R^2 bar", "R^2 cv"),
+            "R^2 vs n for Forward Selection - Regression", lines = true)
+    println(s"rSq = $rSq")
+
+    banner("Backward Elimination Test")
+    val (cols2, rSq2) = mod.backwardElimAll ()                       // R^2, R^2 Bar, R^2 cv
+    val k2 = cols2.size
+    val t2 = VectorD.range (1, k2)                                   // instance index
+    new PlotM (t2, rSq2.transpose, Array ("R^2", "R^2 bar", "R^2 cv"),
+               "R^2 vs n for Backward Elimination - Regression", lines = true)
+    println (s"rSq = $rSq2")
+
+    banner("Stepwise Selection Test")
+    val (cols3, rSq3) = mod.stepRegressionAll ()                     // R^2, R^2 Bar, R^2 cv
+    val k3 = cols3.size
+    val t3 = VectorD.range (1, k3)                                   // instance index
+    new PlotM (t3, rSq3.transpose, Array ("R^2", "R^2 bar", "R^2 cv"),
+               "R^2 vs n for Stepwise Selection - Regression", lines = true)
+    println (s"rSq = $rSq3")
+
+end regressionCCPP
+
+@main def regressionWineQuality (): Unit = 
+
+    banner ("Wine Quality data")
+    val auto_mat = MatrixD.load("winrquality-white_fixed.csv")
+    println(auto_mat)
+
+    val x = auto_mat(?, 0 to 10)
+    val y = auto_mat(?, 11)
+
+    println(x)
+    println(y)
+
+    banner ("Regression for Wine Quality")
+    val mod = new Regression(x, y)
+    mod.trainNtest ()()
+    println(mod.summary)
+
+    banner("Forward Selection Test")
+    val (cols, rSq) = mod.forwardSelAll()
+    val k = cols.size
+    val t = VectorD.range(1, k)
+    new PlotM(t, rSq.transpose, Array ("R^2", "R^2 bar", "R^2 cv"),
+            "R^2 vs n for Forward Selection - Regression", lines = true)
+    println(s"rSq = $rSq")
+
+    banner("Backward Elimination Test")
+    val (cols2, rSq2) = mod.backwardElimAll ()                       // R^2, R^2 Bar, R^2 cv
+    val k2 = cols2.size
+    val t2 = VectorD.range (1, k2)                                   // instance index
+    new PlotM (t2, rSq2.transpose, Array ("R^2", "R^2 bar", "R^2 cv"),
+               "R^2 vs n for Backward Elimination - Regression", lines = true)
+    println (s"rSq = $rSq2")
+
+    banner("Stepwise Selection Test")
+    val (cols3, rSq3) = mod.stepRegressionAll ()                     // R^2, R^2 Bar, R^2 cv
+    val k3 = cols3.size
+    val t3 = VectorD.range (1, k3)                                   // instance index
+    new PlotM (t3, rSq3.transpose, Array ("R^2", "R^2 bar", "R^2 cv"),
+               "R^2 vs n for Stepwise Selection - Regression", lines = true)
+    println (s"rSq = $rSq3")
+
+end regressionWineQuality
