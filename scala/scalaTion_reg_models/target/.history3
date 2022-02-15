@@ -46,3 +46,13 @@
 1644703404017:run
 1644726953856:ruin
 1644726955583:run
+1644866735225:compile
+1644866750370:runMain scalation.modeling.regressionAutoMPG
+1644866812151:exit
+1644869053934:compile
+1644869092487:runMain scalation.modeling.regressionAutoMPG
+1644869147408:runMain scalation.modeling.regressionForestFires
+1644869315796:compile
+1644869329579:runMain scalation.modeling.regressionForestFires
+1644869619263:runMain scalation.modeling.regressionBikeSharingHour
+1644869700878:exit
