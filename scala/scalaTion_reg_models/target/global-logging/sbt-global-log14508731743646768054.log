@@ -1,0 +1,7 @@
+[0m[[0m[0mdebug[0m] [0m[0m> Exec(run, Some(eb21eade-b601-4e11-b8b1-6cd017b3997c), Some(CommandSource(console0)))[0m
+[0m[[0m[0mdebug[0m] [0m[0mEvaluating tasks: Compile / run[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning task... Cancel: Signal, check cycles: false, forcegc: true[0m
+[0m[[0m[0minfo[0m] [0m[0mcompiling 1 Scala source to C:\Users\spenc\Desktop\UGA_projects\DS2_P1\scala\scalaTion_reg_models\target\scala-3.1.1\classes ...[0m
+[0m[[0m[32msuccess[0m] [0m[0mTotal time: 108 s (01:48), completed Feb 13, 2022, 2:39:54 PM[0m
+[0m[[0m[0mdebug[0m] [0m[0m> Exec(shell, None, None)[0m
+[0m[[0m[0mdebug[0m] [0m[0mForcing garbage collection...[0m

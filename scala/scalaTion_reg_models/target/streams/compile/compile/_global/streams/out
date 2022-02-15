@@ -1,14 +1,12 @@
-[0m[[0m[31merror[0m] [0m[0m[31m-- [E006] Not Found Error: C:\Users\spenc\Desktop\UGA_projects\DS2_P1\scala\scalaTion_reg_models\src\main\scala\models\SymLassoRegression.scala:241:28 [0m[0m
-[0m[[0m[31merror[0m] [0m[0m[31m241 |[0m    println ([31ms"xr_fname = [0m${stringOf (xr_fname)}[31m"[0m)                     [34m// raw dataset[0m
-[0m[[0m[31merror[0m] [0m[0m    |                            [31m^^^^^^^^[0m[0m
-[0m[[0m[31merror[0m] [0m[0m    |                            Not found: stringOf[0m
-[0m[[0m[31merror[0m] [0m[0m[31m-- [E006] Not Found Error: C:\Users\spenc\Desktop\UGA_projects\DS2_P1\scala\scalaTion_reg_models\src\main\scala\models\SymLassoRegression.scala:242:28 [0m[0m
-[0m[[0m[31merror[0m] [0m[0m[31m242 |[0m    println ([31ms"x_fname  = [0m${stringOf (x_fname)}[31m"[0m)                      [34m// origin column removed[0m
-[0m[[0m[31merror[0m] [0m[0m    |                            [31m^^^^^^^^[0m[0m
-[0m[[0m[31merror[0m] [0m[0m    |                            Not found: stringOf[0m
-[0m[[0m[31merror[0m] [0m[0m[31m-- [E006] Not Found Error: C:\Users\spenc\Desktop\UGA_projects\DS2_P1\scala\scalaTion_reg_models\src\main\scala\models\SymLassoRegression.scala:243:28 [0m[0m
-[0m[[0m[31merror[0m] [0m[0m[31m243 |[0m    println ([31ms"ox_fname = [0m${stringOf (ox_fname)}[31m"[0m)                     [34m// intercept (1's) added[0m
-[0m[[0m[31merror[0m] [0m[0m    |                            [31m^^^^^^^^[0m[0m
-[0m[[0m[31merror[0m] [0m[0m    |                            Not found: stringOf[0m
-[0m[[0m[31merror[0m] [0m[0mthree errors found[0m
-[0m[[0m[31merror[0m] [0m[0mthree errors found[0m
+[0m[[0m[31merror[0m] [0m[0m[31m-- [E120] Naming Error: C:\Users\spenc\Desktop\UGA_projects\DS2_P1\scala\scalaTion_reg_models\src\main\scala\models\SymLassoRegression.scala:389:10 [0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m389 |[0m[35m@main[0m [33mdef[0m [36mSymLassoRegression_CCPP[0m (): [35mUnit[0m =[0m
+[0m[[0m[31merror[0m] [0m[0m    |          [31m^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m    |Double definition:[0m
+[0m[[0m[31merror[0m] [0m[0m    |def SymLassoRegression_CCPP(): Unit in [33mpackage object[0m [35mSymLassoRegression$package[0m at line 352 and[0m
+[0m[[0m[31merror[0m] [0m[0m    |def SymLassoRegression_CCPP(): Unit in [33mpackage object[0m [35mSymLassoRegression$package[0m at line 389[0m
+[0m[[0m[31merror[0m] [0m[0m    |have the same type after erasure.[0m
+[0m[[0m[31merror[0m] [0m[0m    |[0m
+[0m[[0m[31merror[0m] [0m[0m    |Consider adding a @targetName annotation to one of the conflicting definitions[0m
+[0m[[0m[31merror[0m] [0m[0m    |for disambiguation.[0m
+[0m[[0m[31merror[0m] [0m[0mone error found[0m
+[0m[[0m[31merror[0m] [0m[0mone error found[0m
