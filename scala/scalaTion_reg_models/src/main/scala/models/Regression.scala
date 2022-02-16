@@ -350,7 +350,7 @@ end regressionCCPP
 @main def regressionWineQuality (): Unit = 
 
     banner ("Wine Quality data")
-    val auto_mat = MatrixD.load("winrquality-white_fixed.csv")
+    val auto_mat = MatrixD.load("winequality-white_fixed.csv")
     println(auto_mat)
 
     val x = auto_mat(?, 0 to 10)
