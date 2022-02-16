@@ -13,6 +13,7 @@ package modeling
 import scala.runtime.ScalaRunTime.stringOf
 
 import scalation.mathstat._
+import scalation.modeling.HyperParameter
 
 // import Example_AutoMPG._
 
@@ -126,179 +127,9 @@ object SymLassoRegression:
 end SymLassoRegression
 
 
-
-object AutoMPG:
-
-    /** the names of the predictor variables; the name of response variable is mpg
-     */
-    val xr_fname = Array ("cylinders", "displacement", "horsepower", "weight",
-                          "acceleration", "modelyear", "origin")
-
-    /** the raw combined data matrix 'xyr'
-     */
-    val xyr = MatrixD.load("auto_mpg_fixed_cleaned.csv")
-
-    /** the origin column (6) is categorical
-     */
-    val oxr = xyr.not(?, 7)
-    val oxr_fname: Array [String] = Array ("intercept") ++ xr_fname
-
-    /** the combined data matrix xy with the origin column (6) removed
-     */
-    val xy = xyr.not(?, 6)                                             // remove the origin column
-//  val xy = xyr                                                       // use all columns - may cause multi-collinearity
-
-    private val n = xy.dim2 - 1                                        // last column in xy
-
-    val (x, y) = (xy.not(?, n), xy(?, n))                              // (data/input matrix, response column)
-    val _1     = VectorD.one (xy.dim)                                  // vector of all ones
-    val oxy    = _1 +^: xy                                             // prepend a column of all ones to xy
-    val ox     = _1 +^: x                                              // prepend a column of all ones to x
-
-    val x_fname: Array [String] = xr_fname.take (6)
-    val ox_fname: Array [String] = Array ("intercept") ++ x_fname
-
-end AutoMPG
-
-
-
-object ForestFiresData:
-
-    /** the names of the predictor variables; the name of response variable is mpg
-     */
-    val xr_fname = Array ("X", "Y", "month", "day",
-                          "FFMC", "DMC", "DC", "ISI",
-                          "temp", "RH", "wind", "rain")
-
-    /** the raw combined data matrix 'xyr'
-     */
-    val xyr = MatrixD.load("forestfires_cleaned.csv")
-
-    /** the origin column (6) is categorical
-     */
-    val oxr = xyr.not(?, 12)
-    val oxr_fname: Array [String] = Array ("intercept") ++ xr_fname
-
-    /** the combined data matrix xy with the origin column (6) removed
-     */
-    //  val xy = xyr.not(?, 6)                                         // remove the origin column
-    val xy = xyr                                                       // use all columns - may cause multi-collinearity
-
-    private val n = xy.dim2 - 1                                        // last column in xy
-
-    val (x, y) = (xy.not(?, n), xy(?, n))                              // (data/input matrix, response column)
-    val _1     = VectorD.one (xy.dim)                                  // vector of all ones
-    val oxy    = _1 +^: xy                                             // prepend a column of all ones to xy
-    val ox     = _1 +^: x                                              // prepend a column of all ones to x
-
-    val x_fname: Array [String] = xr_fname.take (12)
-    val ox_fname: Array [String] = Array ("intercept") ++ x_fname
-
-end ForestFiresData
-
-
-
-object CCPP_Data:
-
-    /** the names of the predictor variables; the name of response variable is mpg
-     */
-    val xr_fname = Array ("AT", "V", "AP", "RH")
-
-    /** the raw combined data matrix 'xyr'
-     */
-    val xyr = MatrixD.load("CCPP.csv")
-
-    /** the origin column (6) is categorical
-     */
-    val oxr = xyr.not(?, 4)
-    val oxr_fname: Array [String] = Array ("intercept") ++ xr_fname
-
-    /** the combined data matrix xy with the origin column (6) removed
-     */
-    //  val xy = xyr.not(?, 6)                                         // remove the origin column
-    val xy = xyr                                                       // use all columns - may cause multi-collinearity
-
-    private val n = xy.dim2 - 1                                        // last column in xy
-
-    val (x, y) = (xy.not(?, n), xy(?, n))                              // (data/input matrix, response column)
-    val _1     = VectorD.one (xy.dim)                                  // vector of all ones
-    val oxy    = _1 +^: xy                                             // prepend a column of all ones to xy
-    val ox     = _1 +^: x                                              // prepend a column of all ones to x
-
-    val x_fname: Array [String] = xr_fname.take (4)
-    val ox_fname: Array [String] = Array ("intercept") ++ x_fname
-
-end CCPP_Data
-
-
-
-// object WineQuality_Data:
-
-//     /** the names of the predictor variables; the name of response variable is mpg
-//      */
-//     val xr_fname = Array ("fixed acidity", "volatile acidity", "citric acid", "residual sugar", "chlorides", "free sulfur dioxide",
-//                           "total sulfur dioxide", "density", "pH", "sulphates", "alcohol")
-
-//     /** the raw combined data matrix 'xyr'
-//      */
-//     val xyr = MatrixD.load("winequality-white_fixed.csv")
-
-//     /** the origin column (6) is categorical
-//      */
-//     val oxr = xyr.not(?, 10)
-//     val oxr_fname: Array [String] = Array ("intercept") ++ xr_fname
-
-//     /** the combined data matrix xy with the origin column (6) removed
-//      */
-//     //  val xy = xyr.not(?, 6)                                         // remove the origin column
-//     val xy = xyr                                                       // use all columns - may cause multi-collinearity
-
-//     private val n = xy.dim2 - 1                                        // last column in xy
-
-//     val (x, y) = (xy.not(?, n), xy(?, n))                              // (data/input matrix, response column)
-//     val _1     = VectorD.one (xy.dim)                                  // vector of all ones
-//     val oxy    = _1 +^: xy                                             // prepend a column of all ones to xy
-//     val ox     = _1 +^: x                                              // prepend a column of all ones to x
-
-//     val x_fname: Array [String] = xr_fname.take (10)
-//     val ox_fname: Array [String] = Array ("intercept") ++ x_fname
-
-// end WineQuality_Data
-
-
-
-// object BikeSharing_Data:
-
-//     /** the names of the predictor variables; the name of response variable is mpg
-//      */
-//     val xr_fname = Array ("season", "yr", "mnth", "hr", "holiday", "weekday", "weathersit", "temp", "atemp", "hum", "windspeed", "casual", "register")
-
-//     /** the raw combined data matrix 'xyr'
-//      */
-//     val xyr = MatrixD.load("winequality-white_fixed.csv")
-
-//     /** the origin column (6) is categorical
-//      */
-//     val oxr = xyr.not(?, 10)
-//     val oxr_fname: Array [String] = Array ("intercept") ++ xr_fname
-
-//     /** the combined data matrix xy with the origin column (6) removed
-//      */
-//     //  val xy = xyr.not(?, 6)                                         // remove the origin column
-//     val xy = xyr                                                       // use all columns - may cause multi-collinearity
-
-//     private val n = xy.dim2 - 1                                        // last column in xy
-
-//     val (x, y) = (xy.not(?, n), xy(?, n))                              // (data/input matrix, response column)
-//     val _1     = VectorD.one (xy.dim)                                  // vector of all ones
-//     val oxy    = _1 +^: xy                                             // prepend a column of all ones to xy
-//     val ox     = _1 +^: x                                              // prepend a column of all ones to x
-
-//     val x_fname: Array [String] = xr_fname.take (10)
-//     val ox_fname: Array [String] = Array ("intercept") ++ x_fname
-
-// end WineQuality_Data
-
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//    FUNCTIONS
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
 //:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
@@ -349,27 +180,9 @@ end SymLassoRegression_AutoMPG
 @main def SymLassoRegression_ForestFires (): Unit =
     
     import ForestFiresData._
-
-    // banner ("Variable Names in forestfires Dataset")
-    // println (s"xr_fname = ${stringOf (xr_fname)}")                     // raw dataset
-    // println (s"x_fname  = ${stringOf (x_fname)}")                      // origin column removed
-    // println (s"ox_fname = ${stringOf (ox_fname)}")                     // intercept (1's) added
-
-    // println (s"x = $x")
-    // println (s"y = $y")
-
-    //   for( a <- 0 to 11){
-    //       println(s"var col ${a} = ${x (?, a).variance}")
-    //   }
-
-    // println(s"sum = ${x (?, 11).sum}")
-
-    val fname = Array ("X", "Y", "month", "day",
-                          "FFMC", "DMC", "DC", "ISI",
-                          "temp", "RH", "wind", "rain")
     
-    banner ("forestfires Symbolic Lasso Regression")
-    val mod = SymLassoRegression (x, y, fname, Set (-2, -1, 0.5, 2))    // add cross-terms and given powers
+    banner ("Forest Fires Symbolic Lasso Regression")                     
+    val mod = SymLassoRegression (x, y, x_fname, Set (0.5, 1, 2))         // add cross-terms and given powers
     mod.trainNtest ()()                                                   // train and test the model
     println (mod.summary ())                                              // parameter/coefficient statistics
 
@@ -387,46 +200,33 @@ end SymLassoRegression_ForestFires
 
 
 
-@main def SymLassoRegression_test (): Unit =
+//:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+/** The `SymLassoRegressionTest` main function tests the `SymLassoRegression`
+ *  object using the AutoMPG dataset.  Assumes no missing values.
+ *  It tests custom "Symbolic Lasso Regression", with powers specified in "Set (...)" and
+ *  applies forward selection, backward elimination, or stepwise regression.
+ *  > runMain scalation.modeling.SymLassoRegressionTest
+ */
+@main def SymLassoRegression_AirQuality (): Unit =
     
-    import ForestFiresData._
-
-    // banner ("Variable Names in forestfires Dataset")
-    // println (s"xr_fname = ${stringOf (xr_fname)}")                     // raw dataset
-    // println (s"x_fname  = ${stringOf (x_fname)}")                      // origin column removed
-    // println (s"ox_fname = ${stringOf (ox_fname)}")                     // intercept (1's) added
-
-    // println (s"x = $x")
-    // println (s"y = $y")
-
-    //   for( a <- 0 to 11){
-    //       println(s"var col ${a} = ${x (?, a).variance}")
-    //   }
-
-    // println(s"sum = ${x (?, 11).sum}")
-
-    val f_name = Array ("X", "Y", "month", "day",
-                        "FFMC", "DMC", "DC", "ISI",
-                        "temp", "RH", "wind", "rain")
+    import AirQualityData._
     
-    banner ("forestfires Symbolic Lasso Regression")
-    val arr = Array ("")
-    val mod = SymbolicRegression.quadratic (x, y, f_name)    // add cross-terms and given powers
+    banner ("Air Quality Symbolic Lasso Regression")
+    val mod = SymLassoRegression (x, y, x_fname, Set (1, 2))    // add cross-terms and given powers
     mod.trainNtest ()()                                                   // train and test the model
     println (mod.summary ())                                              // parameter/coefficient statistics
 
-    // for tech <- Predictor.SelectionTech.values do 
-    //     banner (s"Feature Selection Technique: $tech")
-    //     val (cols, rSq) = mod.selectFeatures (tech)                       // R^2, R^2 bar, R^2 cv
-    //     val k = cols.size
-    //     println (s"k = $k, n = ${x.dim2}")
-    //     new PlotM (null, rSq.transpose, Array ("R^2", "R^2 bar", "R^2 cv"),
-    //                s"R^2 vs n for Symbolic Lasso Regression with $tech", lines = true)
-    //     println (s"$tech: rSq = $rSq")
-    // end for
+    for tech <- Predictor.SelectionTech.values do 
+        banner (s"Feature Selection Technique: $tech")
+        val (cols, rSq) = mod.selectFeatures (tech)                       // R^2, R^2 bar, R^2 cv
+        val k = cols.size
+        println (s"k = $k, n = ${x.dim2}")
+        new PlotM (null, rSq.transpose, Array ("R^2", "R^2 bar", "R^2 cv"),
+                   s"R^2 vs n for Symbolic Lasso Regression with $tech", lines = true)
+        println (s"$tech: rSq = $rSq")
+    end for
 
-end SymLassoRegression_test
-
+end SymLassoRegression_AirQuality
 
 
 
@@ -440,14 +240,6 @@ end SymLassoRegression_test
 @main def SymLassoRegression_CCPP (): Unit =
     
     import CCPP_Data._
-
-    banner ("Variable Names in CCPP Dataset")
-    println (s"xr_fname = ${stringOf (xr_fname)}")                     // raw dataset
-    println (s"x_fname  = ${stringOf (x_fname)}")                      // origin column removed
-    println (s"ox_fname = ${stringOf (ox_fname)}")                     // intercept (1's) added
-
-    // println (s"x = $x")
-    // println (s"y = $y")
     
     banner ("CCPP Symbolic Lasso Regression")
     val mod = SymLassoRegression (x, y, x_fname, Set (-2, -1, 0.5, 2))    // add cross-terms and given powers
@@ -468,38 +260,62 @@ end SymLassoRegression_CCPP
 
 
 
-// //:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-// /** The `SymLassoRegressionTest` main function tests the `SymLassoRegression`
-//  *  object using the AutoMPG dataset.  Assumes no missing values.
-//  *  It tests custom "Symbolic Lasso Regression", with powers specified in "Set (...)" and
-//  *  applies forward selection, backward elimination, or stepwise regression.
-//  *  > runMain scalation.modeling.SymLassoRegressionTest
-//  */
-// @main def SymLassoRegression_WineQuality (): Unit =
+//:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+/** The `SymLassoRegressionTest` main function tests the `SymLassoRegression`
+ *  object using the AutoMPG dataset.  Assumes no missing values.
+ *  It tests custom "Symbolic Lasso Regression", with powers specified in "Set (...)" and
+ *  applies forward selection, backward elimination, or stepwise regression.
+ *  > runMain scalation.modeling.SymLassoRegressionTest
+ */
+@main def SymLassoRegression_WineQuality (): Unit =
     
-//     import WineQuality_Data._
-
-//     banner ("Variable Names in winequality-white_fixed")
-//     println (s"xr_fname = ${stringOf (xr_fname)}")                     // raw dataset
-//     println (s"x_fname  = ${stringOf (x_fname)}")                      // origin column removed
-//     println (s"ox_fname = ${stringOf (ox_fname)}")                     // intercept (1's) added
-
-//     // println (s"x = $x")
-//     // println (s"y = $y")
+    import WineQuality_Data._
     
-//     banner ("Wine Quality Symbolic Lasso Regression")
-//     val mod = SymLassoRegression (x, y, x_fname, Set (-2, -1, 0.5, 2))    // add cross-terms and given powers
-//     mod.trainNtest ()()                                                   // train and test the model
-//     println (mod.summary ())                                              // parameter/coefficient statistics
+    banner ("Wine Quality Symbolic Lasso Regression")
+    val mod = SymLassoRegression (x, y, x_fname, Set (0.5, 1, 2))    // add cross-terms and given powers
+    mod.trainNtest ()()                                                   // train and test the model
+    println (mod.summary ())                                              // parameter/coefficient statistics
 
-//     for tech <- Predictor.SelectionTech.values do 
-//         banner (s"Feature Selection Technique: $tech")
-//         val (cols, rSq) = mod.selectFeatures (tech)                       // R^2, R^2 bar, R^2 cv
-//         val k = cols.size
-//         println (s"k = $k, n = ${x.dim2}")
-//         new PlotM (null, rSq.transpose, Array ("R^2", "R^2 bar", "R^2 cv"),
-//                    s"R^2 vs n for Symbolic Lasso Regression with $tech", lines = true)
-//         println (s"$tech: rSq = $rSq")
-//     end for
+    for tech <- Predictor.SelectionTech.values do 
+        banner (s"Feature Selection Technique: $tech")
+        val (cols, rSq) = mod.selectFeatures (tech)                       // R^2, R^2 bar, R^2 cv
+        val k = cols.size
+        println (s"k = $k, n = ${x.dim2}")
+        new PlotM (null, rSq.transpose, Array ("R^2", "R^2 bar", "R^2 cv"),
+                   s"R^2 vs n for Symbolic Lasso Regression with $tech", lines = true)
+        println (s"$tech: rSq = $rSq")
+    end for
 
-// end SymLassoRegression_WineQuality
+end SymLassoRegression_WineQuality
+
+
+
+
+//:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+/** The `SymLassoRegressionTest` main function tests the `SymLassoRegression`
+ *  object using the AutoMPG dataset.  Assumes no missing values.
+ *  It tests custom "Symbolic Lasso Regression", with powers specified in "Set (...)" and
+ *  applies forward selection, backward elimination, or stepwise regression.
+ *  > runMain scalation.modeling.SymLassoRegressionTest
+ */
+@main def SymLassoRegression_BikeSharing (): Unit =
+    
+    import BikeSharing_Data._
+    
+    banner ("Bike Sharing Symbolic Lasso Regression")
+    val mod = SymLassoRegression (x, y, x_fname, Set (0.5, 1, 2))         // add cross-terms and given powers
+                                                                          //false, true, true)) // no intercept, 2&3-way cross terms
+    mod.trainNtest ()()                                                   // train and test the model
+    println (mod.summary ())                                              // parameter/coefficient statistics
+
+    for tech <- Predictor.SelectionTech.values do 
+        banner (s"Feature Selection Technique: $tech")
+        val (cols, rSq) = mod.selectFeatures (tech)                       // R^2, R^2 bar, R^2 cv
+        val k = cols.size
+        println (s"k = $k, n = ${x.dim2}")
+        new PlotM (null, rSq.transpose, Array ("R^2", "R^2 bar", "R^2 cv"),
+                   s"R^2 vs n for Symbolic Lasso Regression with $tech", lines = true)
+        println (s"$tech: rSq = $rSq")
+    end for
+
+end SymLassoRegression_BikeSharing

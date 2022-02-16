@@ -1,6 +1,122 @@
-[0m[[0m[31merror[0m] [0m[0m[31m-- [E006] Not Found Error: /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/src/main/scala/models/SymLassoRegression.scala:405:50 [0m[0m
-[0m[[0m[31merror[0m] [0m[0m[31m405 |[0m    [33mval[0m [36mmod[0m = SymbolicRegression.quadratic (x, y, fname)    [34m// add cross-terms and given powers[0m[0m
-[0m[[0m[31merror[0m] [0m[0m    |                                                  [31m^^^^^[0m[0m
-[0m[[0m[31merror[0m] [0m[0m    |                                                  Not found: fname[0m
-[0m[[0m[31merror[0m] [0m[0mone error found[0m
-[0m[[0m[31merror[0m] [0m[0mone error found[0m
+[0m[[0m[31merror[0m] [0m[0m[31m-- [E006] Not Found Error: C:\Users\spenc\Desktop\UGA_projects\DS2_P1\scala\scalaTion_reg_models\src\main\scala\models\DataObj.scala.scala:20:14 [0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m20 |[0m    [33mval[0m [36mxyr[0m = MatrixD.load([31m"auto_mpg_fixed_cleaned.csv"[0m)[0m
+[0m[[0m[31merror[0m] [0m[0m   |              [31m^^^^^^^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m   |              Not found: MatrixD[0m
+[0m[[0m[31merror[0m] [0m[0m[31m-- [E006] Not Found Error: C:\Users\spenc\Desktop\UGA_projects\DS2_P1\scala\scalaTion_reg_models\src\main\scala\models\DataObj.scala.scala:35:17 [0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m35 |[0m    [33mval[0m [36m_1[0m     = VectorD.one (xy.dim)                                  [34m// vector of all ones[0m[0m
+[0m[[0m[31merror[0m] [0m[0m   |                 [31m^^^^^^^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m   |                 Not found: VectorD[0m
+[0m[[0m[31merror[0m] [0m[0m[31m-- [E008] Not Found Error: C:\Users\spenc\Desktop\UGA_projects\DS2_P1\scala\scalaTion_reg_models\src\main\scala\models\DataObj.scala.scala:37:20 [0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m37 |[0m    [33mval[0m [36mox[0m     = _1 +^: x                                              [34m// prepend a column of all ones to x[0m[0m
+[0m[[0m[31merror[0m] [0m[0m   |                    [31m^^^^^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m   |                    value +^: is not a member of Nothing[0m
+[0m[[0m[31merror[0m] [0m[0m[31m-- [E006] Not Found Error: C:\Users\spenc\Desktop\UGA_projects\DS2_P1\scala\scalaTion_reg_models\src\main\scala\models\DataObj.scala.scala:56:14 [0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m56 |[0m    [33mval[0m [36mxyr[0m = MatrixD.load([31m"forestfires_cleaned.csv"[0m)[0m
+[0m[[0m[31merror[0m] [0m[0m   |              [31m^^^^^^^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m   |              Not found: MatrixD[0m
+[0m[[0m[31merror[0m] [0m[0m[31m-- [E006] Not Found Error: C:\Users\spenc\Desktop\UGA_projects\DS2_P1\scala\scalaTion_reg_models\src\main\scala\models\DataObj.scala.scala:66:17 [0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m66 |[0m    [33mval[0m [36m_1[0m     = VectorD.one (xy.dim)                                  [34m// vector of all ones[0m[0m
+[0m[[0m[31merror[0m] [0m[0m   |                 [31m^^^^^^^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m   |                 Not found: VectorD[0m
+[0m[[0m[31merror[0m] [0m[0m[31m-- [E008] Not Found Error: C:\Users\spenc\Desktop\UGA_projects\DS2_P1\scala\scalaTion_reg_models\src\main\scala\models\DataObj.scala.scala:68:20 [0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m68 |[0m    [33mval[0m [36mox[0m     = _1 +^: x                                              [34m// prepend a column of all ones to x[0m[0m
+[0m[[0m[31merror[0m] [0m[0m   |                    [31m^^^^^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m   |                    value +^: is not a member of Nothing[0m
+[0m[[0m[31merror[0m] [0m[0m[31m-- [E006] Not Found Error: C:\Users\spenc\Desktop\UGA_projects\DS2_P1\scala\scalaTion_reg_models\src\main\scala\models\DataObj.scala.scala:87:14 [0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m87 |[0m    [33mval[0m [36mxyr[0m = MatrixD.load([31m"AirQualityUCI_fixed_cleaned.csv"[0m)[0m
+[0m[[0m[31merror[0m] [0m[0m   |              [31m^^^^^^^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m   |              Not found: MatrixD[0m
+[0m[[0m[31merror[0m] [0m[0m[31m-- [E006] Not Found Error: C:\Users\spenc\Desktop\UGA_projects\DS2_P1\scala\scalaTion_reg_models\src\main\scala\models\DataObj.scala.scala:97:17 [0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m97 |[0m    [33mval[0m [36m_1[0m     = VectorD.one (xy.dim)                                  [34m// vector of all ones[0m[0m
+[0m[[0m[31merror[0m] [0m[0m   |                 [31m^^^^^^^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m   |                 Not found: VectorD[0m
+[0m[[0m[31merror[0m] [0m[0m[31m-- [E008] Not Found Error: C:\Users\spenc\Desktop\UGA_projects\DS2_P1\scala\scalaTion_reg_models\src\main\scala\models\DataObj.scala.scala:99:20 [0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m99 |[0m    [33mval[0m [36mox[0m     = _1 +^: x                                              [34m// prepend a column of all ones to x[0m[0m
+[0m[[0m[31merror[0m] [0m[0m   |                    [31m^^^^^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m   |                    value +^: is not a member of Nothing[0m
+[0m[[0m[31merror[0m] [0m[0m[31m-- [E006] Not Found Error: C:\Users\spenc\Desktop\UGA_projects\DS2_P1\scala\scalaTion_reg_models\src\main\scala\models\DataObj.scala.scala:116:14 [0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m116 |[0m    [33mval[0m [36mxyr[0m = MatrixD.load([31m"CCPP.csv"[0m)[0m
+[0m[[0m[31merror[0m] [0m[0m    |              [31m^^^^^^^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m    |              Not found: MatrixD[0m
+[0m[[0m[31merror[0m] [0m[0m[31m-- [E006] Not Found Error: C:\Users\spenc\Desktop\UGA_projects\DS2_P1\scala\scalaTion_reg_models\src\main\scala\models\DataObj.scala.scala:126:17 [0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m126 |[0m    [33mval[0m [36m_1[0m     = VectorD.one (xy.dim)                                  [34m// vector of all ones[0m[0m
+[0m[[0m[31merror[0m] [0m[0m    |                 [31m^^^^^^^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m    |                 Not found: VectorD[0m
+[0m[[0m[31merror[0m] [0m[0m[31m-- [E008] Not Found Error: C:\Users\spenc\Desktop\UGA_projects\DS2_P1\scala\scalaTion_reg_models\src\main\scala\models\DataObj.scala.scala:128:20 [0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m128 |[0m    [33mval[0m [36mox[0m     = _1 +^: x                                              [34m// prepend a column of all ones to x[0m[0m
+[0m[[0m[31merror[0m] [0m[0m    |                    [31m^^^^^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m    |                    value +^: is not a member of Nothing[0m
+[0m[[0m[31merror[0m] [0m[0m[31m-- [E006] Not Found Error: C:\Users\spenc\Desktop\UGA_projects\DS2_P1\scala\scalaTion_reg_models\src\main\scala\models\DataObj.scala.scala:146:14 [0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m146 |[0m    [33mval[0m [36mxyr[0m = MatrixD.load([31m"winequality-white_fixed.csv"[0m)[0m
+[0m[[0m[31merror[0m] [0m[0m    |              [31m^^^^^^^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m    |              Not found: MatrixD[0m
+[0m[[0m[31merror[0m] [0m[0m[31m-- [E006] Not Found Error: C:\Users\spenc\Desktop\UGA_projects\DS2_P1\scala\scalaTion_reg_models\src\main\scala\models\DataObj.scala.scala:156:17 [0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m156 |[0m    [33mval[0m [36m_1[0m     = VectorD.one (xy.dim)                                  [34m// vector of all ones[0m[0m
+[0m[[0m[31merror[0m] [0m[0m    |                 [31m^^^^^^^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m    |                 Not found: VectorD[0m
+[0m[[0m[31merror[0m] [0m[0m[31m-- [E008] Not Found Error: C:\Users\spenc\Desktop\UGA_projects\DS2_P1\scala\scalaTion_reg_models\src\main\scala\models\DataObj.scala.scala:158:20 [0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m158 |[0m    [33mval[0m [36mox[0m     = _1 +^: x                                              [34m// prepend a column of all ones to x[0m[0m
+[0m[[0m[31merror[0m] [0m[0m    |                    [31m^^^^^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m    |                    value +^: is not a member of Nothing[0m
+[0m[[0m[31merror[0m] [0m[0m[31m-- [E006] Not Found Error: C:\Users\spenc\Desktop\UGA_projects\DS2_P1\scala\scalaTion_reg_models\src\main\scala\models\DataObj.scala.scala:175:14 [0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m175 |[0m    [33mval[0m [36mxyr[0m = MatrixD.load([31m"winequality-white_fixed.csv"[0m)[0m
+[0m[[0m[31merror[0m] [0m[0m    |              [31m^^^^^^^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m    |              Not found: MatrixD[0m
+[0m[[0m[31merror[0m] [0m[0m[31m-- [E006] Not Found Error: C:\Users\spenc\Desktop\UGA_projects\DS2_P1\scala\scalaTion_reg_models\src\main\scala\models\DataObj.scala.scala:185:17 [0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m185 |[0m    [33mval[0m [36m_1[0m     = VectorD.one (xy.dim)                                  [34m// vector of all ones[0m[0m
+[0m[[0m[31merror[0m] [0m[0m    |                 [31m^^^^^^^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m    |                 Not found: VectorD[0m
+[0m[[0m[31merror[0m] [0m[0m[31m-- [E008] Not Found Error: C:\Users\spenc\Desktop\UGA_projects\DS2_P1\scala\scalaTion_reg_models\src\main\scala\models\DataObj.scala.scala:187:20 [0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m187 |[0m    [33mval[0m [36mox[0m     = _1 +^: x                                              [34m// prepend a column of all ones to x[0m[0m
+[0m[[0m[31merror[0m] [0m[0m    |                    [31m^^^^^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m    |                    value +^: is not a member of Nothing[0m
+[0m[[0m[31merror[0m] [0m[0m[31m-- [E008] Not Found Error: C:\Users\spenc\Desktop\UGA_projects\DS2_P1\scala\scalaTion_reg_models\src\main\scala\models\SymLassoRegression.scala:163:35 [0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m163 |[0m        println ([31ms"k = [0m$k[31m, n = [0m${x.dim2}[31m"[0m)[0m
+[0m[[0m[31merror[0m] [0m[0m    |                                 [31m^^^^^^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m    |                                 value dim2 is not a member of Nothing[0m
+[0m[[0m[31merror[0m] [0m[0m[31m-- [E008] Not Found Error: C:\Users\spenc\Desktop\UGA_projects\DS2_P1\scala\scalaTion_reg_models\src\main\scala\models\SymLassoRegression.scala:193:35 [0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m193 |[0m        println ([31ms"k = [0m$k[31m, n = [0m${x.dim2}[31m"[0m)[0m
+[0m[[0m[31merror[0m] [0m[0m    |                                 [31m^^^^^^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m    |                                 value dim2 is not a member of Nothing[0m
+[0m[[0m[31merror[0m] [0m[0m[31m-- [E008] Not Found Error: C:\Users\spenc\Desktop\UGA_projects\DS2_P1\scala\scalaTion_reg_models\src\main\scala\models\SymLassoRegression.scala:223:35 [0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m223 |[0m        println ([31ms"k = [0m$k[31m, n = [0m${x.dim2}[31m"[0m)[0m
+[0m[[0m[31merror[0m] [0m[0m    |                                 [31m^^^^^^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m    |                                 value dim2 is not a member of Nothing[0m
+[0m[[0m[31merror[0m] [0m[0m[31m-- [E008] Not Found Error: C:\Users\spenc\Desktop\UGA_projects\DS2_P1\scala\scalaTion_reg_models\src\main\scala\models\SymLassoRegression.scala:253:35 [0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m253 |[0m        println ([31ms"k = [0m$k[31m, n = [0m${x.dim2}[31m"[0m)[0m
+[0m[[0m[31merror[0m] [0m[0m    |                                 [31m^^^^^^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m    |                                 value dim2 is not a member of Nothing[0m
+[0m[[0m[31merror[0m] [0m[0m[31m-- [E008] Not Found Error: C:\Users\spenc\Desktop\UGA_projects\DS2_P1\scala\scalaTion_reg_models\src\main\scala\models\SymLassoRegression.scala:283:35 [0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m283 |[0m        println ([31ms"k = [0m$k[31m, n = [0m${x.dim2}[31m"[0m)[0m
+[0m[[0m[31merror[0m] [0m[0m    |                                 [31m^^^^^^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m    |                                 value dim2 is not a member of Nothing[0m
+[0m[[0m[31merror[0m] [0m[0m[31m-- [E008] Not Found Error: C:\Users\spenc\Desktop\UGA_projects\DS2_P1\scala\scalaTion_reg_models\src\main\scala\models\SymLassoRegression.scala:315:35 [0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m315 |[0m        println ([31ms"k = [0m$k[31m, n = [0m${x.dim2}[31m"[0m)[0m
+[0m[[0m[31merror[0m] [0m[0m    |                                 [31m^^^^^^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m    |                                 value dim2 is not a member of Nothing[0m
+[0m[[0m[31merror[0m] [0m[0m[31m-- [E008] Not Found Error: C:\Users\spenc\Desktop\UGA_projects\DS2_P1\scala\scalaTion_reg_models\src\main\scala\models\SymRidgeRegression.scala:163:35 [0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m163 |[0m        println ([31ms"k = [0m$k[31m, n = [0m${x.dim2}[31m"[0m)[0m
+[0m[[0m[31merror[0m] [0m[0m    |                                 [31m^^^^^^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m    |                                 value dim2 is not a member of Nothing[0m
+[0m[[0m[31merror[0m] [0m[0m[31m-- [E008] Not Found Error: C:\Users\spenc\Desktop\UGA_projects\DS2_P1\scala\scalaTion_reg_models\src\main\scala\models\SymRidgeRegression.scala:193:35 [0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m193 |[0m        println ([31ms"k = [0m$k[31m, n = [0m${x.dim2}[31m"[0m)[0m
+[0m[[0m[31merror[0m] [0m[0m    |                                 [31m^^^^^^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m    |                                 value dim2 is not a member of Nothing[0m
+[0m[[0m[31merror[0m] [0m[0m[31m-- [E008] Not Found Error: C:\Users\spenc\Desktop\UGA_projects\DS2_P1\scala\scalaTion_reg_models\src\main\scala\models\SymRidgeRegression.scala:223:35 [0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m223 |[0m        println ([31ms"k = [0m$k[31m, n = [0m${x.dim2}[31m"[0m)[0m
+[0m[[0m[31merror[0m] [0m[0m    |                                 [31m^^^^^^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m    |                                 value dim2 is not a member of Nothing[0m
+[0m[[0m[31merror[0m] [0m[0m[31m-- [E008] Not Found Error: C:\Users\spenc\Desktop\UGA_projects\DS2_P1\scala\scalaTion_reg_models\src\main\scala\models\SymRidgeRegression.scala:253:35 [0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m253 |[0m        println ([31ms"k = [0m$k[31m, n = [0m${x.dim2}[31m"[0m)[0m
+[0m[[0m[31merror[0m] [0m[0m    |                                 [31m^^^^^^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m    |                                 value dim2 is not a member of Nothing[0m
+[0m[[0m[31merror[0m] [0m[0m[31m-- [E008] Not Found Error: C:\Users\spenc\Desktop\UGA_projects\DS2_P1\scala\scalaTion_reg_models\src\main\scala\models\SymRidgeRegression.scala:283:35 [0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m283 |[0m        println ([31ms"k = [0m$k[31m, n = [0m${x.dim2}[31m"[0m)[0m
+[0m[[0m[31merror[0m] [0m[0m    |                                 [31m^^^^^^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m    |                                 value dim2 is not a member of Nothing[0m
+[0m[[0m[31merror[0m] [0m[0m[31m-- [E008] Not Found Error: C:\Users\spenc\Desktop\UGA_projects\DS2_P1\scala\scalaTion_reg_models\src\main\scala\models\SymRidgeRegression.scala:315:35 [0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m315 |[0m        println ([31ms"k = [0m$k[31m, n = [0m${x.dim2}[31m"[0m)[0m
+[0m[[0m[31merror[0m] [0m[0m    |                                 [31m^^^^^^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m    |                                 value dim2 is not a member of Nothing[0m
+[0m[[0m[31merror[0m] [0m[0m30 errors found[0m
+[0m[[0m[31merror[0m] [0m[0m30 errors found[0m

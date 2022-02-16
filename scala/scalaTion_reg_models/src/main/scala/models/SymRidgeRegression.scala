@@ -10,10 +10,15 @@
 package scalation
 package modeling
 
+import scala.runtime.ScalaRunTime.stringOf
+
 import scalation.mathstat._
+import scalation.modeling.HyperParameter
+
+// import Example_AutoMPG._
 
 //:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-/** The `SymRidgeRegression` object supports symbolic ridge regression that allows
+/** The `SymRidgeRegression` object supports symbolic Ridge regression that allows
  *  variables/columns to be raised to various powers, e.g., x^2, x^3, x^.5.
  *  IMPORTANT:  must not include INTERCEPT (column of ones) in initial data matrix),
  *  i.e., DO NOT include a column of ones in x (will cause singularity)
@@ -121,20 +126,31 @@ object SymRidgeRegression:
 
 end SymRidgeRegression
 
-import Example_AutoMPG._
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//    FUNCTIONS
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 
 //:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-/** The `symRidgeRegressionTest` main function tests the `SymRidgeRegression`
+/** The `SymRidgeRegressionTest` main function tests the `SymRidgeRegression`
  *  object using the AutoMPG dataset.  Assumes no missing values.
  *  It tests custom "Symbolic Ridge Regression", with powers specified in "Set (...)" and
  *  applies forward selection, backward elimination, or stepwise regression.
- *  > runMain scalation.modeling.symRidgeRegressionTest
+ *  > runMain scalation.modeling.SymRidgeRegressionTest
  */
-@main def symRidgeRegressionTest (): Unit =
+@main def SymRidgeRegression_AutoMPG (): Unit =
+    
+    import AutoMPG._
 
-//  println (s"x = $x")
-//  println (s"y = $y")
+    // banner ("Variable Names in AutoMPG Dataset")
+    // println (s"xr_fname = ${stringOf (xr_fname)}")                     // raw dataset
+    // println (s"x_fname  = ${stringOf (x_fname)}")                      // origin column removed
+    // println (s"ox_fname = ${stringOf (ox_fname)}")                     // intercept (1's) added
 
+    // println (s"x = $x")
+    // println (s"y = $y")
+    
     banner ("auto_mpg Symbolic Ridge Regression")
     val mod = SymRidgeRegression (x, y, x_fname, Set (-2, -1, 0.5, 2))    // add cross-terms and given powers
     mod.trainNtest ()()                                                   // train and test the model
@@ -150,183 +166,29 @@ import Example_AutoMPG._
         println (s"$tech: rSq = $rSq")
     end for
 
-end symRidgeRegressionTest
+end SymRidgeRegression_AutoMPG
 
-
-//:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-/** The `symRidgeRegressionTest2` main function tests the `SymRidgeRegression`
- *  object using the AutoMPG dataset.  Assumes no missing values.
- *  It tests "Quadratic Ridge Regression" (with cross = false) and
- *  applies forward selection, backward elimination, or stepwise regression.
- *  > runMain scalation.modeling.symRidgeRegressionTest2
- */
-@main def symRidgeRegressionTest2 (): Unit =
-
-//  println (s"x = $x")
-//  println (s"y = $y")
-
-    banner ("auto_mpg Quadratic Ridge Regression")
-    val mod = SymRidgeRegression.quadratic (x, y, x_fname)                // add x^2 terms
-    mod.trainNtest ()()                                                   // train and test the model
-    println (mod.summary ())                                              // parameter/coefficient statistics
-
-    for tech <- Predictor.SelectionTech.values do
-        banner (s"Feature Selection Technique: $tech")
-        val (cols, rSq) = mod.selectFeatures (tech)                       // R^2, R^2 bar, R^2 cv
-        val k = cols.size
-        println (s"k = $k, n = ${x.dim2}")
-        new PlotM (null, rSq.transpose, Array ("R^2", "R^2 bar", "R^2 cv"),
-                   s"R^2 vs n for Quadratic Ridge Regression with $tech", lines = true)
-        println (s"$tech: rSq = $rSq")
-    end for
-
-end symRidgeRegressionTest2
 
 
 //:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-/** The `symRidgeRegressionTest3` main function tests the `SymRidgeRegression`
- *  object using the AutoMPG dataset.  Assumes no missing values.
- *  It tests "Quadratic X Ridge Regression" (with cross = true) and
- *  applies forward selection, backward elimination, or stepwise regression.
- *  > runMain scalation.modeling.symRidgeRegressionTest3
- */
-@main def symRidgeRegressionTest3 (): Unit =
-
-//  println (s"x = $x")
-//  println (s"y = $y")
-
-    banner ("auto_mpg Quadratic X Ridge Regression")
-    val mod = SymRidgeRegression.quadratic (x, y, x_fname, true)          // add cross-terms and x^2 terms
-    mod.trainNtest ()()                                                   // train and test the model
-    println (mod.summary ())                                              // parameter/coefficient statistics
-
-    for tech <- Predictor.SelectionTech.values do 
-        banner (s"Feature Selection Technique: $tech")
-        val (cols, rSq) = mod.selectFeatures (tech)                       // R^2, R^2 bar, R^2 cv
-        val k = cols.size
-        println (s"k = $k, n = ${x.dim2}")
-        new PlotM (null, rSq.transpose, Array ("R^2", "R^2 bar", "R^2 cv"),
-                   s"R^2 vs n for Quadratic X Ridge Regression with $tech", lines = true)
-        println (s"$tech: rSq = $rSq")
-    end for
-
-end symRidgeRegressionTest3
-
-
-//:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-/** The `symRidgeRegressionTest4` main function tests the `SymRidgeRegression`
- *  object using the AutoMPG dataset.  Assumes no missing values.
- *  It tests "Cubic Ridge Regression" (with cross = false) and
- *  applies forward selection, backward elimination, or stepwise regression.
- *  > runMain scalation.modeling.symRidgeRegressionTest4
- */
-@main def symRidgeRegressionTest4 (): Unit =
-
-//  println (s"x = $x")
-//  println (s"y = $y")
-
-    banner ("auto_mpg Cubic Ridge Regression")
-    val mod = SymRidgeRegression.cubic (x, y, x_fname)                    // add x^2 and x^3 terms
-    mod.trainNtest ()()                                                   // train and test the model
-    println (mod.summary ())                                              // parameter/coefficient statistics
-
-    for tech <- Predictor.SelectionTech.values do 
-        banner (s"Feature Selection Technique: $tech")
-        val (cols, rSq) = mod.selectFeatures (tech)                       // R^2, R^2 bar, R^2 cv
-        val k = cols.size
-        println (s"k = $k, n = ${x.dim2}")
-        new PlotM (null, rSq.transpose, Array ("R^2", "R^2 bar", "R^2 cv"),
-                   s"R^2 vs n for Cubic Ridge Regression with $tech", lines = true)
-        println (s"$tech: rSq = $rSq")
-    end for
-
-end symRidgeRegressionTest4
-
-
-//:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-/** The `symRidgeRegressionTest5` main function tests the `SymRidgeRegression`
- *  object using the AutoMPG dataset.  Assumes no missing values.
- *  It tests "Cubic X Ridge Regression" (with cross = true) and
- *  applies forward selection, backward elimination, or stepwise regression.
- *  > runMain scalation.modeling.symRidgeRegressionTest5
- */
-@main def symRidgeRegressionTest5 (): Unit =
-
-//  println (s"x = $x")
-//  println (s"y = $y")
-
-    banner ("auto_mpg Cubic X Ridge Regression")
-    val mod = SymRidgeRegression.cubic (x, y, x_fname, true)              // add cross-terms, x^2 and x^3 terms
-    mod.trainNtest ()()                                                   // train and test the model
-    println (mod.summary ())                                              // parameter/coefficient statistics
-
-    for tech <- Predictor.SelectionTech.values do 
-        banner (s"Feature Selection Technique: $tech")
-        val (cols, rSq) = mod.selectFeatures (tech)                       // R^2, R^2 bar, R^2 cv
-        val k = cols.size
-        println (s"k = $k, n = ${x.dim2}")
-        new PlotM (null, rSq.transpose, Array ("R^2", "R^2 bar", "R^2 cv"),
-                   s"R^2 vs n for Cubic X Ridge Regression with $tech", lines = true)
-        println (s"$tech: rSq = $rSq")
-    end for
-
-end symRidgeRegressionTest5
-
-
-//:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-/** The `symRidgeRegressionTest6` main function tests the `SymRidgeRegression`
- *  object using the AutoMPG dataset.  Assumes no missing values.
- *  It tests "Cubic XX Ridge Regression" (with cross, cross3 = true) and
- *  applies forward selection, backward elimination, or stepwise regression.
- *  WARNING: setting cross3 = true can lead to an explotion of terms.
- *  > runMain scalation.modeling.symRidgeRegressionTest6
- */
-@main def symRidgeRegressionTest6 (): Unit =
-
-//  println (s"x = $x")
-//  println (s"y = $y")
-
-    banner ("auto_mpg Cubic XX Ridge Regression")
-    val mod = SymRidgeRegression.cubic (x, y, x_fname,                  // add x^2 and x^3 terms
-                                        true, true)                     // add cross and cross3 terms
-    mod.trainNtest ()()                                                 // train and test the model
-    println (mod.summary ())                                            // parameter/coefficient statistics
-
-    for tech <- Predictor.SelectionTech.values do
-        banner (s"Feature Selection Technique: $tech")
-        val (cols, rSq) = mod.selectFeatures (tech)                     // R^2, R^2 bar, R^2 cv
-        val k = cols.size
-        println (s"k = $k, n = ${x.dim2}")
-        new PlotM (null, rSq.transpose, Array ("R^2", "R^2 bar", "R^2 cv"),
-                   s"R^2 vs n for Cubic XX Ridge Regression with $tech", lines = true)
-        println (s"$tech: rSq = $rSq")
-    end for
-
-end symRidgeRegressionTest6
-
-
-//:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-/** The `symRidgeRegressionTest7` main function tests the `SymRidgeRegression`
+/** The `SymRidgeRegressionTest` main function tests the `SymRidgeRegression`
  *  object using the AutoMPG dataset.  Assumes no missing values.
  *  It tests custom "Symbolic Ridge Regression", with powers specified in "Set (...)" and
  *  applies forward selection, backward elimination, or stepwise regression.
- *  This test case performs data rescaling.
- *  > runMain scalation.modeling.symRidgeRegressionTest7
+ *  > runMain scalation.modeling.SymRidgeRegressionTest
  */
-@main def symRidgeRegressionTest7 (): Unit =
+@main def SymRidgeRegression_ForestFires (): Unit =
+    
+    import ForestFiresData._
+    
+    banner ("Forest Fires Symbolic Ridge Regression")                     
+    val mod = SymRidgeRegression (x, y, x_fname, Set (0.5, 1, 2))         // add cross-terms and given powers
+    mod.trainNtest ()()                                                   // train and test the model
+    println (mod.summary ())                                              // parameter/coefficient statistics
 
-//  println (s"x = $x")
-//  println (s"y = $y")
-
-    banner ("auto_mpg Symbolic Ridge Regression")
-    val mod = SymRidgeRegression.rescale (x, y, x_fname,
-                                          Set (-2, -1, 0.5, 2))          // add cross-terms and given powers
-    mod.trainNtest ()()                                                  // train and test the model
-    println (mod.summary ())                                             // parameter/coefficient statistics
-
-    for tech <- Predictor.SelectionTech.values do
+    for tech <- Predictor.SelectionTech.values do 
         banner (s"Feature Selection Technique: $tech")
-        val (cols, rSq) = mod.selectFeatures (tech)                      // R^2, R^2 bar, R^2 cv
+        val (cols, rSq) = mod.selectFeatures (tech)                       // R^2, R^2 bar, R^2 cv
         val k = cols.size
         println (s"k = $k, n = ${x.dim2}")
         new PlotM (null, rSq.transpose, Array ("R^2", "R^2 bar", "R^2 cv"),
@@ -334,5 +196,126 @@ end symRidgeRegressionTest6
         println (s"$tech: rSq = $rSq")
     end for
 
-end symRidgeRegressionTest7
+end SymRidgeRegression_ForestFires
 
+
+
+//:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+/** The `SymRidgeRegressionTest` main function tests the `SymRidgeRegression`
+ *  object using the AutoMPG dataset.  Assumes no missing values.
+ *  It tests custom "Symbolic Ridge Regression", with powers specified in "Set (...)" and
+ *  applies forward selection, backward elimination, or stepwise regression.
+ *  > runMain scalation.modeling.SymRidgeRegressionTest
+ */
+@main def SymRidgeRegression_AirQuality (): Unit =
+    
+    import AirQualityData._
+    
+    banner ("Air Quality Symbolic Ridge Regression")
+    val mod = SymRidgeRegression (x, y, x_fname, Set (1, 2))    // add cross-terms and given powers
+    mod.trainNtest ()()                                                   // train and test the model
+    println (mod.summary ())                                              // parameter/coefficient statistics
+
+    for tech <- Predictor.SelectionTech.values do 
+        banner (s"Feature Selection Technique: $tech")
+        val (cols, rSq) = mod.selectFeatures (tech)                       // R^2, R^2 bar, R^2 cv
+        val k = cols.size
+        println (s"k = $k, n = ${x.dim2}")
+        new PlotM (null, rSq.transpose, Array ("R^2", "R^2 bar", "R^2 cv"),
+                   s"R^2 vs n for Symbolic Ridge Regression with $tech", lines = true)
+        println (s"$tech: rSq = $rSq")
+    end for
+
+end SymRidgeRegression_AirQuality
+
+
+
+//:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+/** The `SymRidgeRegressionTest` main function tests the `SymRidgeRegression`
+ *  object using the AutoMPG dataset.  Assumes no missing values.
+ *  It tests custom "Symbolic Ridge Regression", with powers specified in "Set (...)" and
+ *  applies forward selection, backward elimination, or stepwise regression.
+ *  > runMain scalation.modeling.SymRidgeRegressionTest
+ */
+@main def SymRidgeRegression_CCPP (): Unit =
+    
+    import CCPP_Data._
+    
+    banner ("CCPP Symbolic Ridge Regression")
+    val mod = SymRidgeRegression (x, y, x_fname, Set (-2, -1, 0.5, 2))    // add cross-terms and given powers
+    mod.trainNtest ()()                                                   // train and test the model
+    println (mod.summary ())                                              // parameter/coefficient statistics
+
+    for tech <- Predictor.SelectionTech.values do 
+        banner (s"Feature Selection Technique: $tech")
+        val (cols, rSq) = mod.selectFeatures (tech)                       // R^2, R^2 bar, R^2 cv
+        val k = cols.size
+        println (s"k = $k, n = ${x.dim2}")
+        new PlotM (null, rSq.transpose, Array ("R^2", "R^2 bar", "R^2 cv"),
+                   s"R^2 vs n for Symbolic Ridge Regression with $tech", lines = true)
+        println (s"$tech: rSq = $rSq")
+    end for
+
+end SymRidgeRegression_CCPP
+
+
+
+//:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+/** The `SymRidgeRegressionTest` main function tests the `SymRidgeRegression`
+ *  object using the AutoMPG dataset.  Assumes no missing values.
+ *  It tests custom "Symbolic Ridge Regression", with powers specified in "Set (...)" and
+ *  applies forward selection, backward elimination, or stepwise regression.
+ *  > runMain scalation.modeling.SymRidgeRegressionTest
+ */
+@main def SymRidgeRegression_WineQuality (): Unit =
+    
+    import WineQuality_Data._
+    
+    banner ("Wine Quality Symbolic Ridge Regression")
+    val mod = SymRidgeRegression (x, y, x_fname, Set (0.5, 1, 2))    // add cross-terms and given powers
+    mod.trainNtest ()()                                                   // train and test the model
+    println (mod.summary ())                                              // parameter/coefficient statistics
+
+    for tech <- Predictor.SelectionTech.values do 
+        banner (s"Feature Selection Technique: $tech")
+        val (cols, rSq) = mod.selectFeatures (tech)                       // R^2, R^2 bar, R^2 cv
+        val k = cols.size
+        println (s"k = $k, n = ${x.dim2}")
+        new PlotM (null, rSq.transpose, Array ("R^2", "R^2 bar", "R^2 cv"),
+                   s"R^2 vs n for Symbolic Ridge Regression with $tech", lines = true)
+        println (s"$tech: rSq = $rSq")
+    end for
+
+end SymRidgeRegression_WineQuality
+
+
+
+
+//:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+/** The `SymRidgeRegressionTest` main function tests the `SymRidgeRegression`
+ *  object using the AutoMPG dataset.  Assumes no missing values.
+ *  It tests custom "Symbolic Ridge Regression", with powers specified in "Set (...)" and
+ *  applies forward selection, backward elimination, or stepwise regression.
+ *  > runMain scalation.modeling.SymRidgeRegressionTest
+ */
+@main def SymRidgeRegression_BikeSharing (): Unit =
+    
+    import BikeSharing_Data._
+    
+    banner ("Bike Sharing Symbolic Ridge Regression")
+    val mod = SymRidgeRegression (x, y, x_fname, Set (0.5, 1, 2))         // add cross-terms and given powers
+                                                                          //false, true, true)) // no intercept, 2&3-way cross terms
+    mod.trainNtest ()()                                                   // train and test the model
+    println (mod.summary ())                                              // parameter/coefficient statistics
+
+    for tech <- Predictor.SelectionTech.values do 
+        banner (s"Feature Selection Technique: $tech")
+        val (cols, rSq) = mod.selectFeatures (tech)                       // R^2, R^2 bar, R^2 cv
+        val k = cols.size
+        println (s"k = $k, n = ${x.dim2}")
+        new PlotM (null, rSq.transpose, Array ("R^2", "R^2 bar", "R^2 cv"),
+                   s"R^2 vs n for Symbolic Ridge Regression with $tech", lines = true)
+        println (s"$tech: rSq = $rSq")
+    end for
+
+end SymRidgeRegression_BikeSharing
