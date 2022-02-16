@@ -1,3 +1,5 @@
+
+
 //:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 /** @author  John Miller
  *  @version 2.0
@@ -141,7 +143,7 @@ end SymRidgeRegression
  */
 @main def SymRidgeRegression_AutoMPG (): Unit =
     
-    import AutoMPG._
+    import AutoMPG_Data._
 
     // banner ("Variable Names in AutoMPG Dataset")
     // println (s"xr_fname = ${stringOf (xr_fname)}")                     // raw dataset
@@ -151,7 +153,7 @@ end SymRidgeRegression
     // println (s"x = $x")
     // println (s"y = $y")
     
-    banner ("auto_mpg Symbolic Ridge Regression")
+    banner ("Auto MPG Symbolic Ridge Regression")
     val mod = SymRidgeRegression (x, y, x_fname, Set (-2, -1, 0.5, 2))    // add cross-terms and given powers
     mod.trainNtest ()()                                                   // train and test the model
     println (mod.summary ())                                              // parameter/coefficient statistics
@@ -179,7 +181,7 @@ end SymRidgeRegression_AutoMPG
  */
 @main def SymRidgeRegression_ForestFires (): Unit =
     
-    import ForestFiresData._
+    import ForestFires_Data._
     
     banner ("Forest Fires Symbolic Ridge Regression")                     
     val mod = SymRidgeRegression (x, y, x_fname, Set (0.5, 1, 2))         // add cross-terms and given powers
@@ -209,7 +211,7 @@ end SymRidgeRegression_ForestFires
  */
 @main def SymRidgeRegression_AirQuality (): Unit =
     
-    import AirQualityData._
+    import AirQuality_Data._
     
     banner ("Air Quality Symbolic Ridge Regression")
     val mod = SymRidgeRegression (x, y, x_fname, Set (1, 2))    // add cross-terms and given powers
@@ -287,7 +289,6 @@ end SymRidgeRegression_CCPP
     end for
 
 end SymRidgeRegression_WineQuality
-
 
 
 

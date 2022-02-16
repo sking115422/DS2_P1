@@ -1,4 +1,5 @@
 
+
 package scalation
 
 import scalation.mathstat._
@@ -10,7 +11,7 @@ import scalation.mathstat._
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
-object AutoMPG:
+object AutoMPG_Data:
 
     /** the names of the predictor variables; the name of response variable is mpg
      */
@@ -41,11 +42,11 @@ object AutoMPG:
     val x_fname: Array [String] = xr_fname.take (6)
     val ox_fname: Array [String] = Array ("intercept") ++ x_fname
 
-end AutoMPG
+end AutoMPG_Data
 
 
 
-object ForestFiresData:
+object ForestFires_Data:
 
     /** the names of the predictor variables; the name of response variable is area
      */
@@ -72,11 +73,11 @@ object ForestFiresData:
     val x_fname: Array [String] = xr_fname.take (12)
     val ox_fname: Array [String] = Array ("intercept") ++ x_fname
 
-end ForestFiresData
+end ForestFires_Data
 
 
 
-object AirQualityData:
+object AirQuality_Data:
 
     /** the names of the predictor variables; the name of response variable is PT08.S4(NO2)
      */
@@ -103,7 +104,7 @@ object AirQualityData:
     val x_fname: Array [String] = xr_fname.take (9)
     val ox_fname: Array [String] = Array ("intercept") ++ x_fname
 
-end AirQualityData
+end AirQuality_Data
 
 
 

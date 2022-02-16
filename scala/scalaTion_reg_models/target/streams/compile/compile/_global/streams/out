@@ -1,122 +1,151 @@
-[0m[[0m[31merror[0m] [0m[0m[31m-- [E006] Not Found Error: C:\Users\spenc\Desktop\UGA_projects\DS2_P1\scala\scalaTion_reg_models\src\main\scala\models\DataObj.scala.scala:20:14 [0m[0m
-[0m[[0m[31merror[0m] [0m[0m[31m20 |[0m    [33mval[0m [36mxyr[0m = MatrixD.load([31m"auto_mpg_fixed_cleaned.csv"[0m)[0m
-[0m[[0m[31merror[0m] [0m[0m   |              [31m^^^^^^^[0m[0m
-[0m[[0m[31merror[0m] [0m[0m   |              Not found: MatrixD[0m
-[0m[[0m[31merror[0m] [0m[0m[31m-- [E006] Not Found Error: C:\Users\spenc\Desktop\UGA_projects\DS2_P1\scala\scalaTion_reg_models\src\main\scala\models\DataObj.scala.scala:35:17 [0m[0m
-[0m[[0m[31merror[0m] [0m[0m[31m35 |[0m    [33mval[0m [36m_1[0m     = VectorD.one (xy.dim)                                  [34m// vector of all ones[0m[0m
-[0m[[0m[31merror[0m] [0m[0m   |                 [31m^^^^^^^[0m[0m
-[0m[[0m[31merror[0m] [0m[0m   |                 Not found: VectorD[0m
-[0m[[0m[31merror[0m] [0m[0m[31m-- [E008] Not Found Error: C:\Users\spenc\Desktop\UGA_projects\DS2_P1\scala\scalaTion_reg_models\src\main\scala\models\DataObj.scala.scala:37:20 [0m[0m
-[0m[[0m[31merror[0m] [0m[0m[31m37 |[0m    [33mval[0m [36mox[0m     = _1 +^: x                                              [34m// prepend a column of all ones to x[0m[0m
-[0m[[0m[31merror[0m] [0m[0m   |                    [31m^^^^^[0m[0m
-[0m[[0m[31merror[0m] [0m[0m   |                    value +^: is not a member of Nothing[0m
-[0m[[0m[31merror[0m] [0m[0m[31m-- [E006] Not Found Error: C:\Users\spenc\Desktop\UGA_projects\DS2_P1\scala\scalaTion_reg_models\src\main\scala\models\DataObj.scala.scala:56:14 [0m[0m
-[0m[[0m[31merror[0m] [0m[0m[31m56 |[0m    [33mval[0m [36mxyr[0m = MatrixD.load([31m"forestfires_cleaned.csv"[0m)[0m
-[0m[[0m[31merror[0m] [0m[0m   |              [31m^^^^^^^[0m[0m
-[0m[[0m[31merror[0m] [0m[0m   |              Not found: MatrixD[0m
-[0m[[0m[31merror[0m] [0m[0m[31m-- [E006] Not Found Error: C:\Users\spenc\Desktop\UGA_projects\DS2_P1\scala\scalaTion_reg_models\src\main\scala\models\DataObj.scala.scala:66:17 [0m[0m
-[0m[[0m[31merror[0m] [0m[0m[31m66 |[0m    [33mval[0m [36m_1[0m     = VectorD.one (xy.dim)                                  [34m// vector of all ones[0m[0m
-[0m[[0m[31merror[0m] [0m[0m   |                 [31m^^^^^^^[0m[0m
-[0m[[0m[31merror[0m] [0m[0m   |                 Not found: VectorD[0m
-[0m[[0m[31merror[0m] [0m[0m[31m-- [E008] Not Found Error: C:\Users\spenc\Desktop\UGA_projects\DS2_P1\scala\scalaTion_reg_models\src\main\scala\models\DataObj.scala.scala:68:20 [0m[0m
-[0m[[0m[31merror[0m] [0m[0m[31m68 |[0m    [33mval[0m [36mox[0m     = _1 +^: x                                              [34m// prepend a column of all ones to x[0m[0m
-[0m[[0m[31merror[0m] [0m[0m   |                    [31m^^^^^[0m[0m
-[0m[[0m[31merror[0m] [0m[0m   |                    value +^: is not a member of Nothing[0m
-[0m[[0m[31merror[0m] [0m[0m[31m-- [E006] Not Found Error: C:\Users\spenc\Desktop\UGA_projects\DS2_P1\scala\scalaTion_reg_models\src\main\scala\models\DataObj.scala.scala:87:14 [0m[0m
-[0m[[0m[31merror[0m] [0m[0m[31m87 |[0m    [33mval[0m [36mxyr[0m = MatrixD.load([31m"AirQualityUCI_fixed_cleaned.csv"[0m)[0m
-[0m[[0m[31merror[0m] [0m[0m   |              [31m^^^^^^^[0m[0m
-[0m[[0m[31merror[0m] [0m[0m   |              Not found: MatrixD[0m
-[0m[[0m[31merror[0m] [0m[0m[31m-- [E006] Not Found Error: C:\Users\spenc\Desktop\UGA_projects\DS2_P1\scala\scalaTion_reg_models\src\main\scala\models\DataObj.scala.scala:97:17 [0m[0m
-[0m[[0m[31merror[0m] [0m[0m[31m97 |[0m    [33mval[0m [36m_1[0m     = VectorD.one (xy.dim)                                  [34m// vector of all ones[0m[0m
-[0m[[0m[31merror[0m] [0m[0m   |                 [31m^^^^^^^[0m[0m
-[0m[[0m[31merror[0m] [0m[0m   |                 Not found: VectorD[0m
-[0m[[0m[31merror[0m] [0m[0m[31m-- [E008] Not Found Error: C:\Users\spenc\Desktop\UGA_projects\DS2_P1\scala\scalaTion_reg_models\src\main\scala\models\DataObj.scala.scala:99:20 [0m[0m
-[0m[[0m[31merror[0m] [0m[0m[31m99 |[0m    [33mval[0m [36mox[0m     = _1 +^: x                                              [34m// prepend a column of all ones to x[0m[0m
-[0m[[0m[31merror[0m] [0m[0m   |                    [31m^^^^^[0m[0m
-[0m[[0m[31merror[0m] [0m[0m   |                    value +^: is not a member of Nothing[0m
-[0m[[0m[31merror[0m] [0m[0m[31m-- [E006] Not Found Error: C:\Users\spenc\Desktop\UGA_projects\DS2_P1\scala\scalaTion_reg_models\src\main\scala\models\DataObj.scala.scala:116:14 [0m[0m
-[0m[[0m[31merror[0m] [0m[0m[31m116 |[0m    [33mval[0m [36mxyr[0m = MatrixD.load([31m"CCPP.csv"[0m)[0m
-[0m[[0m[31merror[0m] [0m[0m    |              [31m^^^^^^^[0m[0m
-[0m[[0m[31merror[0m] [0m[0m    |              Not found: MatrixD[0m
-[0m[[0m[31merror[0m] [0m[0m[31m-- [E006] Not Found Error: C:\Users\spenc\Desktop\UGA_projects\DS2_P1\scala\scalaTion_reg_models\src\main\scala\models\DataObj.scala.scala:126:17 [0m[0m
-[0m[[0m[31merror[0m] [0m[0m[31m126 |[0m    [33mval[0m [36m_1[0m     = VectorD.one (xy.dim)                                  [34m// vector of all ones[0m[0m
-[0m[[0m[31merror[0m] [0m[0m    |                 [31m^^^^^^^[0m[0m
-[0m[[0m[31merror[0m] [0m[0m    |                 Not found: VectorD[0m
-[0m[[0m[31merror[0m] [0m[0m[31m-- [E008] Not Found Error: C:\Users\spenc\Desktop\UGA_projects\DS2_P1\scala\scalaTion_reg_models\src\main\scala\models\DataObj.scala.scala:128:20 [0m[0m
-[0m[[0m[31merror[0m] [0m[0m[31m128 |[0m    [33mval[0m [36mox[0m     = _1 +^: x                                              [34m// prepend a column of all ones to x[0m[0m
-[0m[[0m[31merror[0m] [0m[0m    |                    [31m^^^^^[0m[0m
-[0m[[0m[31merror[0m] [0m[0m    |                    value +^: is not a member of Nothing[0m
-[0m[[0m[31merror[0m] [0m[0m[31m-- [E006] Not Found Error: C:\Users\spenc\Desktop\UGA_projects\DS2_P1\scala\scalaTion_reg_models\src\main\scala\models\DataObj.scala.scala:146:14 [0m[0m
-[0m[[0m[31merror[0m] [0m[0m[31m146 |[0m    [33mval[0m [36mxyr[0m = MatrixD.load([31m"winequality-white_fixed.csv"[0m)[0m
-[0m[[0m[31merror[0m] [0m[0m    |              [31m^^^^^^^[0m[0m
-[0m[[0m[31merror[0m] [0m[0m    |              Not found: MatrixD[0m
-[0m[[0m[31merror[0m] [0m[0m[31m-- [E006] Not Found Error: C:\Users\spenc\Desktop\UGA_projects\DS2_P1\scala\scalaTion_reg_models\src\main\scala\models\DataObj.scala.scala:156:17 [0m[0m
-[0m[[0m[31merror[0m] [0m[0m[31m156 |[0m    [33mval[0m [36m_1[0m     = VectorD.one (xy.dim)                                  [34m// vector of all ones[0m[0m
-[0m[[0m[31merror[0m] [0m[0m    |                 [31m^^^^^^^[0m[0m
-[0m[[0m[31merror[0m] [0m[0m    |                 Not found: VectorD[0m
-[0m[[0m[31merror[0m] [0m[0m[31m-- [E008] Not Found Error: C:\Users\spenc\Desktop\UGA_projects\DS2_P1\scala\scalaTion_reg_models\src\main\scala\models\DataObj.scala.scala:158:20 [0m[0m
-[0m[[0m[31merror[0m] [0m[0m[31m158 |[0m    [33mval[0m [36mox[0m     = _1 +^: x                                              [34m// prepend a column of all ones to x[0m[0m
-[0m[[0m[31merror[0m] [0m[0m    |                    [31m^^^^^[0m[0m
-[0m[[0m[31merror[0m] [0m[0m    |                    value +^: is not a member of Nothing[0m
-[0m[[0m[31merror[0m] [0m[0m[31m-- [E006] Not Found Error: C:\Users\spenc\Desktop\UGA_projects\DS2_P1\scala\scalaTion_reg_models\src\main\scala\models\DataObj.scala.scala:175:14 [0m[0m
-[0m[[0m[31merror[0m] [0m[0m[31m175 |[0m    [33mval[0m [36mxyr[0m = MatrixD.load([31m"winequality-white_fixed.csv"[0m)[0m
-[0m[[0m[31merror[0m] [0m[0m    |              [31m^^^^^^^[0m[0m
-[0m[[0m[31merror[0m] [0m[0m    |              Not found: MatrixD[0m
-[0m[[0m[31merror[0m] [0m[0m[31m-- [E006] Not Found Error: C:\Users\spenc\Desktop\UGA_projects\DS2_P1\scala\scalaTion_reg_models\src\main\scala\models\DataObj.scala.scala:185:17 [0m[0m
-[0m[[0m[31merror[0m] [0m[0m[31m185 |[0m    [33mval[0m [36m_1[0m     = VectorD.one (xy.dim)                                  [34m// vector of all ones[0m[0m
-[0m[[0m[31merror[0m] [0m[0m    |                 [31m^^^^^^^[0m[0m
-[0m[[0m[31merror[0m] [0m[0m    |                 Not found: VectorD[0m
-[0m[[0m[31merror[0m] [0m[0m[31m-- [E008] Not Found Error: C:\Users\spenc\Desktop\UGA_projects\DS2_P1\scala\scalaTion_reg_models\src\main\scala\models\DataObj.scala.scala:187:20 [0m[0m
-[0m[[0m[31merror[0m] [0m[0m[31m187 |[0m    [33mval[0m [36mox[0m     = _1 +^: x                                              [34m// prepend a column of all ones to x[0m[0m
-[0m[[0m[31merror[0m] [0m[0m    |                    [31m^^^^^[0m[0m
-[0m[[0m[31merror[0m] [0m[0m    |                    value +^: is not a member of Nothing[0m
-[0m[[0m[31merror[0m] [0m[0m[31m-- [E008] Not Found Error: C:\Users\spenc\Desktop\UGA_projects\DS2_P1\scala\scalaTion_reg_models\src\main\scala\models\SymLassoRegression.scala:163:35 [0m[0m
-[0m[[0m[31merror[0m] [0m[0m[31m163 |[0m        println ([31ms"k = [0m$k[31m, n = [0m${x.dim2}[31m"[0m)[0m
-[0m[[0m[31merror[0m] [0m[0m    |                                 [31m^^^^^^[0m[0m
-[0m[[0m[31merror[0m] [0m[0m    |                                 value dim2 is not a member of Nothing[0m
-[0m[[0m[31merror[0m] [0m[0m[31m-- [E008] Not Found Error: C:\Users\spenc\Desktop\UGA_projects\DS2_P1\scala\scalaTion_reg_models\src\main\scala\models\SymLassoRegression.scala:193:35 [0m[0m
-[0m[[0m[31merror[0m] [0m[0m[31m193 |[0m        println ([31ms"k = [0m$k[31m, n = [0m${x.dim2}[31m"[0m)[0m
-[0m[[0m[31merror[0m] [0m[0m    |                                 [31m^^^^^^[0m[0m
-[0m[[0m[31merror[0m] [0m[0m    |                                 value dim2 is not a member of Nothing[0m
-[0m[[0m[31merror[0m] [0m[0m[31m-- [E008] Not Found Error: C:\Users\spenc\Desktop\UGA_projects\DS2_P1\scala\scalaTion_reg_models\src\main\scala\models\SymLassoRegression.scala:223:35 [0m[0m
-[0m[[0m[31merror[0m] [0m[0m[31m223 |[0m        println ([31ms"k = [0m$k[31m, n = [0m${x.dim2}[31m"[0m)[0m
-[0m[[0m[31merror[0m] [0m[0m    |                                 [31m^^^^^^[0m[0m
-[0m[[0m[31merror[0m] [0m[0m    |                                 value dim2 is not a member of Nothing[0m
-[0m[[0m[31merror[0m] [0m[0m[31m-- [E008] Not Found Error: C:\Users\spenc\Desktop\UGA_projects\DS2_P1\scala\scalaTion_reg_models\src\main\scala\models\SymLassoRegression.scala:253:35 [0m[0m
-[0m[[0m[31merror[0m] [0m[0m[31m253 |[0m        println ([31ms"k = [0m$k[31m, n = [0m${x.dim2}[31m"[0m)[0m
-[0m[[0m[31merror[0m] [0m[0m    |                                 [31m^^^^^^[0m[0m
-[0m[[0m[31merror[0m] [0m[0m    |                                 value dim2 is not a member of Nothing[0m
-[0m[[0m[31merror[0m] [0m[0m[31m-- [E008] Not Found Error: C:\Users\spenc\Desktop\UGA_projects\DS2_P1\scala\scalaTion_reg_models\src\main\scala\models\SymLassoRegression.scala:283:35 [0m[0m
-[0m[[0m[31merror[0m] [0m[0m[31m283 |[0m        println ([31ms"k = [0m$k[31m, n = [0m${x.dim2}[31m"[0m)[0m
-[0m[[0m[31merror[0m] [0m[0m    |                                 [31m^^^^^^[0m[0m
-[0m[[0m[31merror[0m] [0m[0m    |                                 value dim2 is not a member of Nothing[0m
-[0m[[0m[31merror[0m] [0m[0m[31m-- [E008] Not Found Error: C:\Users\spenc\Desktop\UGA_projects\DS2_P1\scala\scalaTion_reg_models\src\main\scala\models\SymLassoRegression.scala:315:35 [0m[0m
-[0m[[0m[31merror[0m] [0m[0m[31m315 |[0m        println ([31ms"k = [0m$k[31m, n = [0m${x.dim2}[31m"[0m)[0m
-[0m[[0m[31merror[0m] [0m[0m    |                                 [31m^^^^^^[0m[0m
-[0m[[0m[31merror[0m] [0m[0m    |                                 value dim2 is not a member of Nothing[0m
-[0m[[0m[31merror[0m] [0m[0m[31m-- [E008] Not Found Error: C:\Users\spenc\Desktop\UGA_projects\DS2_P1\scala\scalaTion_reg_models\src\main\scala\models\SymRidgeRegression.scala:163:35 [0m[0m
-[0m[[0m[31merror[0m] [0m[0m[31m163 |[0m        println ([31ms"k = [0m$k[31m, n = [0m${x.dim2}[31m"[0m)[0m
-[0m[[0m[31merror[0m] [0m[0m    |                                 [31m^^^^^^[0m[0m
-[0m[[0m[31merror[0m] [0m[0m    |                                 value dim2 is not a member of Nothing[0m
-[0m[[0m[31merror[0m] [0m[0m[31m-- [E008] Not Found Error: C:\Users\spenc\Desktop\UGA_projects\DS2_P1\scala\scalaTion_reg_models\src\main\scala\models\SymRidgeRegression.scala:193:35 [0m[0m
-[0m[[0m[31merror[0m] [0m[0m[31m193 |[0m        println ([31ms"k = [0m$k[31m, n = [0m${x.dim2}[31m"[0m)[0m
-[0m[[0m[31merror[0m] [0m[0m    |                                 [31m^^^^^^[0m[0m
-[0m[[0m[31merror[0m] [0m[0m    |                                 value dim2 is not a member of Nothing[0m
-[0m[[0m[31merror[0m] [0m[0m[31m-- [E008] Not Found Error: C:\Users\spenc\Desktop\UGA_projects\DS2_P1\scala\scalaTion_reg_models\src\main\scala\models\SymRidgeRegression.scala:223:35 [0m[0m
-[0m[[0m[31merror[0m] [0m[0m[31m223 |[0m        println ([31ms"k = [0m$k[31m, n = [0m${x.dim2}[31m"[0m)[0m
-[0m[[0m[31merror[0m] [0m[0m    |                                 [31m^^^^^^[0m[0m
-[0m[[0m[31merror[0m] [0m[0m    |                                 value dim2 is not a member of Nothing[0m
-[0m[[0m[31merror[0m] [0m[0m[31m-- [E008] Not Found Error: C:\Users\spenc\Desktop\UGA_projects\DS2_P1\scala\scalaTion_reg_models\src\main\scala\models\SymRidgeRegression.scala:253:35 [0m[0m
-[0m[[0m[31merror[0m] [0m[0m[31m253 |[0m        println ([31ms"k = [0m$k[31m, n = [0m${x.dim2}[31m"[0m)[0m
-[0m[[0m[31merror[0m] [0m[0m    |                                 [31m^^^^^^[0m[0m
-[0m[[0m[31merror[0m] [0m[0m    |                                 value dim2 is not a member of Nothing[0m
-[0m[[0m[31merror[0m] [0m[0m[31m-- [E008] Not Found Error: C:\Users\spenc\Desktop\UGA_projects\DS2_P1\scala\scalaTion_reg_models\src\main\scala\models\SymRidgeRegression.scala:283:35 [0m[0m
-[0m[[0m[31merror[0m] [0m[0m[31m283 |[0m        println ([31ms"k = [0m$k[31m, n = [0m${x.dim2}[31m"[0m)[0m
-[0m[[0m[31merror[0m] [0m[0m    |                                 [31m^^^^^^[0m[0m
-[0m[[0m[31merror[0m] [0m[0m    |                                 value dim2 is not a member of Nothing[0m
-[0m[[0m[31merror[0m] [0m[0m[31m-- [E008] Not Found Error: C:\Users\spenc\Desktop\UGA_projects\DS2_P1\scala\scalaTion_reg_models\src\main\scala\models\SymRidgeRegression.scala:315:35 [0m[0m
-[0m[[0m[31merror[0m] [0m[0m[31m315 |[0m        println ([31ms"k = [0m$k[31m, n = [0m${x.dim2}[31m"[0m)[0m
-[0m[[0m[31merror[0m] [0m[0m    |                                 [31m^^^^^^[0m[0m
-[0m[[0m[31merror[0m] [0m[0m    |                                 value dim2 is not a member of Nothing[0m
-[0m[[0m[31merror[0m] [0m[0m30 errors found[0m
-[0m[[0m[31merror[0m] [0m[0m30 errors found[0m
+[0m[[0m[31merror[0m] [0m[0m[31m-- [E161] Naming Error: C:\Users\spenc\Desktop\UGA_projects\DS2_P1\scala\scalaTion_reg_models\src\main\scala\models\SymReg.scala:18:0 [0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m18 |[0m[33mobject[0m [35mSymbolicRegression[0m:[0m
+[0m[[0m[31merror[0m] [0m[0m   |[31m^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m   |SymbolicRegression is already defined as [33mobject[0m [35mSymbolicRegression[0m in C:\Users\spenc\Desktop\UGA_projects\DS2_P1\scala\scalaTion_reg_models\src\main\scala\models\CubicX_Regression.scala[0m
+[0m[[0m[31merror[0m] [0m[0m[31m-- [E161] Naming Error: C:\Users\spenc\Desktop\UGA_projects\DS2_P1\scala\scalaTion_reg_models\src\main\scala\models\SymbolicRegression.scala:33:10 [0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m33 |[0m[35m@main[0m [33mdef[0m [36mSymbolicRegression_AutoMPG[0m (): [35mUnit[0m =[0m
+[0m[[0m[31merror[0m] [0m[0m   |[31m^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m   |SymbolicRegression_AutoMPG is already defined as [33mmethod[0m [35mSymbolicRegression_AutoMPG[0m in C:\Users\spenc\Desktop\UGA_projects\DS2_P1\scala\scalaTion_reg_models\src\main\scala\models\CubicX_Regression.scala[0m
+[0m[[0m[31merror[0m] [0m[0m   |[0m
+[0m[[0m[31merror[0m] [0m[0m   |Note that overloaded methods must all be defined in the same group of toplevel definitions[0m
+[0m[[0m[31merror[0m] [0m[0m[31m34 |[0m    [0m
+[0m[[0m[31merror[0m] [0m[0m[31m35 |[0m    [33mimport[0m AutoMPG_Data._[0m
+[0m[[0m[31merror[0m] [0m[0m[31m36 |[0m    [34m// banner ("Variable Names in AutoMPG Dataset")[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m37 |[0m    [34m// println (s"xr_fname = ${stringOf (xr_fname)}")                     // raw dataset[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m38 |[0m    [34m// println (s"x_fname  = ${stringOf (x_fname)}")                      // origin column removed[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m39 |[0m    [34m// println (s"ox_fname = ${stringOf (ox_fname)}")                     // intercept (1's) added[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m40 |[0m    [34m// println (s"x = $x")[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m41 |[0m    [34m// println (s"y = $y")[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m42 |[0m    [0m
+[0m[[0m[31merror[0m] [0m[0m[31m43 |[0m    banner ([31m"auto_mpg Symbolic Regression"[0m)[0m
+[0m[[0m[31merror[0m] [0m[0m[31m44 |[0m    [33mval[0m [36mmod[0m = SymbolicRegression (x, y, x_fname, Set (-[31m2[0m, -[31m1[0m, [31m0.5[0m, [31m2[0m))    [34m// add cross-terms and given powers[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m45 |[0m    mod.trainNtest ()()                                                   [34m// train and test the model[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m46 |[0m    println (mod.summary ())                                              [34m// parameter/coefficient statistics[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m47 |[0m    [33mfor[0m tech <- Predictor.SelectionTech.values [33mdo[0m [0m
+[0m[[0m[31merror[0m] [0m[0m[31m48 |[0m        banner ([31ms"Feature Selection Technique: [0m$tech[31m"[0m)[0m
+[0m[[0m[31merror[0m] [0m[0m[31m49 |[0m        [33mval[0m (cols, rSq) = mod.selectFeatures (tech)                       [34m// R^2, R^2 bar, R^2 cv[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m50 |[0m        [33mval[0m [36mk[0m = cols.size[0m
+[0m[[0m[31merror[0m] [0m[0m[31m51 |[0m        println ([31ms"k = [0m$k[31m, n = [0m${x.dim2}[31m"[0m)[0m
+[0m[[0m[31merror[0m] [0m[0m[31m52 |[0m        [33mnew[0m [35mPlotM[0m ([31mnull[0m, rSq.transpose, Array ([31m"R^2"[0m, [31m"R^2 bar"[0m, [31m"R^2 cv"[0m),[0m
+[0m[[0m[31merror[0m] [0m[0m[31m53 |[0m                   [31ms"R^2 vs n for Symbolic Regression with [0m$tech[31m"[0m, lines = [31mtrue[0m)[0m
+[0m[[0m[31merror[0m] [0m[0m[31m54 |[0m        println ([31ms"[0m$tech[31m: rSq = [0m$rSq[31m"[0m)[0m
+[0m[[0m[31merror[0m] [0m[0m[31m55 |[0m    [33mend[0m [33mfor[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m56 |[0m[33mend[0m SymbolicRegression_AutoMPG[0m
+[0m[[0m[31merror[0m] [0m[0m[31m-- [E161] Naming Error: C:\Users\spenc\Desktop\UGA_projects\DS2_P1\scala\scalaTion_reg_models\src\main\scala\models\SymbolicRegression.scala:71:10 [0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m71 |[0m[35m@main[0m [33mdef[0m [36mSymbolicRegression_ForestFires[0m (): [35mUnit[0m =[0m
+[0m[[0m[31merror[0m] [0m[0m   |[31m^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m   |SymbolicRegression_ForestFires is already defined as [33mmethod[0m [35mSymbolicRegression_ForestFires[0m in C:\Users\spenc\Desktop\UGA_projects\DS2_P1\scala\scalaTion_reg_models\src\main\scala\models\CubicX_Regression.scala[0m
+[0m[[0m[31merror[0m] [0m[0m   |[0m
+[0m[[0m[31merror[0m] [0m[0m   |Note that overloaded methods must all be defined in the same group of toplevel definitions[0m
+[0m[[0m[31merror[0m] [0m[0m[31m72 |[0m    [0m
+[0m[[0m[31merror[0m] [0m[0m[31m73 |[0m    [33mimport[0m ForestFires_Data._[0m
+[0m[[0m[31merror[0m] [0m[0m[31m74 |[0m    [0m
+[0m[[0m[31merror[0m] [0m[0m[31m75 |[0m    banner ([31m"Forest Fires Symbolic Regression"[0m)                     [0m
+[0m[[0m[31merror[0m] [0m[0m[31m76 |[0m    [33mval[0m [36mmod[0m = SymbolicRegression (x, y, x_fname, Set ([31m0.5[0m, [31m1[0m, [31m2[0m))         [34m// add cross-terms and given powers[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m77 |[0m    mod.trainNtest ()()                                                   [34m// train and test the model[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m78 |[0m    println (mod.summary ())                                              [34m// parameter/coefficient statistics[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m79 |[0m    [33mfor[0m tech <- Predictor.SelectionTech.values [33mdo[0m [0m
+[0m[[0m[31merror[0m] [0m[0m[31m80 |[0m        banner ([31ms"Feature Selection Technique: [0m$tech[31m"[0m)[0m
+[0m[[0m[31merror[0m] [0m[0m[31m81 |[0m        [33mval[0m (cols, rSq) = mod.selectFeatures (tech)                       [34m// R^2, R^2 bar, R^2 cv[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m82 |[0m        [33mval[0m [36mk[0m = cols.size[0m
+[0m[[0m[31merror[0m] [0m[0m[31m83 |[0m        println ([31ms"k = [0m$k[31m, n = [0m${x.dim2}[31m"[0m)[0m
+[0m[[0m[31merror[0m] [0m[0m[31m84 |[0m        [33mnew[0m [35mPlotM[0m ([31mnull[0m, rSq.transpose, Array ([31m"R^2"[0m, [31m"R^2 bar"[0m, [31m"R^2 cv"[0m),[0m
+[0m[[0m[31merror[0m] [0m[0m[31m85 |[0m                   [31ms"R^2 vs n for Symbolic Regression with [0m$tech[31m"[0m, lines = [31mtrue[0m)[0m
+[0m[[0m[31merror[0m] [0m[0m[31m86 |[0m        println ([31ms"[0m$tech[31m: rSq = [0m$rSq[31m"[0m)[0m
+[0m[[0m[31merror[0m] [0m[0m[31m87 |[0m    [33mend[0m [33mfor[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m88 |[0m[33mend[0m SymbolicRegression_ForestFires[0m
+[0m[[0m[31merror[0m] [0m[0m[31m-- [E161] Naming Error: C:\Users\spenc\Desktop\UGA_projects\DS2_P1\scala\scalaTion_reg_models\src\main\scala\models\SymbolicRegression.scala:101:10 [0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m101 |[0m[35m@main[0m [33mdef[0m [36mSymbolicRegression_AirQuality[0m (): [35mUnit[0m =[0m
+[0m[[0m[31merror[0m] [0m[0m    |[31m^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m    |SymbolicRegression_AirQuality is already defined as [33mmethod[0m [35mSymbolicRegression_AirQuality[0m in C:\Users\spenc\Desktop\UGA_projects\DS2_P1\scala\scalaTion_reg_models\src\main\scala\models\CubicX_Regression.scala[0m
+[0m[[0m[31merror[0m] [0m[0m    |[0m
+[0m[[0m[31merror[0m] [0m[0m    |Note that overloaded methods must all be defined in the same group of toplevel definitions[0m
+[0m[[0m[31merror[0m] [0m[0m[31m102 |[0m    [0m
+[0m[[0m[31merror[0m] [0m[0m[31m103 |[0m    [33mimport[0m AirQuality_Data._[0m
+[0m[[0m[31merror[0m] [0m[0m[31m104 |[0m    [0m
+[0m[[0m[31merror[0m] [0m[0m[31m105 |[0m    banner ([31m"Air Quality Symbolic Regression"[0m)[0m
+[0m[[0m[31merror[0m] [0m[0m[31m106 |[0m    [33mval[0m [36mmod[0m = SymbolicRegression (x, y, x_fname, Set ([31m1[0m, [31m2[0m))    [34m// add cross-terms and given powers[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m107 |[0m    mod.trainNtest ()()                                                   [34m// train and test the model[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m108 |[0m    println (mod.summary ())                                              [34m// parameter/coefficient statistics[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m109 |[0m    [33mfor[0m tech <- Predictor.SelectionTech.values [33mdo[0m [0m
+[0m[[0m[31merror[0m] [0m[0m[31m110 |[0m        banner ([31ms"Feature Selection Technique: [0m$tech[31m"[0m)[0m
+[0m[[0m[31merror[0m] [0m[0m[31m111 |[0m        [33mval[0m (cols, rSq) = mod.selectFeatures (tech)                       [34m// R^2, R^2 bar, R^2 cv[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m112 |[0m        [33mval[0m [36mk[0m = cols.size[0m
+[0m[[0m[31merror[0m] [0m[0m[31m113 |[0m        println ([31ms"k = [0m$k[31m, n = [0m${x.dim2}[31m"[0m)[0m
+[0m[[0m[31merror[0m] [0m[0m[31m114 |[0m        [33mnew[0m [35mPlotM[0m ([31mnull[0m, rSq.transpose, Array ([31m"R^2"[0m, [31m"R^2 bar"[0m, [31m"R^2 cv"[0m),[0m
+[0m[[0m[31merror[0m] [0m[0m[31m115 |[0m                   [31ms"R^2 vs n for Symbolic Regression with [0m$tech[31m"[0m, lines = [31mtrue[0m)[0m
+[0m[[0m[31merror[0m] [0m[0m[31m116 |[0m        println ([31ms"[0m$tech[31m: rSq = [0m$rSq[31m"[0m)[0m
+[0m[[0m[31merror[0m] [0m[0m[31m117 |[0m    [33mend[0m [33mfor[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m118 |[0m[33mend[0m SymbolicRegression_AirQuality[0m
+[0m[[0m[31merror[0m] [0m[0m[31m-- [E161] Naming Error: C:\Users\spenc\Desktop\UGA_projects\DS2_P1\scala\scalaTion_reg_models\src\main\scala\models\SymbolicRegression.scala:131:10 [0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m131 |[0m[35m@main[0m [33mdef[0m [36mSymbolicRegression_CCPP[0m (): [35mUnit[0m =[0m
+[0m[[0m[31merror[0m] [0m[0m    |[31m^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m    |SymbolicRegression_CCPP is already defined as [33mmethod[0m [35mSymbolicRegression_CCPP[0m in C:\Users\spenc\Desktop\UGA_projects\DS2_P1\scala\scalaTion_reg_models\src\main\scala\models\CubicX_Regression.scala[0m
+[0m[[0m[31merror[0m] [0m[0m    |[0m
+[0m[[0m[31merror[0m] [0m[0m    |Note that overloaded methods must all be defined in the same group of toplevel definitions[0m
+[0m[[0m[31merror[0m] [0m[0m[31m132 |[0m    [0m
+[0m[[0m[31merror[0m] [0m[0m[31m133 |[0m    [33mimport[0m CCPP_Data._[0m
+[0m[[0m[31merror[0m] [0m[0m[31m134 |[0m    [0m
+[0m[[0m[31merror[0m] [0m[0m[31m135 |[0m    banner ([31m"CCPP Symbolic Regression"[0m)[0m
+[0m[[0m[31merror[0m] [0m[0m[31m136 |[0m    [33mval[0m [36mmod[0m = SymbolicRegression (x, y, x_fname, Set (-[31m2[0m, -[31m1[0m, [31m0.5[0m, [31m2[0m))    [34m// add cross-terms and given powers[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m137 |[0m    mod.trainNtest ()()                                                   [34m// train and test the model[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m138 |[0m    println (mod.summary ())                                              [34m// parameter/coefficient statistics[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m139 |[0m    [33mfor[0m tech <- Predictor.SelectionTech.values [33mdo[0m [0m
+[0m[[0m[31merror[0m] [0m[0m[31m140 |[0m        banner ([31ms"Feature Selection Technique: [0m$tech[31m"[0m)[0m
+[0m[[0m[31merror[0m] [0m[0m[31m141 |[0m        [33mval[0m (cols, rSq) = mod.selectFeatures (tech)                       [34m// R^2, R^2 bar, R^2 cv[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m142 |[0m        [33mval[0m [36mk[0m = cols.size[0m
+[0m[[0m[31merror[0m] [0m[0m[31m143 |[0m        println ([31ms"k = [0m$k[31m, n = [0m${x.dim2}[31m"[0m)[0m
+[0m[[0m[31merror[0m] [0m[0m[31m144 |[0m        [33mnew[0m [35mPlotM[0m ([31mnull[0m, rSq.transpose, Array ([31m"R^2"[0m, [31m"R^2 bar"[0m, [31m"R^2 cv"[0m),[0m
+[0m[[0m[31merror[0m] [0m[0m[31m145 |[0m                   [31ms"R^2 vs n for Symbolic Regression with [0m$tech[31m"[0m, lines = [31mtrue[0m)[0m
+[0m[[0m[31merror[0m] [0m[0m[31m146 |[0m        println ([31ms"[0m$tech[31m: rSq = [0m$rSq[31m"[0m)[0m
+[0m[[0m[31merror[0m] [0m[0m[31m147 |[0m    [33mend[0m [33mfor[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m148 |[0m[33mend[0m SymbolicRegression_CCPP[0m
+[0m[[0m[31merror[0m] [0m[0m[31m-- [E161] Naming Error: C:\Users\spenc\Desktop\UGA_projects\DS2_P1\scala\scalaTion_reg_models\src\main\scala\models\SymbolicRegression.scala:161:10 [0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m161 |[0m[35m@main[0m [33mdef[0m [36mSymbolicRegression_WineQuality[0m (): [35mUnit[0m =[0m
+[0m[[0m[31merror[0m] [0m[0m    |[31m^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m    |SymbolicRegression_WineQuality is already defined as [33mmethod[0m [35mSymbolicRegression_WineQuality[0m in C:\Users\spenc\Desktop\UGA_projects\DS2_P1\scala\scalaTion_reg_models\src\main\scala\models\CubicX_Regression.scala[0m
+[0m[[0m[31merror[0m] [0m[0m    |[0m
+[0m[[0m[31merror[0m] [0m[0m    |Note that overloaded methods must all be defined in the same group of toplevel definitions[0m
+[0m[[0m[31merror[0m] [0m[0m[31m162 |[0m    [0m
+[0m[[0m[31merror[0m] [0m[0m[31m163 |[0m    [33mimport[0m WineQuality_Data._[0m
+[0m[[0m[31merror[0m] [0m[0m[31m164 |[0m    [0m
+[0m[[0m[31merror[0m] [0m[0m[31m165 |[0m    banner ([31m"Wine Quality Symbolic Regression"[0m)[0m
+[0m[[0m[31merror[0m] [0m[0m[31m166 |[0m    [33mval[0m [36mmod[0m = SymbolicRegression (x, y, x_fname, Set ([31m0.5[0m, [31m1[0m, [31m2[0m))    [34m// add cross-terms and given powers[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m167 |[0m    mod.trainNtest ()()                                                   [34m// train and test the model[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m168 |[0m    println (mod.summary ())                                              [34m// parameter/coefficient statistics[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m169 |[0m    [33mfor[0m tech <- Predictor.SelectionTech.values [33mdo[0m [0m
+[0m[[0m[31merror[0m] [0m[0m[31m170 |[0m        banner ([31ms"Feature Selection Technique: [0m$tech[31m"[0m)[0m
+[0m[[0m[31merror[0m] [0m[0m[31m171 |[0m        [33mval[0m (cols, rSq) = mod.selectFeatures (tech)                       [34m// R^2, R^2 bar, R^2 cv[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m172 |[0m        [33mval[0m [36mk[0m = cols.size[0m
+[0m[[0m[31merror[0m] [0m[0m[31m173 |[0m        println ([31ms"k = [0m$k[31m, n = [0m${x.dim2}[31m"[0m)[0m
+[0m[[0m[31merror[0m] [0m[0m[31m174 |[0m        [33mnew[0m [35mPlotM[0m ([31mnull[0m, rSq.transpose, Array ([31m"R^2"[0m, [31m"R^2 bar"[0m, [31m"R^2 cv"[0m),[0m
+[0m[[0m[31merror[0m] [0m[0m[31m175 |[0m                   [31ms"R^2 vs n for Symbolic Regression with [0m$tech[31m"[0m, lines = [31mtrue[0m)[0m
+[0m[[0m[31merror[0m] [0m[0m[31m176 |[0m        println ([31ms"[0m$tech[31m: rSq = [0m$rSq[31m"[0m)[0m
+[0m[[0m[31merror[0m] [0m[0m[31m177 |[0m    [33mend[0m [33mfor[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m178 |[0m[33mend[0m SymbolicRegression_WineQuality[0m
+[0m[[0m[31merror[0m] [0m[0m[31m-- [E161] Naming Error: C:\Users\spenc\Desktop\UGA_projects\DS2_P1\scala\scalaTion_reg_models\src\main\scala\models\SymbolicRegression.scala:191:10 [0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m191 |[0m[35m@main[0m [33mdef[0m [36mSymbolicRegression_BikeSharing[0m (): [35mUnit[0m =[0m
+[0m[[0m[31merror[0m] [0m[0m    |[31m^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m    |SymbolicRegression_BikeSharing is already defined as [33mmethod[0m [35mSymbolicRegression_BikeSharing[0m in C:\Users\spenc\Desktop\UGA_projects\DS2_P1\scala\scalaTion_reg_models\src\main\scala\models\CubicX_Regression.scala[0m
+[0m[[0m[31merror[0m] [0m[0m    |[0m
+[0m[[0m[31merror[0m] [0m[0m    |Note that overloaded methods must all be defined in the same group of toplevel definitions[0m
+[0m[[0m[31merror[0m] [0m[0m[31m192 |[0m    [0m
+[0m[[0m[31merror[0m] [0m[0m[31m193 |[0m    [33mimport[0m BikeSharing_Data._[0m
+[0m[[0m[31merror[0m] [0m[0m[31m194 |[0m    [0m
+[0m[[0m[31merror[0m] [0m[0m[31m195 |[0m    banner ([31m"Bike Sharing Symbolic Regression"[0m)[0m
+[0m[[0m[31merror[0m] [0m[0m[31m196 |[0m    [33mval[0m [36mmod[0m = SymbolicRegression (x, y, x_fname, Set ([31m0.5[0m, [31m1[0m, [31m2[0m))         [34m// add cross-terms and given powers[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m197 |[0m                                                                          [34m//false, true, true)) // no intercept, 2&3-way cross terms[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m198 |[0m    mod.trainNtest ()()                                                   [34m// train and test the model[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m199 |[0m    println (mod.summary ())                                              [34m// parameter/coefficient statistics[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m200 |[0m    [33mfor[0m tech <- Predictor.SelectionTech.values [33mdo[0m [0m
+[0m[[0m[31merror[0m] [0m[0m[31m201 |[0m        banner ([31ms"Feature Selection Technique: [0m$tech[31m"[0m)[0m
+[0m[[0m[31merror[0m] [0m[0m[31m202 |[0m        [33mval[0m (cols, rSq) = mod.selectFeatures (tech)                       [34m// R^2, R^2 bar, R^2 cv[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m203 |[0m        [33mval[0m [36mk[0m = cols.size[0m
+[0m[[0m[31merror[0m] [0m[0m[31m204 |[0m        println ([31ms"k = [0m$k[31m, n = [0m${x.dim2}[31m"[0m)[0m
+[0m[[0m[31merror[0m] [0m[0m[31m205 |[0m        [33mnew[0m [35mPlotM[0m ([31mnull[0m, rSq.transpose, Array ([31m"R^2"[0m, [31m"R^2 bar"[0m, [31m"R^2 cv"[0m),[0m
+[0m[[0m[31merror[0m] [0m[0m[31m206 |[0m                   [31ms"R^2 vs n for Symbolic Regression with [0m$tech[31m"[0m, lines = [31mtrue[0m)[0m
+[0m[[0m[31merror[0m] [0m[0m[31m207 |[0m        println ([31ms"[0m$tech[31m: rSq = [0m$rSq[31m"[0m)[0m
+[0m[[0m[31merror[0m] [0m[0m[31m208 |[0m    [33mend[0m [33mfor[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m209 |[0m[33mend[0m SymbolicRegression_BikeSharing[0m
+[0m[[0m[31merror[0m] [0m[0m7 errors found[0m
+[0m[[0m[31merror[0m] [0m[0m7 errors found[0m

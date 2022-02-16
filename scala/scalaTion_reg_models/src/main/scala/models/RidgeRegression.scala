@@ -1,4 +1,5 @@
 
+
 //::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 /** @author  John Miller
  *  @version 2.0
@@ -250,202 +251,158 @@ object RidgeRegression:
 
 end RidgeRegression
 
-@main def ridgeRegAutoMPG (): Unit =
 
-    banner("Auto MPG Data")
-    val auto_mat = MatrixD.load("auto_mpg_fixed_cleaned.csv")
-    // println(auto_mat)
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//    FUNCTIONS
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    val x = auto_mat(?, 0 to 6)
-    val y = auto.mat(?, 7)
 
-    banner("Ridge Regression for Auto MPG")
-    val mod = new RidgeRegession(x, y)
-    mod.trainNtest()
-    println(mod.summary)
+//:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+/** The `RidgeRegression` main function tests the `RidgeRegression` class using
+ *  the AutoMPG dataset.  It illustrates using the `Relation` class for reading the
+ *  data from a .csv file "auto-mpg.csv".  Assumes no missing values.
+ *  It also combines feature selection with cross-validation and plots
+ *  R^2, R^2 Bar and R^2 cv vs. the instance index.
+ *  > runMain scalation.modeling.RidgeRegressionTest4
+ */
+@main def RidgeRegressionAutoMPG (): Unit =
 
-    banner("Forward Selection Test")
-    val (cols, rSq) = mod.forwardSelAll()
-    val k = cols.size
-    val t = VectorD.range(1, k)
-    new PlotM(t, rSq.transpose, Array ("R^2", "R^2 bar", "R^2 cv"),
-            "R^2 vs n for Forward Selection - Ridge Regression", lines = true)
-    println(s"rSq = $rSq")
+    import AutoMPG_Data._
 
-    banner("Backward Elimination Test")
-    val (cols2, rSq2) = mod.backwardElimAll ()                       // R^2, R^2 Bar, R^2 cv
-    val k2 = cols2.size
-    val t2 = VectorD.range (1, k2)                                   // instance index
-    new PlotM (t2, rSq2.transpose, Array ("R^2", "R^2 bar", "R^2 cv"),
-               "R^2 vs n for Backward Elimination - Ridge Regression", lines = true)
-    println (s"rSq = $rSq2")
+    banner ("RidgeRegression for Auto MPG")
+    val mod = new RidgeRegression (x, y)                           // create a Ridge regression model
+    mod.trainNtest ()()                                            // train and test the model
+    println (mod.summary ())                                       // parameter/coefficient statistics
+    // println (s"best (lambda, sse) = ${mod.findLambda}")
 
-    banner("Stepwise Selection Test")
-    val (cols3, rSq3) = mod.stepRegressionAll ()                     // R^2, R^2 Bar, R^2 cv
-    val k3 = cols3.size
-    val t3 = VectorD.range (1, k3)                                   // instance index
-    new PlotM (t3, rSq3.transpose, Array ("R^2", "R^2 bar", "R^2 cv"),
-               "R^2 vs n for Stepwise Selection - Ridge Regression", lines = true)
-    println (s"rSq = $rSq3")
+    for tech <- Predictor.SelectionTech.values do 
+        banner (s"Feature Selection Technique: $tech")
+        val (cols, rSq) = mod.selectFeatures (tech)                       // R^2, R^2 bar, R^2 cv
+        val k = cols.size
+        println (s"k = $k, n = ${x.dim2}")
+        new PlotM (null, rSq.transpose, Array ("R^2", "R^2 bar", "R^2 cv"),
+                   s"R^2 vs n for Ridge Regression with $tech", lines = true)
+        println (s"$tech: rSq = $rSq")
+    end for
 
-end ridgeRegAutoMPG
+end RidgeRegressionAutoMPG
 
-@main def ridgeRegForestFirest (): Unit =
 
-    banner("Forest Fires Data")
-    val auto_mat = MatrixD.load("forestfires.csv")
-    // println(auto_mat)
 
-    val x = auto_mat(?, 0 to 11)
-    val y = auto.mat(?, 12)
+@main def RidgeRegression_ForestFires (): Unit =
 
-    banner("Ridge Regression for Forest Fires")
-    val mod = new RidgeRegession(x, y)
-    mod.trainNtest()
-    println(mod.summary)
+    import ForestFires_Data._
 
-    banner("Forward Selection Test")
-    val (cols, rSq) = mod.forwardSelAll()
-    val k = cols.size
-    val t = VectorD.range(1, k)
-    new PlotM(t, rSq.transpose, Array ("R^2", "R^2 bar", "R^2 cv"),
-            "R^2 vs n for Forward Selection - Ridge Regression", lines = true)
-    println(s"rSq = $rSq")
+    banner ("RidgeRegression for Forest Fires")
+    val mod = new RidgeRegression (x, y)                           // create a Ridge regression model
+    mod.trainNtest ()()                                            // train and test the model
+    println (mod.summary ())                                       // parameter/coefficient statistics
+    // println (s"best (lambda, sse) = ${mod.findLambda}")
 
-    banner("Backward Elimination Test")
-    val (cols2, rSq2) = mod.backwardElimAll ()                       // R^2, R^2 Bar, R^2 cv
-    val k2 = cols2.size
-    val t2 = VectorD.range (1, k2)                                   // instance index
-    new PlotM (t2, rSq2.transpose, Array ("R^2", "R^2 bar", "R^2 cv"),
-               "R^2 vs n for Backward Elimination - Ridge Regression", lines = true)
-    println (s"rSq = $rSq2")
+    for tech <- Predictor.SelectionTech.values do 
+        banner (s"Feature Selection Technique: $tech")
+        val (cols, rSq) = mod.selectFeatures (tech)                       // R^2, R^2 bar, R^2 cv
+        val k = cols.size
+        println (s"k = $k, n = ${x.dim2}")
+        new PlotM (null, rSq.transpose, Array ("R^2", "R^2 bar", "R^2 cv"),
+                   s"R^2 vs n for Ridge Regression with $tech", lines = true)
+        println (s"$tech: rSq = $rSq")
+    end for
+    
+end RidgeRegression_ForestFires
 
-    banner("Stepwise Selection Test")
-    val (cols3, rSq3) = mod.stepRegressionAll ()                     // R^2, R^2 Bar, R^2 cv
-    val k3 = cols3.size
-    val t3 = VectorD.range (1, k3)                                   // instance index
-    new PlotM (t3, rSq3.transpose, Array ("R^2", "R^2 bar", "R^2 cv"),
-               "R^2 vs n for Stepwise Selection - Ridge Regression", lines = true)
-    println (s"rSq = $rSq3")
 
-end ridgeRegForestFirest
 
-@main def ridgeRegBikeSharingHour (): Unit = 
+@main def RidgeRegression_AirQuality (): Unit =
 
-    banner("Bike Sharing Hour Data")
-    val auto_mat = MatrixD.load("bike_sharing_hour.csv")
-    // println(auto_mat)
+    import AirQuality_Data._
 
-    val x = auto_mat(?, 0 to 11)
-    val y = auto.mat(?, 14)
+    banner ("RidgeRegression for Air Quality")
+    val mod = new RidgeRegression (x, y)                           // create a Ridge regression model
+    mod.trainNtest ()()                                            // train and test the model
+    println (mod.summary ())                                       // parameter/coefficient statistics
+    // println (s"best (lambda, sse) = ${mod.findLambda}")
 
-    banner("Ridge Regression for Bike Sharing Hour")
-    val mod = new RidgeRegession(x, y)
-    mod.trainNtest()
-    println(mod.summary)
+    for tech <- Predictor.SelectionTech.values do 
+        banner (s"Feature Selection Technique: $tech")
+        val (cols, rSq) = mod.selectFeatures (tech)                       // R^2, R^2 bar, R^2 cv
+        val k = cols.size
+        println (s"k = $k, n = ${x.dim2}")
+        new PlotM (null, rSq.transpose, Array ("R^2", "R^2 bar", "R^2 cv"),
+                   s"R^2 vs n for Ridge Regression with $tech", lines = true)
+        println (s"$tech: rSq = $rSq")
+    end for
+    
+end RidgeRegression_AirQuality
 
-    banner("Forward Selection Test")
-    val (cols, rSq) = mod.forwardSelAll()
-    val k = cols.size
-    val t = VectorD.range(1, k)
-    new PlotM(t, rSq.transpose, Array ("R^2", "R^2 bar", "R^2 cv"),
-            "R^2 vs n for Forward Selection - Ridge Regression", lines = true)
-    println(s"rSq = $rSq")
 
-    banner("Backward Elimination Test")
-    val (cols2, rSq2) = mod.backwardElimAll ()                       // R^2, R^2 Bar, R^2 cv
-    val k2 = cols2.size
-    val t2 = VectorD.range (1, k2)                                   // instance index
-    new PlotM (t2, rSq2.transpose, Array ("R^2", "R^2 bar", "R^2 cv"),
-               "R^2 vs n for Backward Elimination - Ridge Regression", lines = true)
-    println (s"rSq = $rSq2")
 
-    banner("Stepwise Selection Test")
-    val (cols3, rSq3) = mod.stepRegressionAll ()                     // R^2, R^2 Bar, R^2 cv
-    val k3 = cols3.size
-    val t3 = VectorD.range (1, k3)                                   // instance index
-    new PlotM (t3, rSq3.transpose, Array ("R^2", "R^2 bar", "R^2 cv"),
-               "R^2 vs n for Stepwise Selection - Ridge Regression", lines = true)
-    println (s"rSq = $rSq3")
+@main def RidgeRegression_BikeSharing (): Unit =
 
-end ridgeRegBikeSharingHour
+    import BikeSharing_Data._
 
-@main def ridgeRegCCPP (): Unit =
+    banner ("RidgeRegression for Bike Sharing")
+    val mod = new RidgeRegression (x, y)                           // create a Ridge regression model
+    mod.trainNtest ()()                                            // train and test the model
+    println (mod.summary ())                                       // parameter/coefficient statistics
+    // println (s"best (lambda, sse) = ${mod.findLambda}")
 
-    banner("CCPP Data")
-    val auto_mat = MatrixD.load("CCPP.csv")
-    println(auto_mat)
+    for tech <- Predictor.SelectionTech.values do 
+        banner (s"Feature Selection Technique: $tech")
+        val (cols, rSq) = mod.selectFeatures (tech)                       // R^2, R^2 bar, R^2 cv
+        val k = cols.size
+        println (s"k = $k, n = ${x.dim2}")
+        new PlotM (null, rSq.transpose, Array ("R^2", "R^2 bar", "R^2 cv"),
+                   s"R^2 vs n for Ridge Regression with $tech", lines = true)
+        println (s"$tech: rSq = $rSq")
+    end for
 
-    val x = auto_mat(?, 0 to 3)
-    val y = auto.mat(?, 4)
+end RidgeRegression_BikeSharing
 
-    banner("Ridge Regression for CCPP")
-    val mod = new RidgeRegession(x, y)
-    mod.trainNtest()
-    println(mod.summary)
 
-    banner("Forward Selection Test")
-    val (cols, rSq) = mod.forwardSelAll()
-    val k = cols.size
-    val t = VectorD.range(1, k)
-    new PlotM(t, rSq.transpose, Array ("R^2", "R^2 bar", "R^2 cv"),
-            "R^2 vs n for Forward Selection - Ridge Regression", lines = true)
-    println(s"rSq = $rSq")
 
-    banner("Backward Elimination Test")
-    val (cols2, rSq2) = mod.backwardElimAll ()                       // R^2, R^2 Bar, R^2 cv
-    val k2 = cols2.size
-    val t2 = VectorD.range (1, k2)                                   // instance index
-    new PlotM (t2, rSq2.transpose, Array ("R^2", "R^2 bar", "R^2 cv"),
-               "R^2 vs n for Backward Elimination - Ridge Regression", lines = true)
-    println (s"rSq = $rSq2")
+@main def RidgeRegression_CCPP (): Unit =
 
-    banner("Stepwise Selection Test")
-    val (cols3, rSq3) = mod.stepRegressionAll ()                     // R^2, R^2 Bar, R^2 cv
-    val k3 = cols3.size
-    val t3 = VectorD.range (1, k3)                                   // instance index
-    new PlotM (t3, rSq3.transpose, Array ("R^2", "R^2 bar", "R^2 cv"),
-               "R^2 vs n for Stepwise Selection - Ridge Regression", lines = true)
-    println (s"rSq = $rSq3")
+    import CCPP_Data._
 
-end ridgeRegCCPP
+    banner ("RidgeRegression for CCPP")
+    val mod = new RidgeRegression (x, y)                           // create a Ridge regression model
+    mod.trainNtest ()()                                            // train and test the model
+    println (mod.summary ())                                       // parameter/coefficient statistics
+    // println (s"best (lambda, sse) = ${mod.findLambda}")
 
-@main def ridgeRegWineQuality (): Unit = 
+    for tech <- Predictor.SelectionTech.values do 
+        banner (s"Feature Selection Technique: $tech")
+        val (cols, rSq) = mod.selectFeatures (tech)                       // R^2, R^2 bar, R^2 cv
+        val k = cols.size
+        println (s"k = $k, n = ${x.dim2}")
+        new PlotM (null, rSq.transpose, Array ("R^2", "R^2 bar", "R^2 cv"),
+                   s"R^2 vs n for Ridge Regression with $tech", lines = true)
+        println (s"$tech: rSq = $rSq")
+    end for
 
-    banner("Wine Quality Data")
-    val auto_mat = MatrixD.load("winequality-white_fixed.csv")
-    println(auto_mat)
+end RidgeRegression_CCPP
 
-    val x = auto_mat(?, 0 to 10)
-    val y = auto.mat(?, 11)
 
-    banner("Ridge Regression for Wine Quality")
-    val mod = new RidgeRegession(x, y)
-    mod.trainNtest()
-    println(mod.summary)
 
-    banner("Forward Selection Test")
-    val (cols, rSq) = mod.forwardSelAll()
-    val k = cols.size
-    val t = VectorD.range(1, k)
-    new PlotM(t, rSq.transpose, Array ("R^2", "R^2 bar", "R^2 cv"),
-            "R^2 vs n for Forward Selection - Ridge Regression", lines = true)
-    println(s"rSq = $rSq")
+@main def RidgeRegression_WineQuality (): Unit =
 
-    banner("Backward Elimination Test")
-    val (cols2, rSq2) = mod.backwardElimAll ()                       // R^2, R^2 Bar, R^2 cv
-    val k2 = cols2.size
-    val t2 = VectorD.range (1, k2)                                   // instance index
-    new PlotM (t2, rSq2.transpose, Array ("R^2", "R^2 bar", "R^2 cv"),
-               "R^2 vs n for Backward Elimination - Ridge Regression", lines = true)
-    println (s"rSq = $rSq2")
+    import WineQuality_Data._
 
-    banner("Stepwise Selection Test")
-    val (cols3, rSq3) = mod.stepRegressionAll ()                     // R^2, R^2 Bar, R^2 cv
-    val k3 = cols3.size
-    val t3 = VectorD.range (1, k3)                                   // instance index
-    new PlotM (t3, rSq3.transpose, Array ("R^2", "R^2 bar", "R^2 cv"),
-               "R^2 vs n for Stepwise Selection - Ridge Regression", lines = true)
-    println (s"rSq = $rSq3")
+    banner ("RidgeRegression for Wine Quality")
+    val mod = new RidgeRegression (x, y)                           // create a Ridge regression model
+    mod.trainNtest ()()                                            // train and test the model
+    println (mod.summary ())                                       // parameter/coefficient statistics
+    // println (s"best (lambda, sse) = ${mod.findLambda}")
 
-end ridgeRegWineQuality
+    for tech <- Predictor.SelectionTech.values do 
+        banner (s"Feature Selection Technique: $tech")
+        val (cols, rSq) = mod.selectFeatures (tech)                       // R^2, R^2 bar, R^2 cv
+        val k = cols.size
+        println (s"k = $k, n = ${x.dim2}")
+        new PlotM (null, rSq.transpose, Array ("R^2", "R^2 bar", "R^2 cv"),
+                   s"R^2 vs n for Ridge Regression with $tech", lines = true)
+        println (s"$tech: rSq = $rSq")
+    end for
+
+end RidgeRegression_WineQuality

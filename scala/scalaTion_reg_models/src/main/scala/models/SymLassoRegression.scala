@@ -1,3 +1,5 @@
+
+
 //:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 /** @author  John Miller
  *  @version 2.0
@@ -141,7 +143,7 @@ end SymLassoRegression
  */
 @main def SymLassoRegression_AutoMPG (): Unit =
     
-    import AutoMPG._
+    import AutoMPG_Data._
 
     // banner ("Variable Names in AutoMPG Dataset")
     // println (s"xr_fname = ${stringOf (xr_fname)}")                     // raw dataset
@@ -179,7 +181,7 @@ end SymLassoRegression_AutoMPG
  */
 @main def SymLassoRegression_ForestFires (): Unit =
     
-    import ForestFiresData._
+    import ForestFires_Data._
     
     banner ("Forest Fires Symbolic Lasso Regression")                     
     val mod = SymLassoRegression (x, y, x_fname, Set (0.5, 1, 2))         // add cross-terms and given powers
@@ -209,7 +211,7 @@ end SymLassoRegression_ForestFires
  */
 @main def SymLassoRegression_AirQuality (): Unit =
     
-    import AirQualityData._
+    import AirQuality_Data._
     
     banner ("Air Quality Symbolic Lasso Regression")
     val mod = SymLassoRegression (x, y, x_fname, Set (1, 2))    // add cross-terms and given powers
