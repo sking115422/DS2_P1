@@ -7,20 +7,37 @@ from sklearn.metrics import r2_score
 
 
 def get_air_quality_df():
-    parent_path = os.path.dirname(os.getcwd())
-    df = pd.read_csv(parent_path + '\\cleaned_data\\AirQualityUCI_fixed_cleaned.csv', index_col=0)
+    parent_path = os.getcwd()
+    df = pd.read_csv(parent_path + '/cleaned_data/AirQualityUCI_fixed_cleaned.csv', index_col=0)
     return df
 
 
 def get_auto_mpg_df():
-    parent_path = os.path.dirname(os.getcwd())
-    df = pd.read_csv(parent_path + '\\cleaned_data\\auto_mpg_fixed_cleaned.csv', index_col=0)
+    parent_path = os.getcwd()
+    df = pd.read_csv(parent_path + '/cleaned_data/auto_mpg_fixed_cleaned.csv', index_col=0)
     return df
 
 
 def get_forest_fires_df():
-    parent_path = os.path.dirname(os.getcwd())
-    df = pd.read_csv(parent_path + '\\cleaned_data\\forestfires_cleaned.csv', index_col=0)
+    parent_path = os.getcwd()
+    df = pd.read_csv(parent_path + '/cleaned_data/forestfires_cleaned.csv', index_col=0)
+    return df
+
+def get_ccpp_df():
+    parent_path = os.getcwd()
+    df = pd.read_csv(parent_path + '/cleaned_data/CCPP.csv', index_col=0)
+    return df
+
+
+def get_bike_sharing_df():
+    parent_path = os.getcwd()
+    df = pd.read_csv(parent_path + '/cleaned_data/bike_sharing_hour.csv', index_col=0)
+    return df
+
+
+def get_wine_quality_df():
+    parent_path = os.getcwd()
+    df = pd.read_csv(parent_path + '/cleaned_data/winequality-white_fixed.csv', index_col=0)
     return df
 
 
@@ -78,3 +95,5 @@ def get_r2_bar(model, data, y_true):
     p = len(data.columns)
     r2_bar = 1 - (1 - r2)*(n-1/n-p-1)
     return r2_bar
+
+
