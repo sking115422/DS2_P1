@@ -1,0 +1,30 @@
+[0m[[0m[0mdebug[0m] [0m[0m> Exec(run, Some(3f5e135c-7a54-41ba-b972-f37c46046143), Some(CommandSource(console0)))[0m
+[0m[[0m[0mdebug[0m] [0m[0mEvaluating tasks: Compile / run[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning task... Cancel: Signal, check cycles: false, forcegc: true[0m
+[0m[[0m[0minfo[0m] [0m[0mcompiling 1 Scala source to /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes ...[0m
+[0m[[0m[31merror[0m] [0m[0m[31m-- [E007] Type Mismatch Error: /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/src/main/scala/models/Regression.scala:231:29 [0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m231 |[0m    [33mval[0m [36mmod[0m = Regression (x, y)                           [34m// create a  regression model[0m[0m
+[0m[[0m[31merror[0m] [0m[0m    |                             [31m^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m    | Found:    (scalation.ForestFires_Data.y : scalation.mathstat.VectorD)[0m
+[0m[[0m[31merror[0m] [0m[0m    | Required: Array[String][0m
+[0m[[0m[31merror[0m] [0m[0m[31m-- [E008] Not Found Error: /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/src/main/scala/models/Regression.scala:232:8 [0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m232 |[0m    mod.trainNtest ()()                                            [34m// train and test the model[0m[0m
+[0m[[0m[31merror[0m] [0m[0m    |    [31m^^^^^^^^^^^^^^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m    |value trainNtest is not a member of Int => scalation.modeling.Regression[0m
+[0m[[0m[31merror[0m] [0m[0m[31m-- [E008] Not Found Error: /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/src/main/scala/models/Regression.scala:233:17 [0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m233 |[0m    println (mod.summary ())                                       [34m// parameter/coefficient statistics[0m[0m
+[0m[[0m[31merror[0m] [0m[0m    |             [31m^^^^^^^^^^^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m    | value summary is not a member of Int => scalation.modeling.Regression[0m
+[0m[[0m[31merror[0m] [0m[0m[31m-- [E008] Not Found Error: /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/src/main/scala/models/Regression.scala:238:30 [0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m238 |[0m        [33mval[0m (cols, rSq) = mod.selectFeatures (tech)                       [34m// R^2, R^2 bar, R^2 cv[0m[0m
+[0m[[0m[31merror[0m] [0m[0m    |                          [31m^^^^^^^^^^^^^^^^^^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m    |value selectFeatures is not a member of Int => scalation.modeling.Regression[0m
+[0m[[0m[31merror[0m] [0m[0m[31m-- [E045] Cyclic Error: /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/src/main/scala/models/Regression.scala:238:8 [0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m238 |[0m        [33mval[0m (cols, rSq) = mod.selectFeatures (tech)                       [34m// R^2, R^2 bar, R^2 cv[0m[0m
+[0m[[0m[31merror[0m] [0m[0m    |        [31m^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m    |        Recursive [33mvalue[0m [35m$2$[0m needs type[0m
+[0m[[0m[31merror[0m] [0m[0m5 errors found[0m
+[0m[[0m[31merror[0m] [0m[0m5 errors found[0m
+[0m[[0m[31merror[0m] [0m[0m(Compile / [31mcompileIncremental[0m) Compilation failed[0m
+[0m[[0m[31merror[0m] [0m[0mTotal time: 1 s, completed Feb 18, 2022, 7:46:30 PM[0m
+[0m[[0m[0mdebug[0m] [0m[0m> Exec(shell, None, None)[0m

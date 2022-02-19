@@ -12,9 +12,14 @@
 package scalation
 package modeling
 
+import scalation.mathstat._
+
 import scala.runtime.ScalaRunTime.stringOf
 
-import scalation.mathstat._
+import scala.language.postfixOps
+import java.io._
+
+
 
 //::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 /** The `Regression` class supports multiple linear regression.  In this case,
@@ -195,8 +200,14 @@ end Regression
     banner ("Regression for Auto MPG")
     val mod = new Regression (x, y)                           // create a  regression model
     mod.trainNtest ()()                                            // train and test the model
-    println (mod.summary ())                                       // parameter/coefficient statistics
-    // println (s"best (lambda, sse) = ${mod.findLambda}")
+    mod.summary ()                                                 // parameter/coefficient statistics
+
+    // val writer = new FileWriter(new File("/Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/src/main/scala/models/out/rep_sum.txt"), true)
+    // writer.write(s"$summ")
+    // writer.close()
+
+    // banner ("Cross-Validation")
+    // Fit.showQofStatTable (mod.crossValidate ())
 
     for tech <- Predictor.SelectionTech.values do 
         banner (s"Feature Selection Technique: $tech")
@@ -207,6 +218,7 @@ end Regression
                    s"R^2 vs n for  Regression with $tech", lines = true)
         println (s"$tech: rSq = $rSq")
     end for
+
 
 end RegressionAutoMPG
 
