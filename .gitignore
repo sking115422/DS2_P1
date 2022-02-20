@@ -1,5 +1,10 @@
+__pycache__
 .DS_Store
 .ipynb_checkpoints
 .metals
 .vscode
 .bsp
+bg-jobs
+global-logging
+.history3
+active.json

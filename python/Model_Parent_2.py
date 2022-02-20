@@ -63,11 +63,16 @@ def splitData(X, y, num_splits):
 
 
 
-def calc_p_values(model, X, y, bool):
+def calc_p_values(model, X, y, bool, name):
     # Statsmodels.OLS requires us to add a constant.
     x = sm.add_constant(X)
     model = sm.OLS(y , x)
     results = model.fit()
+    
+    print()
+    print(name + " SELECTION REPORT:")
+    print()
+    print(results.summary())
     
     df_pval = pd.DataFrame()
     df_pval['pval'] = results.pvalues
@@ -95,7 +100,7 @@ def forwardSelection(model, X, y):
     bic_list_final = []
     
     #True = sorting ascending order => forward selection
-    df_pval = calc_p_values(model, X, y, True)
+    df_pval = calc_p_values(model, X, y, True, "FORWARD")
     
     add_order_list = df_pval['index'].to_list()
     feature_names_list = df_pval['feat_name'].to_list()
@@ -191,7 +196,7 @@ def backwardSelection(model, X, y):
     bic_list_final = []
 
     #False = sorting descending order => backward selection
-    df_pval = calc_p_values(model, X, y, False)
+    df_pval = calc_p_values(model, X, y, False, "BACKWARD")
 
     rem_order_list = df_pval['index'].to_list()
     feature_names_list = df_pval['feat_name'].to_list()
