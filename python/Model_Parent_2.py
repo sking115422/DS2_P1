@@ -280,7 +280,11 @@ def backwardSelection(model, X, y):
     ax2.legend()
 
     fig.show()
-
+    
+    
+    
+    
+    
 
     
     
