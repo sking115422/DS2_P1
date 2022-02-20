@@ -142,8 +142,8 @@ def forwardSelection(model, X, y):
         
         r2_cv_list_final.append(np.average(r2_list))
         r2_bar_list_final.append(np.average(r2_bar_list))
-        aic_val_list.append(np.average(aic_val_list))
-        bic_val_list.append(np.average(aic_val_list))
+        aic_list_final.append(np.average(aic_val_list))
+        bic_list_final.append(np.average(bic_val_list))
         
     feature_list = range(1, X.shape[1] + 1)
     
@@ -151,8 +151,8 @@ def forwardSelection(model, X, y):
     df_final['Num_Features'] = feature_list
     df_final['r2_cv'] = r2_cv_list_final
     df_final['r2_bar'] = r2_bar_list_final
-    df_final['aic'] = aic_val_list
-    df_final['bic'] = bic_val_list
+    df_final['aic'] = aic_list_final
+    df_final['bic'] = bic_list_final
     
     print()
     print("FORWARD SELECTION SUMMARY TABLE:")
@@ -175,8 +175,8 @@ def forwardSelection(model, X, y):
     ax1.plot(feature_list, r2_bar_list_final, label="r2_bar", color="red")
     ax1.legend()
         
-    ax2.plot(feature_list, aic_val_list, label="aic", color="blue")
-    ax2.plot(feature_list, bic_val_list, label="bic", color="orange")
+    ax2.plot(feature_list, aic_list_final, label="aic", color="blue")
+    ax2.plot(feature_list, bic_list_final, label="bic", color="orange")
     ax2.legend()
     
     fig.show()
@@ -236,8 +236,8 @@ def backwardSelection(model, X, y):
         
         r2_cv_list_final.append(np.average(r2_list))
         r2_bar_list_final.append(np.average(r2_bar_list))
-        aic_val_list.append(np.average(aic_val_list))
-        bic_val_list.append(np.average(aic_val_list))
+        aic_list_final.append(np.average(aic_val_list))
+        bic_list_final.append(np.average(bic_val_list))
     
         x_tmp = x_tmp.drop(each, axis=1)
     
@@ -251,8 +251,8 @@ def backwardSelection(model, X, y):
     df_final['Num_Features'] = feature_list
     df_final['r2_cv'] = r2_cv_list_final
     df_final['r2_bar'] = r2_bar_list_final
-    df_final['aic'] = aic_val_list
-    df_final['bic'] = bic_val_list
+    df_final['aic'] = aic_list_final
+    df_final['bic'] = bic_list_final
 
     print()
     print("BACKWARD SELECTION SUMMARY TABLE:")
@@ -275,8 +275,8 @@ def backwardSelection(model, X, y):
     ax1.plot(feature_list, r2_bar_list_final, label="r2_bar", color="red")
     ax1.legend()
         
-    ax2.plot(feature_list, aic_val_list, label="aic", color="blue")
-    ax2.plot(feature_list, bic_val_list, label="bic", color="orange")
+    ax2.plot(feature_list, aic_list_final, label="aic", color="blue")
+    ax2.plot(feature_list, bic_list_final, label="bic", color="orange")
     ax2.legend()
 
     fig.show()
@@ -284,7 +284,122 @@ def backwardSelection(model, X, y):
     
     
     
+def stepwiseSelection(model, X, y):
+
+    x_tmp = pd.DataFrame()
     
+    # X.shape[1]
+    
+    r2_cv_list_final = []
+    r2_bar_list_final = []
+    aic_list_final = []
+    bic_list_final = []
+    
+    #True = sorting ascending order => forward selection
+    df_pval = calc_p_values(model, X, y, True, "STEPWISE")
+    
+    add_order_list = df_pval['index'].to_list()
+    feature_names_list = df_pval['feat_name'].to_list()
+    
+    num_feat = 1
+    r2_cv_old = 0
+    
+    final_feat_ind_list = []
+    final_feat_name_list = []
+    final_feat_name_drop_list = []
+
+    for each in add_order_list:
+        
+        
+        
+        x_tmp = pd.concat([x_tmp, X.iloc[:, each]], axis=1)
+        
+        ret_list = splitData(x_tmp, y, 5)
+        
+        r2_list = []
+        r2_bar_list = []
+        aic_val_list = []
+        bic_val_list = []
+        
+        for fold in ret_list:
+            
+            X_train = fold[0]
+            X_test = fold[1]
+            y_train = fold[2]
+            y_test = fold[3]
+            
+            model.fit(X_train, y_train)
+            y_pred = model.predict(X_test)
+            
+            r2 = r2_score(y_test, y_pred)
+            r2_list.append(r2)
+            
+            r2_bar_list.append(calc_r2_bar(len(y), num_feat, r2))
+            aic_val_list.append(aic.aic(y_test, y_pred, num_feat))
+            bic_val_list.append(bic.bic(y_test, y_pred, num_feat))
+            
+        
+        r2_cv = np.average(r2_list)
+        
+        if r2_cv > r2_cv_old:
+            
+            r2_cv_old = r2_cv
+            
+            num_feat = num_feat + 1
+            
+            final_feat_ind_list.append(each)
+            final_feat_name_list.append(feature_names_list[each])
+            
+            r2_cv_list_final.append(r2_cv)
+            r2_bar_list_final.append(np.average(r2_bar_list))
+            aic_list_final.append(np.average(aic_val_list))
+            bic_list_final.append(np.average(bic_val_list))
+            
+        else:
+            
+            x_tmp.drop(columns=x_tmp.columns[-1], axis=1, inplace=True)
+            final_feat_name_drop_list.append(feature_names_list[each])
+        
+    feature_list = range(1, num_feat)
+    
+    df_final = pd.DataFrame()
+    df_final['Num_Features'] = feature_list
+    df_final['r2_cv'] = r2_cv_list_final
+    df_final['r2_bar'] = r2_bar_list_final
+    df_final['aic'] = aic_list_final
+    df_final['bic'] = bic_list_final
+    
+    print()
+    print("STEPWISE SELECTION SUMMARY TABLE:")
+    print()
+    print("Features Added:", final_feat_name_list)
+    print("Features Dropped:", final_feat_name_drop_list)
+
+    t = pt(['Num_Features', 'r2_cv', 'r2_bar', 'AIC', 'BIC'])
+    for row in range(0, df_final.shape[0]):
+        t.add_row(df_final.iloc[row, :].to_list())
+    print(t)
+    
+    
+    fig = plt.figure(figsize=(25, 10))
+    fig.suptitle('Stepwise Selection Graphical Summary')    
+    
+    ax1 = fig.add_subplot(121)
+    ax2 = fig.add_subplot(122)
+    
+    ax1.plot(feature_list, r2_cv_list_final, label="r2_cv", color="green")
+    ax1.plot(feature_list, r2_bar_list_final, label="r2_bar", color="red")
+    ax1.legend()
+        
+    ax2.plot(feature_list, aic_list_final, label="aic", color="blue")
+    ax2.plot(feature_list, bic_list_final, label="bic", color="orange")
+    ax2.legend()
+    
+    fig.show()    
+    
+    
+    
+
 
     
     
