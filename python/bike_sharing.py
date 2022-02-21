@@ -3,7 +3,7 @@ from sklearn.preprocessing import PolynomialFeatures
 
 from Model_Parent import *
 
-b_df = get_bike_sharing_df()
+b_df = pd.read_csv("/Users/sdk/Desktop/UGA_proj/DS2_P1/cleaned_data/bike_sharing_hour.csv")
 
 # Drops the Casual and Registered rental count columns along with total rented bikes since they are essentially the same metric
 X = b_df.iloc[:, :-3]

@@ -23,6 +23,40 @@ def showFit(x_values, y_test, y_pred):
     plt.plot(x_values, y_pred, label="y_pred", color="blue")
     plt.legend()
     plt.show()
+    
+    
+    
+    
+def calc_aic(y, y_pred, num_features):
+    
+    n = len(y)
+    
+    sum_list = []
+    for i in range (0, len(y)):
+        sum_list.append((y[i] - y_pred[i])**2)
+        
+    rss = sum(sum_list)
+    
+    aic_val = n * np.log(rss/n) + 2 * num_features
+    
+    return aic_val
+
+
+
+
+def calc_bic (y, y_pred, num_features):
+    
+    n = len(y)
+    
+    sum_list = []
+    for i in range (0, len(y)):
+        sum_list.append((y[i] - y_pred[i])**2)
+        
+    rss = sum(sum_list)
+    
+    aic_val = n * np.log(rss/n) + num_features * np.log(n)
+    
+    return aic_val    
 
 
 
@@ -130,14 +164,17 @@ def forwardSelection(model, X, y):
             model.fit(X_train, y_train)
             y_pred = model.predict(X_test)
             
+            
+            print(y_test)
+            print(y_pred) 
+            print(num_feat)
+            
             r2 = r2_score(y_test, y_pred)
             r2_list.append(r2)
             
             r2_bar_list.append(calc_r2_bar(len(y), num_feat, r2))
-            
-            aic_val_list.append(aic.aic(y_test, y_pred, num_feat))
-            
-            bic_val_list.append(bic.bic(y_test, y_pred, num_feat))
+            aic_val_list.append(calc_aic(y_test, y_pred, num_feat))
+            bic_val_list.append(calc_aic(y_test, y_pred, num_feat))
             
         
         r2_cv_list_final.append(np.average(r2_list))
@@ -231,9 +268,9 @@ def backwardSelection(model, X, y):
             
             r2_bar_list.append(calc_r2_bar(len(y), num_feat, r2))
             
-            aic_val_list.append(aic.aic(y_test, y_pred, num_feat))
+            aic_val_list.append(calc_aic(y_test, y_pred, num_feat))
             
-            bic_val_list.append(bic.bic(y_test, y_pred, num_feat))
+            bic_val_list.append(calc_bic(y_test, y_pred, num_feat))
             
         
         r2_cv_list_final.append(np.average(r2_list))
@@ -339,8 +376,8 @@ def stepwiseSelection(model, X, y):
             r2_list.append(r2)
             
             r2_bar_list.append(calc_r2_bar(len(y), num_feat, r2))
-            aic_val_list.append(aic.aic(y_test, y_pred, num_feat))
-            bic_val_list.append(bic.bic(y_test, y_pred, num_feat))
+            aic_val_list.append(calc_aic(y_test, y_pred, num_feat))
+            bic_val_list.append(calc_bic(y_test, y_pred, num_feat))
             
         
         r2_cv = np.average(r2_list)

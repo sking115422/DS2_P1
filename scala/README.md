@@ -1,8 +1,10 @@
 # Scala Models Code
 
-### NOTES
+This folder named "scala" contains all relevant files needed to run the regression models on each dataset in scala. Each dataset should have its own object in scala/scalaTion_reg_models/src/main/scala/models/DataObj.scala. All files necessary to run the models in scala are contained under the scala/scalaTion_reg_models/src/main/scala/models directory. The files should be named logically and are broken up with respect to model implimentation. 
 
-* The repo shoud be organized so we can all keep our scala code in the DS2_P1/scala/scalaTion_reg_models/src/main/scala/models/ directory. So just create a new .scale file in there and work out of that directory.
+## Steps to Run Code
 
-* To correctly start the metals server: cd into the "scalaTion_reg_models" directory and run the command "sbt". If you are working in VS Code this should start it up for you. 
+1. 
+
+
 
