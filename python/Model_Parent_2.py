@@ -1,5 +1,9 @@
 
 
+################################################################################################
+# IMPORT FUNTIONS & GLOBAL PARAMETERS
+################################################################################################
+
 import numpy as np
 import pandas as pd
 
@@ -8,16 +12,23 @@ from prettytable import PrettyTable as pt
 
 from sklearn.model_selection import KFold
 from sklearn.metrics import r2_score
-from RegscorePy import * 
 import statsmodels.api as sm
 
 # library I got aic and bic from is listed below. Underlying calculations are shown there.
 # https://pypi.org/project/RegscorePy/
-
+from RegscorePy import * 
 
 # Setting size of all matplotlib graphs
 plt.rcParams.update({'font.size': 14})
 
+
+################################################################################################
+# HELPER FUNCTIONS
+################################################################################################
+
+
+# Function to quickly show visual preformance of the model
+# Plots y vs y_predicted
 def showFit(x_values, y_test, y_pred):
     plt.scatter(x_values, y_test, label="y_test", color="black")
     plt.plot(x_values, y_pred, label="y_pred", color="blue")
@@ -25,8 +36,7 @@ def showFit(x_values, y_test, y_pred):
     plt.show()
     
     
-    
-    
+# Calculates AIC based on equation list on the follow webpage: https://pypi.org/project/RegscorePy/
 def calc_aic(y, y_pred, num_features):
     
     n = len(y)
@@ -42,8 +52,7 @@ def calc_aic(y, y_pred, num_features):
     return aic_val
 
 
-
-
+# Calculates BIC based on equation list on the follow webpage: https://pypi.org/project/RegscorePy/
 def calc_bic (y, y_pred, num_features):
     
     n = len(y)
@@ -59,8 +68,7 @@ def calc_bic (y, y_pred, num_features):
     return aic_val    
 
 
-
-
+# Caluculates r2_bar base on formula outlined in pg. 157-158 of the textbook: https://cobweb.cs.uga.edu/~jam/scalation_guide/comp_data_science.pdf
 def calc_r2_bar(m, n, r2):
         
     #m = number of data points
@@ -75,8 +83,8 @@ def calc_r2_bar(m, n, r2):
     return r2_bar
 
 
-
-
+# Splits data into and X_train set, X_test set, y_train set, and y_test set based on KFold cross validation with n number of splits
+# Default train to test ratio is 80:20
 def splitData(X, y, num_splits):
 
     X_arr = X.to_numpy()
@@ -95,8 +103,9 @@ def splitData(X, y, num_splits):
     return ret_list
 
 
-
-
+# Using OLS statmodels lib to calculate p-values for each feature
+# function returns a dataframe sorted in ascending order with the coresponding feature name and index postion
+# column headers are [index, feature_name, p_value]
 def calc_p_values(model, X, y, bool, name):
     # Statsmodels.OLS requires us to add a constant.
     x = sm.add_constant(X)
@@ -120,10 +129,17 @@ def calc_p_values(model, X, y, bool, name):
     return df_pval
 
 
+################################################################################################
+# MAIN SELECTION METHODS
+################################################################################################
 
 
+### FORWARD SELECTION
+# Function that preforms forward feature selection favoring those feature with the lowest p-values
+# Outputs a summary, report table, and graph to show change in r2_bar, r2_cv, AIC, and BIC as input features are changed
 def forwardSelection(model, X, y):
 
+    #Starting with a temporary empty feature dataframe
     x_tmp = pd.DataFrame()
     
     # X.shape[1]
@@ -141,12 +157,15 @@ def forwardSelection(model, X, y):
     
     num_feat = 0
 
+    # Iterating through each feature in a list. This order correspondes to the features p-values. Lower is closer to the front of the list
     for each in add_order_list:
         
         num_feat = num_feat + 1
         
+        # Adding feature to a temporary dataframe
         x_tmp = pd.concat([x_tmp, X.iloc[:, each]], axis=1)
         
+        # Splitting data in folds and appropriate sets for training and testing
         ret_list = splitData(x_tmp, y, 5)
         
         r2_list = []
@@ -154,6 +173,7 @@ def forwardSelection(model, X, y):
         aic_val_list = []
         bic_val_list = []
         
+        # Iterating through each fold in cross validation. In this case there are 5 folds
         for fold in ret_list:
             
             X_train = fold[0]
@@ -161,22 +181,18 @@ def forwardSelection(model, X, y):
             y_train = fold[2]
             y_test = fold[3]
             
+            # Training and testing model 
             model.fit(X_train, y_train)
             y_pred = model.predict(X_test)
             
-            
-            print(y_test)
-            print(y_pred) 
-            print(num_feat)
-            
+            # Calculating r2, r2_bar, AIC, and BIC for each fold and storing
             r2 = r2_score(y_test, y_pred)
             r2_list.append(r2)
-            
             r2_bar_list.append(calc_r2_bar(len(y), num_feat, r2))
             aic_val_list.append(calc_aic(y_test, y_pred, num_feat))
             bic_val_list.append(calc_aic(y_test, y_pred, num_feat))
             
-        
+        # Averaging values for each fold and storing
         r2_cv_list_final.append(np.average(r2_list))
         r2_bar_list_final.append(np.average(r2_bar_list))
         aic_list_final.append(np.average(aic_val_list))
@@ -184,6 +200,7 @@ def forwardSelection(model, X, y):
         
     feature_list = range(1, X.shape[1] + 1)
     
+    # Creating dataframe of values from each feature addition
     df_final = pd.DataFrame()
     df_final['Num_Features'] = feature_list
     df_final['r2_cv'] = r2_cv_list_final
@@ -191,6 +208,7 @@ def forwardSelection(model, X, y):
     df_final['aic'] = aic_list_final
     df_final['bic'] = bic_list_final
     
+    # Printing dataframe to console as formated table 
     print()
     print("FORWARD SELECTION SUMMARY TABLE:")
     print()
@@ -201,7 +219,7 @@ def forwardSelection(model, X, y):
         t.add_row(df_final.iloc[row, :].to_list())
     print(t)
     
-    
+    # Generating figures of r2_cv, r2_bar, AIC, and BIC vs number of features
     fig = plt.figure(figsize=(25, 10))
     fig.suptitle('Forward Selection Graphical Summary')    
     
@@ -221,8 +239,9 @@ def forwardSelection(model, X, y):
     fig.show()
 
 
-
-
+### BACKWARD SELECTION
+# Function that preforms backward feature selection favoring those feature with the lowest p-values
+# Outputs a summary, report table, and graph to show change in r2_bar, r2_cv, AIC, and BIC as input features are changed
 def backwardSelection(model, X, y):
 
     x_tmp = pd.DataFrame()
@@ -242,10 +261,13 @@ def backwardSelection(model, X, y):
 
     num_feat = X.shape[1]
     
+    #Starting with a temporary dataframe of all features
     x_tmp = X
 
+    # Iterating through each feature in a list. This order correspondes to the features p-values. Higher is closer to the front of the list
     for each in feature_names_list:
         
+        # Splitting data in folds and appropriate sets for training and testing
         ret_list = splitData(x_tmp, y, 5)
         
         r2_list = []
@@ -253,6 +275,7 @@ def backwardSelection(model, X, y):
         aic_val_list = []
         bic_val_list = []
         
+        # Iterating through each fold in cross validation. In this case there are 5 folds
         for fold in ret_list:
             
             X_train = fold[0]
@@ -260,24 +283,24 @@ def backwardSelection(model, X, y):
             y_train = fold[2]
             y_test = fold[3]
             
+            # Training and testing model 
             model.fit(X_train, y_train)
             y_pred = model.predict(X_test)
             
+            # Calculating r2, r2_bar, AIC, and BIC for each fold and storing
             r2 = r2_score(y_test, y_pred)
             r2_list.append(r2)
-            
             r2_bar_list.append(calc_r2_bar(len(y), num_feat, r2))
-            
             aic_val_list.append(calc_aic(y_test, y_pred, num_feat))
-            
             bic_val_list.append(calc_bic(y_test, y_pred, num_feat))
             
-        
+        # Averaging values for each fold and storing
         r2_cv_list_final.append(np.average(r2_list))
         r2_bar_list_final.append(np.average(r2_bar_list))
         aic_list_final.append(np.average(aic_val_list))
         bic_list_final.append(np.average(bic_val_list))
-    
+
+        # Droping feature from temporary dataframe
         x_tmp = x_tmp.drop(each, axis=1)
     
         num_feat = num_feat - 1
@@ -286,6 +309,7 @@ def backwardSelection(model, X, y):
     feature_list = list(feature_list)
     feature_list = feature_list[::-1]
 
+    # Creating dataframe of values from each feature subtraction
     df_final = pd.DataFrame()
     df_final['Num_Features'] = feature_list
     df_final['r2_cv'] = r2_cv_list_final
@@ -293,6 +317,7 @@ def backwardSelection(model, X, y):
     df_final['aic'] = aic_list_final
     df_final['bic'] = bic_list_final
 
+    # Printing dataframe to console as formated table
     print()
     print("BACKWARD SELECTION SUMMARY TABLE:")
     print()
@@ -303,7 +328,7 @@ def backwardSelection(model, X, y):
         t.add_row(df_final.iloc[row, :].to_list())
     print(t)
 
-
+    # Generating figures of r2_cv, r2_bar, AIC, and BIC vs number of features
     fig = plt.figure(figsize=(25, 10))
     fig.suptitle('Backward Selection Graphical Summary')    
 
@@ -323,10 +348,12 @@ def backwardSelection(model, X, y):
     fig.show()
     
     
-    
-    
+### STEPWISE SELECTION
+# Function that preforms stepwise feature selection favoring those feature with the lowest p-values but dropping features if they make no improvment(r2_cv) to the model.
+# Outputs a summary, report table, and graph to show change in r2_bar, r2_cv, AIC, and BIC as input features are changed
 def stepwiseSelection(model, X, y):
 
+    #Starting with a temporary empty feature dataframe
     x_tmp = pd.DataFrame()
     
     # X.shape[1]
@@ -343,18 +370,21 @@ def stepwiseSelection(model, X, y):
     feature_names_list = df_pval['feat_name'].to_list()
     
     num_feat = 1
+    
+    # Setting initial r2_cv value to 0
     r2_cv_old = 0
     
     final_feat_ind_list = []
     final_feat_name_list = []
     final_feat_name_drop_list = []
 
+    # Iterating through each feature in a list. This order correspondes to the features p-values. Lower is closer to the front of the list
     for each in add_order_list:
         
-        
-        
+        # Adding feature to a temporary dataframe
         x_tmp = pd.concat([x_tmp, X.iloc[:, each]], axis=1)
         
+        # Splitting data in folds and appropriate sets for training and testing
         ret_list = splitData(x_tmp, y, 5)
         
         r2_list = []
@@ -362,6 +392,7 @@ def stepwiseSelection(model, X, y):
         aic_val_list = []
         bic_val_list = []
         
+        # Iterating through each fold in cross validation. In this case there are 5 folds
         for fold in ret_list:
             
             X_train = fold[0]
@@ -369,40 +400,46 @@ def stepwiseSelection(model, X, y):
             y_train = fold[2]
             y_test = fold[3]
             
+            # Training and testing model
             model.fit(X_train, y_train)
             y_pred = model.predict(X_test)
             
+            # Calculating r2, r2_bar, AIC, and BIC for each fold and storing
             r2 = r2_score(y_test, y_pred)
             r2_list.append(r2)
-            
             r2_bar_list.append(calc_r2_bar(len(y), num_feat, r2))
             aic_val_list.append(calc_aic(y_test, y_pred, num_feat))
             bic_val_list.append(calc_bic(y_test, y_pred, num_feat))
             
-        
+        # Finding r2_cv for feature change
         r2_cv = np.average(r2_list)
         
+        # Comparing new r2_cv with old to make sure feature addition offers improvement to model
         if r2_cv > r2_cv_old:
             
+            # Update r2_cv_old value to latest r2_cv
             r2_cv_old = r2_cv
             
             num_feat = num_feat + 1
             
+            # Store necessary metrics
             final_feat_ind_list.append(each)
             final_feat_name_list.append(feature_names_list[each])
-            
             r2_cv_list_final.append(r2_cv)
             r2_bar_list_final.append(np.average(r2_bar_list))
             aic_list_final.append(np.average(aic_val_list))
             bic_list_final.append(np.average(bic_val_list))
             
+        # If there is no model improvement with the addition of a feature the feature is removed. 
         else:
             
+            # Feature dropped and recorded
             x_tmp.drop(columns=x_tmp.columns[-1], axis=1, inplace=True)
             final_feat_name_drop_list.append(feature_names_list[each])
         
     feature_list = range(1, num_feat)
     
+    # Creating dataframe of values from each feature change
     df_final = pd.DataFrame()
     df_final['Num_Features'] = feature_list
     df_final['r2_cv'] = r2_cv_list_final
@@ -410,6 +447,7 @@ def stepwiseSelection(model, X, y):
     df_final['aic'] = aic_list_final
     df_final['bic'] = bic_list_final
     
+    # Printing dataframe to console as formated table
     print()
     print("STEPWISE SELECTION SUMMARY TABLE:")
     print()
@@ -421,14 +459,12 @@ def stepwiseSelection(model, X, y):
         t.add_row(df_final.iloc[row, :].to_list())
     print(t)
     
-    
+    # Generating figures of r2_cv, r2_bar, AIC, and BIC vs number of features
     fig = plt.figure(figsize=(25, 10))
     fig.suptitle('Stepwise Selection Graphical Summary')
     
-    
     ax1 = fig.add_subplot(121)
     ax2 = fig.add_subplot(122)
-    
     
     ax1.plot(feature_list, r2_cv_list_final, label="r2_cv", color="green")
     ax1.plot(feature_list, r2_bar_list_final, label="r2_bar", color="red")

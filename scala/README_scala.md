@@ -4,7 +4,11 @@ This folder named "scala" contains all relevant files needed to run the regressi
 
 ## Steps to Run Code
 
-1. 
+1. cd into the scala/scalaTion_reg_models directory
+1. Run command: sbt
+1. Run command: run
+1. Choose the model and dataset combination you with to run from the list
+1. Examine the output
 
 
 
