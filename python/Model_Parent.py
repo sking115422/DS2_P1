@@ -86,7 +86,7 @@ def backward_selection(model, feature_df: pd.DataFrame, response_series: pd.Seri
     featstrings = []
     r2_cvs = []
     r2_bars = []
-    while not f_df.empty:
+    while len(f_df.columns) > 1:
         best_f = None
         best_r2_bar = -1000
         best_r2_cv = -1000
@@ -119,16 +119,26 @@ def backward_selection(model, feature_df: pd.DataFrame, response_series: pd.Seri
     return
 
 
-def stepwise_selection(df):
-    return
-
 def get_r2_bar(model, data, y_true):
     model.fit(data, y_true)
     y_pred = model.predict(data)
     r2 = r2_score(y_true, y_pred)
     n = len(data)
     p = len(data.columns)
-    r2_bar = 1 - (1 - r2) * (n - 1 / n - p - 1)
+    r2_bar = calc_r2_bar(n, p, r2)
+    # r2_bar = 1 - ((1 - r2) * (n - 1)) / (n - p - 1)
     return r2_bar
 
+
+def calc_r2_bar(m, n, r2):
+    # m = number of data points
+    # n = number of features
+
+    dfr = n - 1
+    df = m - n
+
+    rdf = (dfr + df) / df  # ratio of total degrees of freedom to degrees of freedom for error
+    r2_bar = 1 - rdf * (1 - r2)
+
+    return r2_bar
 
