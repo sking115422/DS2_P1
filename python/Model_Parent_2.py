@@ -3,7 +3,6 @@
 import numpy as np
 import pandas as pd
 
-
 import matplotlib.pyplot as plt
 from prettytable import PrettyTable as pt
 
@@ -16,7 +15,8 @@ import statsmodels.api as sm
 # https://pypi.org/project/RegscorePy/
 
 
-
+# Setting size of all matplotlib graphs
+plt.rcParams.update({'font.size': 14})
 
 def showFit(x_values, y_test, y_pred):
     plt.scatter(x_values, y_test, label="y_test", color="black")
