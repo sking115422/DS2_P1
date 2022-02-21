@@ -9,3 +9,5 @@ global-logging
 .history3
 active.json
 venv
+target
+project
