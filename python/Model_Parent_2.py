@@ -173,10 +173,12 @@ def forwardSelection(model, X, y):
     
     ax1.plot(feature_list, r2_cv_list_final, label="r2_cv", color="green")
     ax1.plot(feature_list, r2_bar_list_final, label="r2_bar", color="red")
+    ax1.set_xlabel('Number of Features')
     ax1.legend()
         
     ax2.plot(feature_list, aic_list_final, label="aic", color="blue")
     ax2.plot(feature_list, bic_list_final, label="bic", color="orange")
+    ax2.set_xlabel('Number of Features')
     ax2.legend()
     
     fig.show()
@@ -273,10 +275,12 @@ def backwardSelection(model, X, y):
 
     ax1.plot(feature_list, r2_cv_list_final, label="r2_cv", color="green")
     ax1.plot(feature_list, r2_bar_list_final, label="r2_bar", color="red")
+    ax1.set_xlabel('Number of Features')
     ax1.legend()
         
     ax2.plot(feature_list, aic_list_final, label="aic", color="blue")
     ax2.plot(feature_list, bic_list_final, label="bic", color="orange")
+    ax2.set_xlabel('Number of Features')
     ax2.legend()
 
     fig.show()
@@ -382,17 +386,21 @@ def stepwiseSelection(model, X, y):
     
     
     fig = plt.figure(figsize=(25, 10))
-    fig.suptitle('Stepwise Selection Graphical Summary')    
+    fig.suptitle('Stepwise Selection Graphical Summary')
+    
     
     ax1 = fig.add_subplot(121)
     ax2 = fig.add_subplot(122)
     
+    
     ax1.plot(feature_list, r2_cv_list_final, label="r2_cv", color="green")
     ax1.plot(feature_list, r2_bar_list_final, label="r2_bar", color="red")
+    ax1.set_xlabel('Number of Features')
     ax1.legend()
         
     ax2.plot(feature_list, aic_list_final, label="aic", color="blue")
     ax2.plot(feature_list, bic_list_final, label="bic", color="orange")
+    ax2.set_xlabel('Number of Features')
     ax2.legend()
     
     fig.show()    
