@@ -164,11 +164,6 @@ def forwardSelection(model, X, y):
             model.fit(X_train, y_train)
             y_pred = model.predict(X_test)
             
-            
-            print(y_test)
-            print(y_pred) 
-            print(num_feat)
-            
             r2 = r2_score(y_test, y_pred)
             r2_list.append(r2)
             
@@ -267,9 +262,7 @@ def backwardSelection(model, X, y):
             r2_list.append(r2)
             
             r2_bar_list.append(calc_r2_bar(len(y), num_feat, r2))
-            
             aic_val_list.append(calc_aic(y_test, y_pred, num_feat))
-            
             bic_val_list.append(calc_bic(y_test, y_pred, num_feat))
             
         
