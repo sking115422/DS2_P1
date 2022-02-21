@@ -7,36 +7,36 @@ from sklearn.metrics import r2_score
 
 
 def get_air_quality_df():
-    parent_path = os.getcwd()
+    parent_path = os.path.dirname(os.getcwd())
     df = pd.read_csv(parent_path + '/cleaned_data/AirQualityUCI_fixed_cleaned.csv', index_col=0)
     return df
 
 
 def get_auto_mpg_df():
-    parent_path = os.getcwd()
+    parent_path = os.path.dirname(os.getcwd())
     df = pd.read_csv(parent_path + '/cleaned_data/auto_mpg_fixed_cleaned.csv', index_col=0)
     return df
 
 
 def get_forest_fires_df():
-    parent_path = os.getcwd()
+    parent_path = os.path.dirname(os.getcwd())
     df = pd.read_csv(parent_path + '/cleaned_data/forestfires_cleaned.csv', index_col=0)
     return df
 
 def get_ccpp_df():
-    parent_path = os.getcwd()
+    parent_path = os.path.dirname(os.getcwd())
     df = pd.read_csv(parent_path + '/cleaned_data/CCPP.csv', index_col=0)
     return df
 
 
 def get_bike_sharing_df():
-    parent_path = os.getcwd()
+    parent_path = os.path.dirname(os.getcwd())
     df = pd.read_csv(parent_path + '/cleaned_data/bike_sharing_hour.csv', index_col=0)
     return df
 
 
 def get_wine_quality_df():
-    parent_path = os.getcwd()
+    parent_path = os.path.dirname(os.getcwd())
     df = pd.read_csv(parent_path + '/cleaned_data/winequality-white_fixed.csv', index_col=0)
     return df
 
@@ -56,14 +56,14 @@ def forward_selection(model, feature_df: pd.DataFrame, response_series: pd.Serie
             print("Testing feature: ", f)
             temp_features = pd.concat([features, pd.Series(f_df[f])], axis=1)
             r2_bar = get_r2_bar(model, temp_features, response_series)
-            r2_cv = np.mean(cross_validate(model, temp_features, response_series, scoring='r2', cv=5)['test_score'])  # 80-20 split
+            cv = cross_validate(model, temp_features, response_series, scoring='r2', cv=5)  # 80-20 split
+            r2_cv = np.mean(cv['test_score'])
             print("R^2 Bar: ", r2_bar)
             print("R^2 CV: ", r2_cv)
             if r2_cv > best_r2_cv:
                 best_r2_cv=r2_cv
                 best_f=f
                 best_r2_bar = r2_bar
-            ...
         features = pd.concat([features, pd.Series(f_df[best_f])], axis=1)
         featstrings.append(','.join([feat for feat in features]))
         r2_cvs.append(best_r2_cv)
@@ -80,7 +80,7 @@ def forward_selection(model, feature_df: pd.DataFrame, response_series: pd.Serie
     return
 
 
-def backward_selection(df):
+def backward_selection(model, feature_df: pd.DataFrame, response_series: pd.Series):
     return
 
 
@@ -93,7 +93,7 @@ def get_r2_bar(model, data, y_true):
     r2 = r2_score(y_true, y_pred)
     n = len(data)
     p = len(data.columns)
-    r2_bar = 1 - (1 - r2)*(n-1/n-p-1)
+    r2_bar = 1 - ((1 - r2)*(n-1))/(n-p-1)
     return r2_bar
 
 
