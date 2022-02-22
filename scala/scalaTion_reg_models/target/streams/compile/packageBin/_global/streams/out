@@ -1,1 +1,509 @@
-[0m[[0m[0mdebug[0m] [0m[0mJar uptodate: C:\Users\Tango\Desktop\Projects\Project1\DS2_P1\scala\scalaTion_reg_models\target\scala-3.1.1\models_3-0.1.0-SNAPSHOT.jar[0m
+[0m[[0m[0mdebug[0m] [0m[0mPackaging /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/models_3-0.1.0-SNAPSHOT.jar ...[0m
+[0m[[0m[0mdebug[0m] [0m[0mInput file mappings:[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/CCPP_Data.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/CCPP_Data.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/WineQuality_Data.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/WineQuality_Data.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/BikeSharing_Data.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/BikeSharing_Data.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/ForestFires_Data.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/ForestFires_Data.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/AirQuality_Data$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/AirQuality_Data$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/ForestFires_Data.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/ForestFires_Data.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/CCPP_Data$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/CCPP_Data$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/BikeSharing_Data.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/BikeSharing_Data.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/WineQuality_Data.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/WineQuality_Data.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/CCPP_Data.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/CCPP_Data.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/Regression$package 2.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/Regression$package 2.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/Regression_BikeSharing.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/Regression_BikeSharing.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/LassoRegression$package.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/LassoRegression$package.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/lassoRegression_ForestFires.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/lassoRegression_ForestFires.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/test$package 2.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/test$package 2.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/lassoRegression_forestfires 2.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/lassoRegression_forestfires 2.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/symRidgeRegressionTest 2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/symRidgeRegressionTest 2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/SymRidgeRegression_WineQuality.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/SymRidgeRegression_WineQuality.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/regressionTest2 2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/regressionTest2 2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/RidgeRegression$package.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/RidgeRegression$package.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/QuadX_Regression_WineQuality.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/QuadX_Regression_WineQuality.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/SymbolicRegression_ForestFires.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/SymbolicRegression_ForestFires.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/SymRidgeRegression_AirQuality.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/SymRidgeRegression_AirQuality.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/Regression 3.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/Regression 3.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/CCPP_Data 2.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/CCPP_Data 2.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/lassoRegression_AirQuality.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/lassoRegression_AirQuality.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/symRidgeRegressionTest3 2.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/symRidgeRegressionTest3 2.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/RidgeRegression_BikeSharing.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/RidgeRegression_BikeSharing.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/Regression$package$ 3.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/Regression$package$ 3.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/regressionForestFires 2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/regressionForestFires 2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/lassoRegression_CCPP 2.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/lassoRegression_CCPP 2.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/RidgeRegression.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/RidgeRegression.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/Regression$package 3.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/Regression$package 3.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/SymbolicRegression.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/SymbolicRegression.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/lassoRegression_CCPP.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/lassoRegression_CCPP.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/regressionWineQuality 2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/regressionWineQuality 2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/RidgeRegression_ForestFires.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/RidgeRegression_ForestFires.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/LassoRegression.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/LassoRegression.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/symRidgeRegressionTest2 2.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/symRidgeRegressionTest2 2.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/CubicX_Regression_CCPP.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/CubicX_Regression_CCPP.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/SymbolicRegression_AutoMPG.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/SymbolicRegression_AutoMPG.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/SymbolicRegression$package$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/SymbolicRegression$package$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/SymbolicRegression$package.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/SymbolicRegression$package.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/QuadX_Regression_CCPP.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/QuadX_Regression_CCPP.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/lassoRegressionAutoMPG 2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/lassoRegressionAutoMPG 2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/RidgeRegression_AirQuality.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/RidgeRegression_AirQuality.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/RegressionAutoMPG.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/RegressionAutoMPG.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/SymLassoRegression_WineQuality.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/SymLassoRegression_WineQuality.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/SymRidgeRegression 2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/SymRidgeRegression 2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/CubicX_Regression_AirQuality.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/CubicX_Regression_AirQuality.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/Regression 2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/Regression 2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/CubicX_Regression$package.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/CubicX_Regression$package.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/lassoRegression_BikeSharing.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/lassoRegression_BikeSharing.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/CubicX_Regression_AutoMPG.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/CubicX_Regression_AutoMPG.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/Regression_ForestFires.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/Regression_ForestFires.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/SymLassoRegression_AirQuality.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/SymLassoRegression_AirQuality.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/regressionAutoMPG 2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/regressionAutoMPG 2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/lassoRegressionAutoMPG.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/lassoRegressionAutoMPG.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/SymLassoRegression_CCPP.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/SymLassoRegression_CCPP.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/ForestFiresData 2.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/ForestFiresData 2.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/regressionTest3 2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/regressionTest3 2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/QuadX_Regression$package$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/QuadX_Regression$package$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/SymLassoRegression$package$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/SymLassoRegression$package$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/SymbolicRegression_AirQuality.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/SymbolicRegression_AirQuality.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/CubicX_Regression_WineQuality.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/CubicX_Regression_WineQuality.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/lassoRegression_WineQuality 2.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/lassoRegression_WineQuality 2.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/SymbolicRegression_BikeSharing.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/SymbolicRegression_BikeSharing.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/SymLassoRegression_AirQuality.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/SymLassoRegression_AirQuality.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/CubicX_Regression_AutoMPG.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/CubicX_Regression_AutoMPG.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/lassoRegression_BikeSharing.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/lassoRegression_BikeSharing.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/CubicX_Regression$package.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/CubicX_Regression$package.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/Regression_ForestFires.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/Regression_ForestFires.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/SymRidgeRegression 2.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/SymRidgeRegression 2.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/Regression 2.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/Regression 2.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/CubicX_Regression_AirQuality.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/CubicX_Regression_AirQuality.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/CubicX_Regression_WineQuality.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/CubicX_Regression_WineQuality.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/SymbolicRegression_AirQuality.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/SymbolicRegression_AirQuality.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/SymbolicRegression_BikeSharing.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/SymbolicRegression_BikeSharing.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/lassoRegression_WineQuality 2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/lassoRegression_WineQuality 2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/ForestFiresData 2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/ForestFiresData 2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/regressionTest3 2.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/regressionTest3 2.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/regressionAutoMPG 2.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/regressionAutoMPG 2.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/SymLassoRegression_CCPP.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/SymLassoRegression_CCPP.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/lassoRegressionAutoMPG.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/lassoRegressionAutoMPG.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/Regression$package$ 2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/Regression$package$ 2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/symRidgeRegressionTest2 2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/symRidgeRegressionTest2 2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/Regression$package 4.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/Regression$package 4.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/RidgeRegression_ForestFires.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/RidgeRegression_ForestFires.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/Regression$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/Regression$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/LassoRegression.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/LassoRegression.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/lassoRegression_CCPP.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/lassoRegression_CCPP.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/Regression$package 3.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/Regression$package 3.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/SymbolicRegression.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/SymbolicRegression.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/RegressionAutoMPG.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/RegressionAutoMPG.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/SymLassoRegression_WineQuality.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/SymLassoRegression_WineQuality.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/lassoRegressionAutoMPG 2.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/lassoRegressionAutoMPG 2.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/regressionTest 2.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/regressionTest 2.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/RidgeRegression_AirQuality.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/RidgeRegression_AirQuality.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/QuadX_Regression_CCPP.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/QuadX_Regression_CCPP.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/CubicX_Regression_CCPP.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/CubicX_Regression_CCPP.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/SymbolicRegression$package.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/SymbolicRegression$package.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/SymbolicRegression_AutoMPG.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/SymbolicRegression_AutoMPG.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/RidgeRegression$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/RidgeRegression$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/lassoRegression_AirQuality.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/lassoRegression_AirQuality.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/symRidgeRegressionTest3 2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/symRidgeRegressionTest3 2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/RidgeRegression_BikeSharing.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/RidgeRegression_BikeSharing.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/Regression 3.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/Regression 3.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/CCPP_Data 2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/CCPP_Data 2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/SymRidgeRegression$ 2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/SymRidgeRegression$ 2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/RidgeRegression.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/RidgeRegression.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/Regression$package$ 4.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/Regression$package$ 4.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/lassoRegression_CCPP 2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/lassoRegression_CCPP 2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/regressionAutoMPG 3.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/regressionAutoMPG 3.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/Regression$package$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/Regression$package$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/test$package 2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/test$package 2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/lassoRegression_forestfires 2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/lassoRegression_forestfires 2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/symRidgeRegressionTest 2.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/symRidgeRegressionTest 2.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/Regression_BikeSharing.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/Regression_BikeSharing.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/LassoRegression$package.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/LassoRegression$package.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/lassoRegression_ForestFires.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/lassoRegression_ForestFires.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/SymLassoRegression$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/SymLassoRegression$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/Regression$package 2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/Regression$package 2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/QuadX_Regression_WineQuality.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/QuadX_Regression_WineQuality.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/SymRidgeRegression_AirQuality.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/SymRidgeRegression_AirQuality.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/SymbolicRegression_ForestFires.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/SymbolicRegression_ForestFires.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/LassoRegression$package$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/LassoRegression$package$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/RidgeRegression$package.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/RidgeRegression$package.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/SymRidgeRegression_WineQuality.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/SymRidgeRegression_WineQuality.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/regressionTest2 2.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/regressionTest2 2.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/QuadX_Regression$package.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/QuadX_Regression$package.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/SymRidgeRegression_AutoMPG.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/SymRidgeRegression_AutoMPG.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/SymRidgeRegression$package.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/SymRidgeRegression$package.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/QuadX_Regression_AutoMPG.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/QuadX_Regression_AutoMPG.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/Regression$ 4.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/Regression$ 4.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/LassoRegression$package 2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/LassoRegression$package 2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/regressionTest7 2.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/regressionTest7 2.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/SymLassoRegression.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/SymLassoRegression.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/test 2.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/test 2.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/symRidgeRegressionTest4 2.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/symRidgeRegressionTest4 2.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/SymLassoRegression$package 2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/SymLassoRegression$package 2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/LassoRegression$package$ 2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/LassoRegression$package$ 2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/SymLassoRegression_AutoMPG.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/SymLassoRegression_AutoMPG.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/SymLassoRegression$package.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/SymLassoRegression$package.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/lassoRegression_BikeSharingHour 2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/lassoRegression_BikeSharingHour 2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/SymLassoRegression_BikeSharing.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/SymLassoRegression_BikeSharing.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/LassoRegression 2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/LassoRegression 2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/SymLassoRegression 2.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/SymLassoRegression 2.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/lassoRegression_WineQuality.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/lassoRegression_WineQuality.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/SymRidgeRegression$package$ 2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/SymRidgeRegression$package$ 2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/Regression$package.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/Regression$package.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/regressionTest5 2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/regressionTest5 2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/SymRidgeRegression_ForestFires.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/SymRidgeRegression_ForestFires.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/symRidgeRegressionTest6 2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/symRidgeRegressionTest6 2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/SymRidgeRegression$package 2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/SymRidgeRegression$package 2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/CubicX_Regression$package$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/CubicX_Regression$package$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/QuadX_Regression_ForestFires.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/QuadX_Regression_ForestFires.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/SymbolicRegression_WineQuality.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/SymbolicRegression_WineQuality.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/SymRidgeRegression$package$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/SymRidgeRegression$package$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/CubicX_Regression_BikeSharing.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/CubicX_Regression_BikeSharing.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/Regression_CCPP.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/Regression_CCPP.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/Regression_WineQuality.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/Regression_WineQuality.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/Regression_AirQuality.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/Regression_AirQuality.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/regressionBikeSharingHour 2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/regressionBikeSharingHour 2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/Regression$ 2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/Regression$ 2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/SymLassoRegression_ForestFires 2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/SymLassoRegression_ForestFires 2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/regressionTest4 2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/regressionTest4 2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/SymLassoRegression$ 2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/SymLassoRegression$ 2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/symRidgeRegressionTest7 2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/symRidgeRegressionTest7 2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/SymRidgeRegression_CCPP.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/SymRidgeRegression_CCPP.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/SymRidgeRegression_BikeSharing.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/SymRidgeRegression_BikeSharing.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/AutoMPG 2.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/AutoMPG 2.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/CubicX_Regression_ForestFires.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/CubicX_Regression_ForestFires.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/SymLassoRegression_CCPP 2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/SymLassoRegression_CCPP 2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/QuadX_Regression_BikeSharing.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/QuadX_Regression_BikeSharing.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/RidgeRegression_CCPP.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/RidgeRegression_CCPP.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/regressionTest6 2.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/regressionTest6 2.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/RidgeRegressionAutoMPG.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/RidgeRegressionAutoMPG.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/RidgeRegression_WineQuality.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/RidgeRegression_WineQuality.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/SymbolicRegression_CCPP.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/SymbolicRegression_CCPP.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/symRidgeRegressionTest5 2.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/symRidgeRegressionTest5 2.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/QuadX_Regression_AirQuality.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/QuadX_Regression_AirQuality.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/SymRidgeRegression.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/SymRidgeRegression.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/Regression.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/Regression.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/CCPP_Data$ 2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/CCPP_Data$ 2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/test$package$ 2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/test$package$ 2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/SymLassoRegression_ForestFires.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/SymLassoRegression_ForestFires.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/RidgeRegression_WineQuality.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/RidgeRegression_WineQuality.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/regressionTest6 2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/regressionTest6 2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/RidgeRegressionAutoMPG.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/RidgeRegressionAutoMPG.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/RidgeRegression_CCPP.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/RidgeRegression_CCPP.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/LassoRegression$ 2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/LassoRegression$ 2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/LassoRegression$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/LassoRegression$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/SymLassoRegression_ForestFires.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/SymLassoRegression_ForestFires.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/SymRidgeRegression.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/SymRidgeRegression.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/QuadX_Regression_AirQuality.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/QuadX_Regression_AirQuality.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/Regression.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/Regression.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/SymbolicRegression_CCPP.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/SymbolicRegression_CCPP.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/symRidgeRegressionTest5 2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/symRidgeRegressionTest5 2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/SymLassoRegression_ForestFires 2.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/SymLassoRegression_ForestFires 2.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/regressionTest4 2.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/regressionTest4 2.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/SymRidgeRegression$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/SymRidgeRegression$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/SymbolicRegression$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/SymbolicRegression$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/Regression_WineQuality.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/Regression_WineQuality.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/Regression_AirQuality.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/Regression_AirQuality.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/RidgeRegression$package$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/RidgeRegression$package$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/CubicX_Regression_ForestFires.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/CubicX_Regression_ForestFires.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/SymLassoRegression_CCPP 2.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/SymLassoRegression_CCPP 2.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/QuadX_Regression_BikeSharing.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/QuadX_Regression_BikeSharing.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/SymLassoRegression$package$ 2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/SymLassoRegression$package$ 2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/AutoMPG 2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/AutoMPG 2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/symRidgeRegressionTest7 2.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/symRidgeRegressionTest7 2.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/SymRidgeRegression_CCPP.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/SymRidgeRegression_CCPP.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/SymRidgeRegression_BikeSharing.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/SymRidgeRegression_BikeSharing.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/Regression$package.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/Regression$package.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/regressionTest5 2.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/regressionTest5 2.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/SymLassoRegression 2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/SymLassoRegression 2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/lassoRegression_WineQuality.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/lassoRegression_WineQuality.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/LassoRegression 2.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/LassoRegression 2.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/QuadX_Regression_ForestFires.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/QuadX_Regression_ForestFires.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/SymbolicRegression_WineQuality.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/SymbolicRegression_WineQuality.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/CubicX_Regression_BikeSharing.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/CubicX_Regression_BikeSharing.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/Regression_CCPP.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/Regression_CCPP.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/SymRidgeRegression$package 2.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/SymRidgeRegression$package 2.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/symRidgeRegressionTest6 2.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/symRidgeRegressionTest6 2.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/SymRidgeRegression_ForestFires.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/SymRidgeRegression_ForestFires.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/regressionTest7 2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/regressionTest7 2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/Regression$ 3.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/Regression$ 3.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/SymLassoRegression.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/SymLassoRegression.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/test 2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/test 2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/QuadX_Regression_AutoMPG.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/QuadX_Regression_AutoMPG.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/SymRidgeRegression$package.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/SymRidgeRegression$package.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/SymRidgeRegression_AutoMPG.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/SymRidgeRegression_AutoMPG.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/QuadX_Regression$package.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/QuadX_Regression$package.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/regressionCCPP 2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/regressionCCPP 2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/LassoRegression$package 2.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/LassoRegression$package 2.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/lassoRegression_BikeSharingHour 2.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/lassoRegression_BikeSharingHour 2.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/SymLassoRegression_BikeSharing.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/SymLassoRegression_BikeSharing.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/SymLassoRegression$package.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/SymLassoRegression$package.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/SymLassoRegression_AutoMPG.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/SymLassoRegression_AutoMPG.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/ForestFiresData$ 2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/ForestFiresData$ 2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/SymLassoRegression$package 2.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/SymLassoRegression$package 2.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/SymLassoRegression_AutoMPG 2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/SymLassoRegression_AutoMPG 2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/modeling/symRidgeRegressionTest4 2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/modeling/symRidgeRegressionTest4 2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/AutoMPG_Data.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/AutoMPG_Data.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/AirQuality_Data.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/AirQuality_Data.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/AutoMPG_Data$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/AutoMPG_Data$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/ForestFires_Data$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/ForestFires_Data$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/BikeSharing_Data$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/BikeSharing_Data$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/WineQuality_Data$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/WineQuality_Data$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/AutoMPG_Data.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/AutoMPG_Data.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	scalation/AirQuality_Data.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/sdk/Desktop/UGA_proj/DS2_P1/scala/scalaTion_reg_models/target/scala-3.1.1/classes/scalation/AirQuality_Data.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0mDone packaging.[0m
