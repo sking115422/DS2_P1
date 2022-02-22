@@ -25,7 +25,7 @@ The goal of the project was to model 6 datasets with 2 different coding language
 
 The project organized into 4 main folders: raw_data, cleaned_data, python, and scala. The raw_data folder is filled with the original datasets as they came from the original sources. The cleaned_data folder is filled with a formatted and cleaned version of the origional data. The python folder holds all of the Python code, and in that folder there should be a README_py.md file that outlines how to run all Python code. Finally, the scala folder holds all of the Scala code and ScalaTion packages, and in that folder there should be a README_scala.md with more specific instructions on how to run the Scala code. 
 
-Under the main directory DS2_P1 there is also a results.xlsx and a results_summary.doc. These files outline the results from each of the models on each data set and then summarize them in a meaningful way. 
+Under the main directory DS2_P1 there is also a results.xlsx, results_summary.doc, and a results_summary.pdf. These files outline the results from each of the models on each data set and then summarize them in a meaningful way. 
 
 ## Dataset Links 
 
